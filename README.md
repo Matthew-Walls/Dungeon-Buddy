@@ -7,4 +7,5 @@ Goal of the project is to create a easy to use tool set for D&D 5E Dungeon Maste
 # Current Features
 
 Dice Roller Logic  --------> 100% Complete
+
 Monster Index Form --------> 80% Complete 
