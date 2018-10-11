@@ -212,46 +212,40 @@ namespace Dungeon_Buddy
             }
         }
 
-        private DataGridViewCell GetCell(string text, DataGridView dGV, int col)
-        {
-            DataGridViewCell cell = dGV.CurrentCell;
-
-            foreach (DataGridViewRow row in dGV.Rows)
-            {
-                text.ToLower();
-                String text2 = row.Cells[col].Value.ToString().ToLower();
-
-                try
-                {
-                    if (row.Cells[col].Value != null && text == text2)
-                        cell = row.Cells[col];
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-
-            return cell;
-        }
-
-        /*END OF METHODS RELATED TO THE DATA GRID VIEW*/
-
+        //Filters the datagridview by Search Text Box Name
         private void searchTB_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.CurrentCell = GetCell(searchTB.Text, dataGridView1, 0);
-
+            String text = searchTB.Text;
+            if (text != "" && text != "Search")
+            {
+                monsterTable.DefaultView.RowFilter = string.Format("Name LIKE '%{0}%'", searchTB.Text);
+            }
         }
 
+        //Filters the datagridview by the values in the challenge rating text boxes
         private void CR_TB1_TextChanged(object sender, EventArgs e)
         {
-
+            if (double.TryParse(CR_TB1.Text, out double temp1))
+            {
+                if (double.TryParse(CR_TB2.Text, out double temp2))
+                {
+                    monsterTable.DefaultView.RowFilter = string.Format("Challenge >= {0} AND Challenge <= {1}", temp1, temp2);
+                }
+            }
         }
 
+        //Filters the datagridview by the values in the challenge rating text boxes
         private void CR_TB2_TextChanged(object sender, EventArgs e)
         {
-
+            if (double.TryParse(CR_TB1.Text, out double temp1))
+            {
+                if (double.TryParse(CR_TB2.Text, out double temp2))
+                {
+                    monsterTable.DefaultView.RowFilter = string.Format("Challenge >= {0} AND Challenge <= {1}", temp1, temp2);
+                }
+            }
         }
+        /*END OF METHODS RELATED TO THE DATA GRID VIEW*/
 
         private void searchTB_Leave(object sender, EventArgs e)
         {
@@ -264,5 +258,4 @@ namespace Dungeon_Buddy
                 searchTB.Text = "";
         }
     }
-
 }
