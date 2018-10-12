@@ -15,14 +15,17 @@ namespace Dungeon_Buddy
 
     public partial class MonsterIndexForm : Form
     {
-        private const String FILE_PATH = "data\\5E Monster Spreadsheet.txt";
+        private const String FILE_PATH = "Data\\5E Monster Spreadsheet.txt";
+
+        //This refers to the number of columns of text in the text file
+        //Could be replaced with a normal int and set via a count colum method during construction 
+        private const int NUMBER_OF_COLUMNS = 14;
+
         private String[] ENVIRONMENTS = { "Arctic", "Coastal", "Desert", "Forest", "Grassland", "Hills", "Mountain", "Swamp", "Underdark", "Underwater", "Urban" };
         private String[] SIZES = { "Tiny", "Small/Huge", "Small", "Medium", "Large", "Huge", "Gargantuan" };
         private String[] TYPES = { "Aberration", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity", "Ooze", "Plant", "Undead" };
 
         private List<Monster> monsters = new List<Monster>();
-
-        private const int NUMBER_OF_COLUMNS = 14;
         private DataTable monsterTable;
 
         public MonsterIndexForm()
@@ -247,11 +250,13 @@ namespace Dungeon_Buddy
         }
         /*END OF METHODS RELATED TO THE DATA GRID VIEW*/
 
+        //Reset the default text in search textbox when left
         private void searchTB_Leave(object sender, EventArgs e)
         {
             searchTB.Text = "Search";
         }
 
+        //Clear the default text in the search textBox when entered 
         private void searchTB_Enter(object sender, EventArgs e)
         {
             if (searchTB.Text == "Search")
