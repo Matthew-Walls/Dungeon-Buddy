@@ -11,8 +11,6 @@ using System.IO;
 
 namespace Dungeon_Buddy
 {
-    //Simple Test To See If Branch Commit Is Working As Intended
-
     public partial class MonsterIndexForm : Form
     {
         private const String FILE_PATH = "Data\\5E Monster Spreadsheet.txt";
@@ -22,7 +20,7 @@ namespace Dungeon_Buddy
         private const int NUMBER_OF_COLUMNS = 14;
 
         private String[] ENVIRONMENTS = { "Arctic", "Coastal", "Desert", "Forest", "Grassland", "Hills", "Mountain", "Swamp", "Underdark", "Underwater", "Urban" };
-        private String[] SIZES = { "Tiny", "Small/Huge", "Small", "Medium", "Large", "Huge", "Gargantuan" };
+        private String[] SIZES = { "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan" };
         private String[] TYPES = { "Aberration", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity", "Ooze", "Plant", "Undead" };
 
         private List<Monster> monsters = new List<Monster>();
@@ -60,10 +58,142 @@ namespace Dungeon_Buddy
             foreach (DataGridViewColumn col in dataGridView1.Columns)
                 col.MinimumWidth = 100;
 
-            dataGridView1.AutoResizeColumns();
+            lbl_Count.Text = string.Format("Displaying ( {0} / {1} )", dataGridView1.Rows.Count, monsters.Count);
         }
 
-        /*BELOW ARE METHODS RELATED TO PARSING THE INITIAL TEXT FILE*/
+        private void FilterData()
+        {
+            //String to act as the filter for the monster table row filter to be populated with SQL staements based on the checked combo boxes
+            string filterFormat = "";
+
+            string searchName = searchTB.Text;
+
+            if (searchName != "" && searchName != "Search")
+                filterFormat = string.Format("(Challenge >= {0} AND Challenge <= {1}) AND (Name LIKE '%{2}%')", UpDown_CR_MIN.Value.ToString(), UpDown_CR_MAX.Value.ToString(), searchTB.Text);
+            else
+                filterFormat = string.Format("(Challenge >= {0} AND Challenge <= {1})", UpDown_CR_MIN.Value.ToString(), UpDown_CR_MAX.Value.ToString());
+
+            //Get the number of environment items checked and store them in an array to use later
+            int envCount = environmentCB.CheckedItems.Count;
+            string[] envs = new string[envCount];
+
+            //Get the number of size items checked and store them in an array to use later
+            int sizeCount = sizeCB.CheckedItems.Count;
+            string[] sizes = new string[sizeCount];
+
+            //Get the number of type items checked and store them in an array to use later
+            int typeCount = typeCB.CheckedItems.Count;
+            string[] types = new string[typeCount];
+
+            //If there are any items checked add AND 
+            if (envCount > 0 || sizeCount > 0 || typeCount > 0)
+                filterFormat += " AND ";
+
+            if (envCount > 0)
+            {
+                for(int index = 0; index < envCount; index++)
+                {
+                    envs[index] = environmentCB.CheckedItems[index].ToString();
+                }
+            }
+
+            if (sizeCount > 0)
+            {
+                for (int index = 0; index < sizeCount; index++)
+                {
+                    sizes[index] = sizeCB.CheckedItems[index].ToString();
+                }
+            }
+
+            if (typeCount > 0)
+            {
+                for (int index = 0; index < typeCount; index++)
+                {
+                    types[index] = typeCB.CheckedItems[index].ToString();
+                }
+            }
+
+            if(sizeCount > 0)
+            {
+                filterFormat += string.Format("(Size LIKE '%{0}%'", sizes[0]);
+ 
+                if (sizeCount > 1)
+                {
+                    for (int index = 1; index < sizeCount; index++)
+                    {
+                        filterFormat += string.Format(" OR Size LIKE '%{0}%'", sizes[index]);
+                    }
+                }
+                filterFormat += ")";
+            }
+         
+            if (envCount > 0)
+            {
+                if (sizeCount > 0)
+                {
+                    filterFormat += " AND ";
+                }
+
+                filterFormat += string.Format("(Environment LIKE '%{0}%'", envs[0]);
+
+                if (envCount > 1)
+                {
+                    for (int index = 1; index < envCount; index++)
+                    {
+                        filterFormat += string.Format(" OR Environment LIKE '%{0}%'", envs[index]);
+                    }
+                }
+                filterFormat += ")";
+            }
+
+            if (typeCount > 0)
+            {
+                if (envCount > 0 || sizeCount > 0)
+                {
+                    filterFormat += " AND ";
+                }
+
+                filterFormat += string.Format("(Type LIKE '%{0}%'", types[0]);
+
+                if (typeCount > 1)
+                {
+                    for (int index = 1; index < typeCount; index++)
+                    {
+                        filterFormat += string.Format(" OR Type LIKE '%{0}%'", types[index]);
+                    }
+                }
+                filterFormat += ")";
+            }
+
+            Console.WriteLine(filterFormat);
+            monsterTable.DefaultView.RowFilter = filterFormat;
+            lbl_Count.Text = string.Format("Displaying ( {0} / {1} )", dataGridView1.Rows.Count, monsters.Count);
+
+            string sizeList = "";
+            if (sizeCount != 0 )
+                sizeList = " SIZE: ";
+
+            string typeList = "";
+            if (typeCount != 0)
+                typeList = " TYPE: ";
+
+            string envList = "";
+            if (envCount != 0)
+                envList = " ENV: ";
+
+            foreach (string text in sizes)
+                sizeList += string.Format("{0} ", text);
+          
+            foreach (string text in types)
+                typeList += string.Format("{0} ", text);
+
+            foreach (string text in envs)
+                envList += string.Format("{0} ", text);
+
+            lbl_filters.Text = "Filters: " + sizeList + typeList + envList;
+        }
+
+        /*      <BELOW ARE METHODS RELATED TO PARSING THE INITIAL TEXT FILE?      */
 
         //Takes a text file, and reads it line by line, returning the total line count
         private int TotalLines(String filePath)
@@ -110,7 +240,7 @@ namespace Dungeon_Buddy
             return subArray;
         }
 
-        /*END OF METHODS RELATED TO TEXT FILES*/
+        /*      <END OF METHODS RELATED TO TEXT FILES>        */
 
         //Takes a String Array and populates a list of Monsters from the data
         private void PopulateMonsterList(String[] data)
@@ -156,7 +286,6 @@ namespace Dungeon_Buddy
                 //Add the monster to the list of monsters
                 monsters.Add(monster);
             }
-
         }
 
         //First, create an object[] representing all the relavent Instance Variables to store in the Data Table
@@ -201,7 +330,7 @@ namespace Dungeon_Buddy
             }
         }
 
-        /*BELOW ARE METHODS RELATED TO THE DATA GRID VIEW*/
+        /*      <BELOW ARE METHODS RELATED TO THE DATA GRID VIEW>     */
 
         //When a row selection changed event fires, display the information for the first selected row in the side text box
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -216,44 +345,51 @@ namespace Dungeon_Buddy
         }
 
         //Filters the datagridview by Search Text Box Name
+   
+
+        /*      <CHECKED COMBO BOXES>     */
+        private void sizeCB_DropDownClosed(object sender, EventArgs e)
+        {
+            FilterData();
+        }
+
+        private void environmentCB_DropDownClosed(object sender, EventArgs e)
+        {
+            FilterData();
+        }
+
+        private void typeCB_DropDownClosed(object sender, EventArgs e)
+        {
+            FilterData();
+        }
+        /*      </CHECKED COMBO BOXES>       */
+
+        /*      <NUMERIC UP DOWNS>       */
+        private void UpDown_CR_MAX_ValueChanged(object sender, EventArgs e)
+        {
+            FilterData();
+        }
+
+        private void UpDown_CR_MIN_ValueChanged(object sender, EventArgs e)
+        {
+            FilterData();
+        }
+        /*      </NUMERIC UP DOWNS>        */
+
+        /*      END OF METHODS RELATED TO THE DATA GRID VIEW>        */
+
+        /*      <SEARCH TEXT BOX>       */
+
         private void searchTB_TextChanged(object sender, EventArgs e)
         {
-            String text = searchTB.Text;
-            if (text != "" && text != "Search")
-            {
-                monsterTable.DefaultView.RowFilter = string.Format("Name LIKE '%{0}%'", searchTB.Text);
-            }
+            FilterData();
         }
-
-        //Filters the datagridview by the values in the challenge rating text boxes
-        private void CR_TB1_TextChanged(object sender, EventArgs e)
-        {
-            if (double.TryParse(CR_TB1.Text, out double temp1))
-            {
-                if (double.TryParse(CR_TB2.Text, out double temp2))
-                {
-                    monsterTable.DefaultView.RowFilter = string.Format("Challenge >= {0} AND Challenge <= {1}", temp1, temp2);
-                }
-            }
-        }
-
-        //Filters the datagridview by the values in the challenge rating text boxes
-        private void CR_TB2_TextChanged(object sender, EventArgs e)
-        {
-            if (double.TryParse(CR_TB1.Text, out double temp1))
-            {
-                if (double.TryParse(CR_TB2.Text, out double temp2))
-                {
-                    monsterTable.DefaultView.RowFilter = string.Format("Challenge >= {0} AND Challenge <= {1}", temp1, temp2);
-                }
-            }
-        }
-        /*END OF METHODS RELATED TO THE DATA GRID VIEW*/
 
         //Reset the default text in search textbox when left
         private void searchTB_Leave(object sender, EventArgs e)
         {
-            searchTB.Text = "Search";
+            if(searchTB.Text == "")
+                searchTB.Text = "Search";
         }
 
         //Clear the default text in the search textBox when entered 
@@ -262,5 +398,26 @@ namespace Dungeon_Buddy
             if (searchTB.Text == "Search")
                 searchTB.Text = "";
         }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            foreach (int index in environmentCB.CheckedIndices)
+                environmentCB.SetItemChecked(index, false);
+            environmentCB.Text = "Environment";
+
+            foreach (int index in sizeCB.CheckedIndices)
+                sizeCB.SetItemChecked(index, false);
+            sizeCB.Text = "Size";
+
+            foreach (int index in typeCB.CheckedIndices)
+                typeCB.SetItemChecked(index, false);
+            typeCB.Text = "Type";
+
+            FilterData();
+        }
+
+        /*      </SEARCH TEXT BOX   >       */
+
+
     }
 }
