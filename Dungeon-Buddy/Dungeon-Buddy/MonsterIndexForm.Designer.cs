@@ -40,9 +40,19 @@
             this.sizeCB = new CheckComboBoxTest.CheckedComboBox();
             this.environmentCB = new CheckComboBoxTest.CheckedComboBox();
             this.clearButton = new System.Windows.Forms.Button();
+            this.tabControl_Side = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnAddMonsters = new System.Windows.Forms.Button();
+            this.btn_Clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MIN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MAX)).BeginInit();
+            this.tabControl_Side.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -60,16 +70,17 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(622, 485);
+            this.dataGridView1.Size = new System.Drawing.Size(622, 480);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(641, 49);
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(231, 485);
+            this.richTextBox1.Size = new System.Drawing.Size(219, 481);
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "";
             // 
@@ -98,7 +109,7 @@
             this.lbl_filters.AutoEllipsis = true;
             this.lbl_filters.Location = new System.Drawing.Point(96, 540);
             this.lbl_filters.Name = "lbl_filters";
-            this.lbl_filters.Size = new System.Drawing.Size(776, 13);
+            this.lbl_filters.Size = new System.Drawing.Size(539, 13);
             this.lbl_filters.TabIndex = 15;
             this.lbl_filters.Text = "Filters";
             // 
@@ -202,11 +213,76 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
+            // tabControl_Side
+            // 
+            this.tabControl_Side.Controls.Add(this.tabPage1);
+            this.tabControl_Side.Controls.Add(this.tabPage2);
+            this.tabControl_Side.Location = new System.Drawing.Point(644, 30);
+            this.tabControl_Side.Name = "tabControl_Side";
+            this.tabControl_Side.SelectedIndex = 0;
+            this.tabControl_Side.Size = new System.Drawing.Size(228, 503);
+            this.tabControl_Side.TabIndex = 20;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage1.Controls.Add(this.richTextBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(220, 481);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Description";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(220, 477);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "My Monsters";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(213, 475);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // btnAddMonsters
+            // 
+            this.btnAddMonsters.Location = new System.Drawing.Point(702, 536);
+            this.btnAddMonsters.Name = "btnAddMonsters";
+            this.btnAddMonsters.Size = new System.Drawing.Size(82, 20);
+            this.btnAddMonsters.TabIndex = 21;
+            this.btnAddMonsters.Text = "Add Selected";
+            this.btnAddMonsters.UseVisualStyleBackColor = true;
+            this.btnAddMonsters.Click += new System.EventHandler(this.btnAddMonsters_Click);
+            // 
+            // btn_Clear
+            // 
+            this.btn_Clear.Location = new System.Drawing.Point(790, 536);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Size = new System.Drawing.Size(82, 20);
+            this.btn_Clear.TabIndex = 22;
+            this.btn_Clear.Text = "Clear List";
+            this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            // 
             // MonsterIndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.btn_Clear);
+            this.Controls.Add(this.btnAddMonsters);
+            this.Controls.Add(this.tabControl_Side);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.lbl_Count);
             this.Controls.Add(this.UpDown_CR_MAX);
@@ -217,7 +293,6 @@
             this.Controls.Add(this.sizeCB);
             this.Controls.Add(this.environmentCB);
             this.Controls.Add(this.searchTB);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MonsterIndexForm";
@@ -226,6 +301,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MIN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MAX)).EndInit();
+            this.tabControl_Side.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,6 +323,12 @@
         private System.Windows.Forms.NumericUpDown UpDown_CR_MAX;
         private System.Windows.Forms.Label lbl_Count;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.TabControl tabControl_Side;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnAddMonsters;
+        private System.Windows.Forms.Button btn_Clear;
     }
 }
 

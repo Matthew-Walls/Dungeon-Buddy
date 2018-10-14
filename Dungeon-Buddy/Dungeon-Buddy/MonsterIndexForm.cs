@@ -54,9 +54,24 @@ namespace Dungeon_Buddy
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
-
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             foreach (DataGridViewColumn col in dataGridView1.Columns)
                 col.MinimumWidth = 100;
+
+            foreach (DataGridViewColumn c in dataGridView1.Columns)
+            {
+                dataGridView2.Columns.Add(c.Clone() as DataGridViewColumn);
+            }
+
+            dataGridView2.Columns[0].Visible = false;
+            dataGridView2.Columns[2].Visible = false;
+            dataGridView2.Columns[5].Visible = false;
+            dataGridView2.Columns[6].Visible = false;
+            dataGridView2.Columns[10].Visible = false;
+            dataGridView2.Columns[11].Visible = false;
+            dataGridView2.Columns[12].Visible = false;
+            dataGridView2.Columns[13].Visible = false;
+            dataGridView2.Columns[14].Visible = false;
 
             lbl_Count.Text = string.Format("Displaying ( {0} / {1} )", dataGridView1.Rows.Count, monsters.Count);
         }
@@ -414,6 +429,24 @@ namespace Dungeon_Buddy
             typeCB.Text = "Type";
 
             FilterData();
+        }
+
+        private void btnAddMonsters_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow r in dataGridView1.SelectedRows)
+            {
+                int index = dataGridView2.Rows.Add(r.Clone() as DataGridViewRow);
+                foreach (DataGridViewCell o in r.Cells)
+                {
+                    dataGridView2.Rows[index].Cells[o.ColumnIndex].Value = o.Value;
+                }
+            }
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Clear();
+            dataGridView2.Refresh();
         }
 
         /*      </SEARCH TEXT BOX   >       */
