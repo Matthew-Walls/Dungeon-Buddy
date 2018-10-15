@@ -50,6 +50,7 @@
     <Compile Include="CheckedComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DiceRoll.cs" />
     <Compile Include="MonsterIndexForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +84,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\5E Monster Spreadsheet.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
