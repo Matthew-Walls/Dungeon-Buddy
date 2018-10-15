@@ -50,6 +50,7 @@
     <Compile Include="CheckedComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DiceRoll.cs" />
     <Compile Include="MonsterIndexForm.cs">
       <SubType>Form</SubType>
     </Compile>
