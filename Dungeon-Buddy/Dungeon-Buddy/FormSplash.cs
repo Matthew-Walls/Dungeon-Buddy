@@ -23,10 +23,10 @@ namespace Dungeon_Buddy
         private FormMain _parentForm;
 
         // Method to create and pass a campaign to FormMain.
-        private void PassCampaign(int id, string name, string desc)
+        private void PassCampaign(int id, string name, List<string> desc)
         {
             // Create campaign from local variables.
-            Campaign campaign = new Campaign(name, desc);
+            Campaign campaign = new Campaign(id, name, desc);
 
             // Set campaign in Parent Form.
             _parentForm.Campaign = campaign;
@@ -55,7 +55,8 @@ namespace Dungeon_Buddy
             // database.
             // Store form values into local variables.
             string name = "Campaign of truth!";
-            string desc = "Cool test campaign.";
+            string[] desc = new string[2];
+            desc[0] = "Cool test campaign.";
 
             // Test that name isn't null.
             if (name == "")
@@ -66,14 +67,14 @@ namespace Dungeon_Buddy
             }
 
             // Call PassCampaign.
-            PassCampaign(2, name, desc);
+            PassCampaign(2, name, desc.ToList());
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
             // Store form values into local variables.
             string name = txtBoxName.Text;
-            string desc = txtBoxDesc.Text;
+            List<string> desc = txtBoxDesc.Lines.ToList();
 
             // Test that name isn't null.
             if (name == "")

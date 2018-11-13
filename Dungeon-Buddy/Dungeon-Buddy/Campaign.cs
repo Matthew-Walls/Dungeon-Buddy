@@ -31,13 +31,13 @@ namespace Dungeon_Buddy
         }
 
         // Constructor to create a new campaign.
-        public Campaign(string name, string desc)
+        public Campaign(int id, string name, List<string> desc)
         {
             // In future we will create record from values into database
             // then read from the database to get proper ID value.
-            _id = 1;
+            _id = id;
             _name = name;
-            _description = Description;
+            _description = desc;
         }
     }
 }

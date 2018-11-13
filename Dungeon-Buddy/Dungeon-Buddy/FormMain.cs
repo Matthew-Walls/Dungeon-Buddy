@@ -22,15 +22,43 @@ namespace Dungeon_Buddy
 
         // Define properties.
         public Campaign Campaign
-        {
+        { 
             set { _campaign = value; }
+            get { return _campaign; }
+        }
+
+        // Method for creating and displaying the FormSplash form.
+        private void DisplayFormSplash()
+        {
+            FormSplash formSplash = new FormSplash(this);
+            formSplash.ShowDialog();
+        }
+
+        // Method for creating and displaying the FormEditCampaign form.
+        private void DisplayFormEditCampaign()
+        {
+            FormEditCampaign formEditCampaign = new FormEditCampaign(this);
+            formEditCampaign.ShowDialog();
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            // On form load create and display FormSplash
-            FormSplash formSplash = new FormSplash(this);
-            formSplash.ShowDialog();
+            DisplayFormSplash();
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            DisplayFormSplash();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            DisplayFormEditCampaign();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

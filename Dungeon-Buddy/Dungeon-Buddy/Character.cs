@@ -10,7 +10,7 @@ namespace Dungeon_Buddy
     {
         private string name;
         private string size;
-        private string allignment;
+        private string alignment;
         private string description;
         private string tag;
 
@@ -21,7 +21,7 @@ namespace Dungeon_Buddy
 
         public string Name { get => name; set => name = value; }
         public string Size { get => size; set => size = value; }
-        public string Allignment { get => allignment; set => allignment = value; }
+        public string Allignment { get => alignment; set => alignment = value; }
         public string Description { get => description; set => description = value; }
         public string Tag { get => tag; set => tag = value; }
     }
