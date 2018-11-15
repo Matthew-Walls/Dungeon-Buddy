@@ -46,11 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Campaign.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CheckedComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DiceRoll.cs" />
+    <Compile Include="Encounter.cs" />
     <Compile Include="MonsterIndexForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +60,7 @@
       <DependentUpon>MonsterIndexForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Monster.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MonsterIndexForm.resx">

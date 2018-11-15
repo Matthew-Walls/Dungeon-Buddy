@@ -8,37 +8,37 @@ namespace Dungeon_Buddy
 {
     public class Monster : Character
     {
-        private int monsterIndex;
-        private double challengeRating;
-        private double xp;
-        private string monsterType;
-        private string environment;
-        private string npcName;
-        private string source;
-        private string page;
-        private string reference;
-        private string srd;
+        private int _monsterIndex;
+        private double _challengeRating;
+        private double _xp;
+        private string _monsterType;
+        private string _environment;
+        private string _npcName;
+        private string _source;
+        private string _page;
+        private string _reference;
+        private string _srd;
 
         public Monster(int index)
         {
-            monsterIndex = index;
+            _monsterIndex = index;
 
         }
 
-        public double ChallengeRating { get => challengeRating; set => challengeRating = value; }
-        public double XP { get => xp; set => xp = value; }
-        public string Environment { get => environment; set => environment = value; }
-        public string NpcName { get => npcName; set => npcName = value; }
-        public string Source { get => source; set => source = value; }
-        public string Page { get => page; set => page = value; }
-        public string Reference { get => reference; set => reference = value; }
-        public string Srd { get => srd; set => srd = value; }
-        public string MonsterType { get => monsterType; set => monsterType = value; }
-        public int MonsterIndex { get => monsterIndex; private set => monsterIndex = value; }
+        public int MonsterIndex { get => _monsterIndex; set => _monsterIndex = value; }
+        public double ChallengeRating { get => _challengeRating; set => _challengeRating = value; }
+        public double Xp { get => _xp; set => _xp = value; }
+        public string MonsterType { get => _monsterType; set => _monsterType = value; }
+        public string Environment { get => _environment; set => _environment = value; }
+        public string NpcName { get => _npcName; set => _npcName = value; }
+        public string Source { get => _source; set => _source = value; }
+        public string Page { get => _page; set => _page = value; }
+        public string Reference { get => _reference; set => _reference = value; }
+        public string Srd { get => _srd; set => _srd = value; }
 
         public Object[] GetData()
         {
-            return new object[] { MonsterIndex, Name, NpcName, Size, MonsterType, Tag, Allignment, Environment, ChallengeRating, XP, Source, Page, Reference, Srd, Description };
+            return new object[] { MonsterIndex, Name, NpcName, Size, MonsterType, Tag, Allignment, Environment, ChallengeRating, Xp, Source, Page, Reference, Srd, Description };
         }
         public string[] GetFields()
         {

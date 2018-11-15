@@ -8,21 +8,21 @@ namespace Dungeon_Buddy
 {
     public class Character
     {
-        private string name;
-        private string size;
-        private string allignment;
-        private string description;
-        private string tag;
+        private string _name;
+        private string _size;
+        private string _allignment;
+        private string _description;
+        private string _tag;
 
         public Character()
         {
 
         }
 
-        public string Name { get => name; set => name = value; }
-        public string Size { get => size; set => size = value; }
-        public string Allignment { get => allignment; set => allignment = value; }
-        public string Description { get => description; set => description = value; }
-        public string Tag { get => tag; set => tag = value; }
+        public string Name { get => _name; set => _name = value; }
+        public string Size { get => _size; set => _size = value; }
+        public string Allignment { get => _allignment; set => _allignment = value; }
+        public string Description { get => _description; set => _description = value; }
+        public string Tag { get => _tag; set => _tag = value; }
     }
 }

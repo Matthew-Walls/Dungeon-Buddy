@@ -286,7 +286,7 @@ namespace Dungeon_Buddy
 
                 if (double.TryParse(temp[8], out double xp))
                 {
-                    monster.XP = xp;
+                    monster.Xp = xp;
                 }
                 else
                 {

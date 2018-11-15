@@ -338,7 +338,7 @@
             // 
             // monsterBindingSource
             // 
-            this.monsterBindingSource.DataSource = typeof(Dungeon_Buddy.Monster);
+           // this.monsterBindingSource.DataSource = typeof(Dungeon_Buddy.Monster);
             // 
             // btn_AddMonsters
             // 
