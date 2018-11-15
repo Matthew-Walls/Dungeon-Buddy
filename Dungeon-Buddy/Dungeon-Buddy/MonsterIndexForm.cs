@@ -24,7 +24,8 @@ namespace Dungeon_Buddy
         private String[] TYPES = { "Aberration", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity", "Ooze", "Plant", "Undead" };
 
         private List<Monster> monsters = new List<Monster>();
-        private DataTable monsterTable;
+        private DataTable monsterTable = new DataTable();
+
 
         public MonsterIndexForm()
         {
@@ -40,9 +41,9 @@ namespace Dungeon_Buddy
                 typeCB.Items.Add(type);
 
             PopulateMonsterList(ImportTextFile(FILE_PATH));
-
+    
+    
             //Create a DataTable object, add columns, and populate it with rows from text file data
-            monsterTable = new DataTable();
             GenerateDataTable();
             dataGridView1.DataSource = monsterTable;
             dataGridView1.Columns[0].Visible = false;
@@ -308,6 +309,7 @@ namespace Dungeon_Buddy
         //Third, Crate a DataColumn[] representing all the columns in the Data Table, by getting the Names and Data Types from the String and Object arrays
         //Fourth, add the Data Columns to the Data Table
         //Fifth, Create a row for each Monster in the list from all the Instance Variables from GetData()
+        
         private void GenerateDataTable()
         {
             //Gets the data[] from monster GetData() method. It is an object array of all the data fields in the monster class
@@ -344,6 +346,8 @@ namespace Dungeon_Buddy
                 monsterTable.Rows.Add(row);
             }
         }
+
+            
 
         /*      <BELOW ARE METHODS RELATED TO THE DATA GRID VIEW>     */
 
@@ -414,6 +418,7 @@ namespace Dungeon_Buddy
                 searchTB.Text = "";
         }
 
+        //Clear filters list
         private void clearButton_Click(object sender, EventArgs e)
         {
             foreach (int index in environmentCB.CheckedIndices)
@@ -431,26 +436,17 @@ namespace Dungeon_Buddy
             FilterData();
         }
 
-        private void btnAddMonsters_Click(object sender, EventArgs e)
+        //Method to add monsters to the My MNonsters list
+        private void btn_AddMonsters_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow r in dataGridView1.SelectedRows)
-            {
-                int index = dataGridView2.Rows.Add(r.Clone() as DataGridViewRow);
-                foreach (DataGridViewCell o in r.Cells)
-                {
-                    dataGridView2.Rows[index].Cells[o.ColumnIndex].Value = o.Value;
-                }
-            }
+            
         }
 
-        private void btn_Clear_Click(object sender, EventArgs e)
+        //Method to clear monsters from the My Monsters list
+        private void btn_ClearMonsters_Click(object sender, EventArgs e)
         {
             dataGridView2.Rows.Clear();
             dataGridView2.Refresh();
         }
-
-        /*      </SEARCH TEXT BOX   >       */
-
-
     }
 }

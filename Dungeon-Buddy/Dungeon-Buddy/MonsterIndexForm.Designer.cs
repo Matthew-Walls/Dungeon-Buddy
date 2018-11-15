@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.searchTB = new System.Windows.Forms.TextBox();
@@ -36,16 +37,32 @@
             this.UpDown_CR_MIN = new System.Windows.Forms.NumericUpDown();
             this.UpDown_CR_MAX = new System.Windows.Forms.NumericUpDown();
             this.lbl_Count = new System.Windows.Forms.Label();
-            this.typeCB = new CheckComboBoxTest.CheckedComboBox();
-            this.sizeCB = new CheckComboBoxTest.CheckedComboBox();
-            this.environmentCB = new CheckComboBoxTest.CheckedComboBox();
             this.clearButton = new System.Windows.Forms.Button();
             this.tabControl_Side = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnAddMonsters = new System.Windows.Forms.Button();
-            this.btn_Clear = new System.Windows.Forms.Button();
+            this.challengeRatingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.environmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.npcNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sourceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.srdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monsterTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monsterIndexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allignmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monsterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_AddMonsters = new System.Windows.Forms.Button();
+            this.btn_ClearMonsters = new System.Windows.Forms.Button();
+            this.typeCB = new CheckComboBoxTest.CheckedComboBox();
+            this.sizeCB = new CheckComboBoxTest.CheckedComboBox();
+            this.environmentCB = new CheckComboBoxTest.CheckedComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MIN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MAX)).BeginInit();
@@ -53,6 +70,7 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monsterBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -155,6 +173,193 @@
             this.lbl_Count.TabIndex = 18;
             this.lbl_Count.Text = "Showing";
             // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(15, 536);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 20);
+            this.clearButton.TabIndex = 19;
+            this.clearButton.Text = "Clear Filters";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // tabControl_Side
+            // 
+            this.tabControl_Side.Controls.Add(this.tabPage1);
+            this.tabControl_Side.Controls.Add(this.tabPage2);
+            this.tabControl_Side.Location = new System.Drawing.Point(644, 30);
+            this.tabControl_Side.Name = "tabControl_Side";
+            this.tabControl_Side.SelectedIndex = 0;
+            this.tabControl_Side.Size = new System.Drawing.Size(228, 503);
+            this.tabControl_Side.TabIndex = 20;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage1.Controls.Add(this.richTextBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(220, 477);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Description";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(220, 477);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "My Monsters";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.challengeRatingDataGridViewTextBoxColumn,
+            this.xPDataGridViewTextBoxColumn,
+            this.environmentDataGridViewTextBoxColumn,
+            this.npcNameDataGridViewTextBoxColumn,
+            this.sourceDataGridViewTextBoxColumn,
+            this.pageDataGridViewTextBoxColumn,
+            this.referenceDataGridViewTextBoxColumn,
+            this.srdDataGridViewTextBoxColumn,
+            this.monsterTypeDataGridViewTextBoxColumn,
+            this.monsterIndexDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.sizeDataGridViewTextBoxColumn,
+            this.allignmentDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.tagDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.monsterBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(213, 475);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // challengeRatingDataGridViewTextBoxColumn
+            // 
+            this.challengeRatingDataGridViewTextBoxColumn.DataPropertyName = "ChallengeRating";
+            this.challengeRatingDataGridViewTextBoxColumn.HeaderText = "ChallengeRating";
+            this.challengeRatingDataGridViewTextBoxColumn.Name = "challengeRatingDataGridViewTextBoxColumn";
+            // 
+            // xPDataGridViewTextBoxColumn
+            // 
+            this.xPDataGridViewTextBoxColumn.DataPropertyName = "XP";
+            this.xPDataGridViewTextBoxColumn.HeaderText = "XP";
+            this.xPDataGridViewTextBoxColumn.Name = "xPDataGridViewTextBoxColumn";
+            // 
+            // environmentDataGridViewTextBoxColumn
+            // 
+            this.environmentDataGridViewTextBoxColumn.DataPropertyName = "Environment";
+            this.environmentDataGridViewTextBoxColumn.HeaderText = "Environment";
+            this.environmentDataGridViewTextBoxColumn.Name = "environmentDataGridViewTextBoxColumn";
+            // 
+            // npcNameDataGridViewTextBoxColumn
+            // 
+            this.npcNameDataGridViewTextBoxColumn.DataPropertyName = "NpcName";
+            this.npcNameDataGridViewTextBoxColumn.HeaderText = "NpcName";
+            this.npcNameDataGridViewTextBoxColumn.Name = "npcNameDataGridViewTextBoxColumn";
+            // 
+            // sourceDataGridViewTextBoxColumn
+            // 
+            this.sourceDataGridViewTextBoxColumn.DataPropertyName = "Source";
+            this.sourceDataGridViewTextBoxColumn.HeaderText = "Source";
+            this.sourceDataGridViewTextBoxColumn.Name = "sourceDataGridViewTextBoxColumn";
+            // 
+            // pageDataGridViewTextBoxColumn
+            // 
+            this.pageDataGridViewTextBoxColumn.DataPropertyName = "Page";
+            this.pageDataGridViewTextBoxColumn.HeaderText = "Page";
+            this.pageDataGridViewTextBoxColumn.Name = "pageDataGridViewTextBoxColumn";
+            // 
+            // referenceDataGridViewTextBoxColumn
+            // 
+            this.referenceDataGridViewTextBoxColumn.DataPropertyName = "Reference";
+            this.referenceDataGridViewTextBoxColumn.HeaderText = "Reference";
+            this.referenceDataGridViewTextBoxColumn.Name = "referenceDataGridViewTextBoxColumn";
+            // 
+            // srdDataGridViewTextBoxColumn
+            // 
+            this.srdDataGridViewTextBoxColumn.DataPropertyName = "Srd";
+            this.srdDataGridViewTextBoxColumn.HeaderText = "Srd";
+            this.srdDataGridViewTextBoxColumn.Name = "srdDataGridViewTextBoxColumn";
+            // 
+            // monsterTypeDataGridViewTextBoxColumn
+            // 
+            this.monsterTypeDataGridViewTextBoxColumn.DataPropertyName = "MonsterType";
+            this.monsterTypeDataGridViewTextBoxColumn.HeaderText = "MonsterType";
+            this.monsterTypeDataGridViewTextBoxColumn.Name = "monsterTypeDataGridViewTextBoxColumn";
+            // 
+            // monsterIndexDataGridViewTextBoxColumn
+            // 
+            this.monsterIndexDataGridViewTextBoxColumn.DataPropertyName = "MonsterIndex";
+            this.monsterIndexDataGridViewTextBoxColumn.HeaderText = "MonsterIndex";
+            this.monsterIndexDataGridViewTextBoxColumn.Name = "monsterIndexDataGridViewTextBoxColumn";
+            this.monsterIndexDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // sizeDataGridViewTextBoxColumn
+            // 
+            this.sizeDataGridViewTextBoxColumn.DataPropertyName = "Size";
+            this.sizeDataGridViewTextBoxColumn.HeaderText = "Size";
+            this.sizeDataGridViewTextBoxColumn.Name = "sizeDataGridViewTextBoxColumn";
+            // 
+            // allignmentDataGridViewTextBoxColumn
+            // 
+            this.allignmentDataGridViewTextBoxColumn.DataPropertyName = "Allignment";
+            this.allignmentDataGridViewTextBoxColumn.HeaderText = "Allignment";
+            this.allignmentDataGridViewTextBoxColumn.Name = "allignmentDataGridViewTextBoxColumn";
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // tagDataGridViewTextBoxColumn
+            // 
+            this.tagDataGridViewTextBoxColumn.DataPropertyName = "Tag";
+            this.tagDataGridViewTextBoxColumn.HeaderText = "Tag";
+            this.tagDataGridViewTextBoxColumn.Name = "tagDataGridViewTextBoxColumn";
+            // 
+            // monsterBindingSource
+            // 
+            this.monsterBindingSource.DataSource = typeof(Dungeon_Buddy.Monster);
+            // 
+            // btn_AddMonsters
+            // 
+            this.btn_AddMonsters.Location = new System.Drawing.Point(702, 536);
+            this.btn_AddMonsters.Name = "btn_AddMonsters";
+            this.btn_AddMonsters.Size = new System.Drawing.Size(82, 20);
+            this.btn_AddMonsters.TabIndex = 21;
+            this.btn_AddMonsters.Text = "Add Selected";
+            this.btn_AddMonsters.UseVisualStyleBackColor = true;
+            this.btn_AddMonsters.Click += new System.EventHandler(this.btn_AddMonsters_Click);
+            // 
+            // btn_ClearMonsters
+            // 
+            this.btn_ClearMonsters.Location = new System.Drawing.Point(790, 536);
+            this.btn_ClearMonsters.Name = "btn_ClearMonsters";
+            this.btn_ClearMonsters.Size = new System.Drawing.Size(82, 20);
+            this.btn_ClearMonsters.TabIndex = 22;
+            this.btn_ClearMonsters.Text = "Clear List";
+            this.btn_ClearMonsters.UseVisualStyleBackColor = true;
+            this.btn_ClearMonsters.Click += new System.EventHandler(this.btn_ClearMonsters_Click);
+            // 
             // typeCB
             // 
             this.typeCB.CheckOnClick = true;
@@ -203,85 +408,13 @@
             this.environmentCB.ValueSeparator = ", ";
             this.environmentCB.DropDownClosed += new System.EventHandler(this.environmentCB_DropDownClosed);
             // 
-            // clearButton
-            // 
-            this.clearButton.Location = new System.Drawing.Point(15, 536);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(75, 20);
-            this.clearButton.TabIndex = 19;
-            this.clearButton.Text = "Clear Filters";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
-            // 
-            // tabControl_Side
-            // 
-            this.tabControl_Side.Controls.Add(this.tabPage1);
-            this.tabControl_Side.Controls.Add(this.tabPage2);
-            this.tabControl_Side.Location = new System.Drawing.Point(644, 30);
-            this.tabControl_Side.Name = "tabControl_Side";
-            this.tabControl_Side.SelectedIndex = 0;
-            this.tabControl_Side.Size = new System.Drawing.Size(228, 503);
-            this.tabControl_Side.TabIndex = 20;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage1.Controls.Add(this.richTextBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(220, 481);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Description";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(220, 477);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "My Monsters";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(213, 475);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // btnAddMonsters
-            // 
-            this.btnAddMonsters.Location = new System.Drawing.Point(702, 536);
-            this.btnAddMonsters.Name = "btnAddMonsters";
-            this.btnAddMonsters.Size = new System.Drawing.Size(82, 20);
-            this.btnAddMonsters.TabIndex = 21;
-            this.btnAddMonsters.Text = "Add Selected";
-            this.btnAddMonsters.UseVisualStyleBackColor = true;
-            this.btnAddMonsters.Click += new System.EventHandler(this.btnAddMonsters_Click);
-            // 
-            // btn_Clear
-            // 
-            this.btn_Clear.Location = new System.Drawing.Point(790, 536);
-            this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(82, 20);
-            this.btn_Clear.TabIndex = 22;
-            this.btn_Clear.Text = "Clear List";
-            this.btn_Clear.UseVisualStyleBackColor = true;
-            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
-            // 
             // MonsterIndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.btn_Clear);
-            this.Controls.Add(this.btnAddMonsters);
+            this.Controls.Add(this.btn_ClearMonsters);
+            this.Controls.Add(this.btn_AddMonsters);
             this.Controls.Add(this.tabControl_Side);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.lbl_Count);
@@ -305,6 +438,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monsterBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,8 +461,24 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button btnAddMonsters;
-        private System.Windows.Forms.Button btn_Clear;
+        private System.Windows.Forms.Button btn_AddMonsters;
+        private System.Windows.Forms.Button btn_ClearMonsters;
+        private System.Windows.Forms.DataGridViewTextBoxColumn challengeRatingDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn environmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn npcNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sourceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn referenceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn srdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monsterTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monsterIndexDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sizeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn allignmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tagDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource monsterBindingSource;
     }
 }
 
