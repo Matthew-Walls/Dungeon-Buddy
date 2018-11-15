@@ -74,6 +74,9 @@ namespace Dungeon_Buddy
             dataGridView2.Columns[13].Visible = false;
             dataGridView2.Columns[14].Visible = false;
 
+            dataGridView1.Columns["Environment"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+
             lbl_Count.Text = string.Format("Displaying ( {0} / {1} )", dataGridView1.Rows.Count, monsters.Count);
         }
 
