@@ -19,6 +19,7 @@ namespace Dungeon_Buddy
         private string _reference;
         private string _srd;
 
+
         public Monster(int index)
         {
             _monsterIndex = index;

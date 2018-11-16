@@ -30,6 +30,7 @@ namespace Dungeon_Buddy
         public MonsterIndexForm()
         {
             InitializeComponent();
+            
 
             foreach (String env in ENVIRONMENTS)
                 environmentCB.Items.Add(env);
@@ -40,44 +41,66 @@ namespace Dungeon_Buddy
             foreach (String type in TYPES)
                 typeCB.Items.Add(type);
 
-            PopulateMonsterList(ImportTextFile(FILE_PATH));
-    
-    
-            //Create a DataTable object, add columns, and populate it with rows from text file data
-            GenerateDataTable();
-            dataGridView1.DataSource = monsterTable;
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[2].Visible = false;
-            dataGridView1.Columns[5].Visible = false;
-            dataGridView1.Columns[6].Visible = false;
-            dataGridView1.Columns[10].Visible = false;
-            dataGridView1.Columns[11].Visible = false;
-            dataGridView1.Columns[12].Visible = false;
-            dataGridView1.Columns[13].Visible = false;
-            dataGridView1.Columns[14].Visible = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-            foreach (DataGridViewColumn col in dataGridView1.Columns)
-                col.MinimumWidth = 100;
+            PopulateMonsterList(ImportTextFile(FILE_PATH));     //Populate List<Monster> from text file
+            GenerateDataTable();                                //Create and configure Monster Data Table
+            ConfigureDataGrids();                               //Configure data grid views
 
-            foreach (DataGridViewColumn c in dataGridView1.Columns)
+            lbl_Count.Text = string.Format("Displaying ( {0} / {1} )", dgv_Monsters.Rows.Count, monsters.Count);
+
+
+            /* Start of testing block*/
+            Campaign camp = new Campaign();
+            for(int index = 0; index < 4; index++)
             {
-                dataGridView2.Columns.Add(c.Clone() as DataGridViewColumn);
+                camp.CreatePlayer();
             }
 
-            dataGridView2.Columns[0].Visible = false;
-            dataGridView2.Columns[2].Visible = false;
-            dataGridView2.Columns[5].Visible = false;
-            dataGridView2.Columns[6].Visible = false;
-            dataGridView2.Columns[10].Visible = false;
-            dataGridView2.Columns[11].Visible = false;
-            dataGridView2.Columns[12].Visible = false;
-            dataGridView2.Columns[13].Visible = false;
-            dataGridView2.Columns[14].Visible = false;
+            //camp.GenerateEncounter();
 
-            dataGridView1.Columns["Environment"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            /* End of testing block */
+        }
+
+        private void ConfigureDataGrids()
+        {
+            //Data Grid View - Monsters
+
+            dgv_Monsters.DataSource = monsterTable;
+            dgv_Monsters.Columns[0].Visible = false;
+            dgv_Monsters.Columns[2].Visible = false;
+            dgv_Monsters.Columns[5].Visible = false;
+            dgv_Monsters.Columns[6].Visible = false;
+            dgv_Monsters.Columns[10].Visible = false;
+            dgv_Monsters.Columns[11].Visible = false;
+            dgv_Monsters.Columns[12].Visible = false;
+            dgv_Monsters.Columns[13].Visible = false;
+            dgv_Monsters.Columns[14].Visible = false;
+
+            foreach (DataGridViewColumn col in dgv_Monsters.Columns)
+            {
+                col.MinimumWidth = 65;
+                col.Width = 65;
+            }
+
+            dgv_Monsters.Columns["Name"].Width = 120;
+            dgv_Monsters.Columns["Environment"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
 
-            lbl_Count.Text = string.Format("Displaying ( {0} / {1} )", dataGridView1.Rows.Count, monsters.Count);
+            //Data Grid View - Selected Monsters
+
+            foreach (DataGridViewColumn c in dgv_Monsters.Columns)
+            {
+                dgv_SelectedMonsters.Columns.Add(c.Clone() as DataGridViewColumn);
+            }
+
+            dgv_SelectedMonsters.Columns[0].Visible = false;
+            dgv_SelectedMonsters.Columns[2].Visible = false;
+            dgv_SelectedMonsters.Columns[5].Visible = false;
+            dgv_SelectedMonsters.Columns[6].Visible = false;
+            dgv_SelectedMonsters.Columns[10].Visible = false;
+            dgv_SelectedMonsters.Columns[11].Visible = false;
+            dgv_SelectedMonsters.Columns[12].Visible = false;
+            dgv_SelectedMonsters.Columns[13].Visible = false;
+            dgv_SelectedMonsters.Columns[14].Visible = false;
         }
 
         private void FilterData()
@@ -186,7 +209,7 @@ namespace Dungeon_Buddy
 
             Console.WriteLine(filterFormat);
             monsterTable.DefaultView.RowFilter = filterFormat;
-            lbl_Count.Text = string.Format("Displaying ( {0} / {1} )", dataGridView1.Rows.Count, monsters.Count);
+            lbl_Count.Text = string.Format("Displaying ( {0} / {1} )", dgv_Monsters.Rows.Count, monsters.Count);
 
             string sizeList = "";
             if (sizeCount != 0 )
@@ -358,9 +381,9 @@ namespace Dungeon_Buddy
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             //If no rows are selected, do nothing
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dgv_Monsters.SelectedRows.Count > 0)
             {
-                int index = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+                int index = (int)dgv_Monsters.SelectedRows[0].Cells[0].Value;
 
                 richTextBox1.Text = monsters[index].ToString();
             }
@@ -448,8 +471,8 @@ namespace Dungeon_Buddy
         //Method to clear monsters from the My Monsters list
         private void btn_ClearMonsters_Click(object sender, EventArgs e)
         {
-            dataGridView2.Rows.Clear();
-            dataGridView2.Refresh();
+            dgv_SelectedMonsters.Rows.Clear();
+            dgv_SelectedMonsters.Refresh();
         }
     }
 }
