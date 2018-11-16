@@ -49,7 +49,7 @@ namespace Dungeon_Buddy
 
 
             /* Start of testing block*/
-            Campaign camp = new Campaign();
+            Campaign camp = new Campaign(99,"Test","Test".Split('|').ToList(),"Test",DateTime.Today);
             for(int index = 0; index < 4; index++)
             {
                 camp.CreatePlayer();

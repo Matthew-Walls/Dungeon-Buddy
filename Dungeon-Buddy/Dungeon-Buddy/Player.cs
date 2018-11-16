@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Buddy
 {
-    class Player : Character
+    public class Player : Character
     {
         private int _level;
         private DateTime _startDate;
