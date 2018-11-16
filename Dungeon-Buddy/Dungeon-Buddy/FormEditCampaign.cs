@@ -24,18 +24,22 @@ namespace Dungeon_Buddy
 
         // Method to save current changes to the database
         // and FormMain campaign object.
-        private void SaveChanges(string name, List<string> desc)
+        private void SaveChanges(string name, List<string> desc, string dm, DateTime startDate)
         {
-            _parentForm.Campaign.Name = name;
+            _parentForm.Campaign.CampaignTitle = name;
             _parentForm.Campaign.Description = desc;
+            _parentForm.Campaign.DungeonMaster = dm;
+            _parentForm.Campaign.StartDate = startDate;
         }
 
         private void FormEditCampaign_Load(object sender, EventArgs e)
         {
             // Sets form objects to current campaign values.
             lblId.Text = _parentForm.Campaign.Id.ToString();
-            txtBoxName.Text = _parentForm.Campaign.Name;
+            txtBoxName.Text = _parentForm.Campaign.CampaignTitle;
             txtBoxDesc.Lines = _parentForm.Campaign.Description.ToArray();
+            txtBoxDM.Text = _parentForm.Campaign.DungeonMaster;
+            dateStartDate.Value = _parentForm.Campaign.StartDate;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -48,6 +52,8 @@ namespace Dungeon_Buddy
             // Store form values into local variables.
             string name = txtBoxName.Text;
             List<string> desc = txtBoxDesc.Lines.ToList();
+            string dm = txtBoxDM.Text;
+            DateTime startDate = dateStartDate.Value;
 
             // Test that name isn't null.
             if (name == "")
@@ -58,7 +64,7 @@ namespace Dungeon_Buddy
             }
 
             // Call method to save changes.
-            SaveChanges(name, desc);
+            SaveChanges(name, desc, dm, startDate);
 
             // Close edit form.
             this.Close();
