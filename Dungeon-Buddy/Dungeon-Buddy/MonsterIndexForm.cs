@@ -24,7 +24,8 @@ namespace Dungeon_Buddy
         private String[] TYPES = { "Aberration", "Beast", "Celestial", "Construct", "Dragon", "Elemental", "Fey", "Fiend", "Giant", "Humanoid", "Monstrosity", "Ooze", "Plant", "Undead" };
 
         private List<Monster> monsters = new List<Monster>();
-        private DataTable monsterTable;
+        private DataTable monsterTable = new DataTable();
+
 
         public MonsterIndexForm()
         {
@@ -40,9 +41,9 @@ namespace Dungeon_Buddy
                 typeCB.Items.Add(type);
 
             PopulateMonsterList(ImportTextFile(FILE_PATH));
-
+    
+    
             //Create a DataTable object, add columns, and populate it with rows from text file data
-            monsterTable = new DataTable();
             GenerateDataTable();
             dataGridView1.DataSource = monsterTable;
             dataGridView1.Columns[0].Visible = false;
@@ -54,9 +55,27 @@ namespace Dungeon_Buddy
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
-
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             foreach (DataGridViewColumn col in dataGridView1.Columns)
                 col.MinimumWidth = 100;
+
+            foreach (DataGridViewColumn c in dataGridView1.Columns)
+            {
+                dataGridView2.Columns.Add(c.Clone() as DataGridViewColumn);
+            }
+
+            dataGridView2.Columns[0].Visible = false;
+            dataGridView2.Columns[2].Visible = false;
+            dataGridView2.Columns[5].Visible = false;
+            dataGridView2.Columns[6].Visible = false;
+            dataGridView2.Columns[10].Visible = false;
+            dataGridView2.Columns[11].Visible = false;
+            dataGridView2.Columns[12].Visible = false;
+            dataGridView2.Columns[13].Visible = false;
+            dataGridView2.Columns[14].Visible = false;
+
+            dataGridView1.Columns["Environment"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
 
             lbl_Count.Text = string.Format("Displaying ( {0} / {1} )", dataGridView1.Rows.Count, monsters.Count);
         }
@@ -270,7 +289,7 @@ namespace Dungeon_Buddy
 
                 if (double.TryParse(temp[8], out double xp))
                 {
-                    monster.XP = xp;
+                    monster.Xp = xp;
                 }
                 else
                 {
@@ -293,6 +312,7 @@ namespace Dungeon_Buddy
         //Third, Crate a DataColumn[] representing all the columns in the Data Table, by getting the Names and Data Types from the String and Object arrays
         //Fourth, add the Data Columns to the Data Table
         //Fifth, Create a row for each Monster in the list from all the Instance Variables from GetData()
+        
         private void GenerateDataTable()
         {
             //Gets the data[] from monster GetData() method. It is an object array of all the data fields in the monster class
@@ -329,6 +349,8 @@ namespace Dungeon_Buddy
                 monsterTable.Rows.Add(row);
             }
         }
+
+            
 
         /*      <BELOW ARE METHODS RELATED TO THE DATA GRID VIEW>     */
 
@@ -399,6 +421,7 @@ namespace Dungeon_Buddy
                 searchTB.Text = "";
         }
 
+        //Clear filters list
         private void clearButton_Click(object sender, EventArgs e)
         {
             foreach (int index in environmentCB.CheckedIndices)
@@ -416,8 +439,17 @@ namespace Dungeon_Buddy
             FilterData();
         }
 
-        /*      </SEARCH TEXT BOX   >       */
+        //Method to add monsters to the My MNonsters list
+        private void btn_AddMonsters_Click(object sender, EventArgs e)
+        {
+            
+        }
 
-
+        //Method to clear monsters from the My Monsters list
+        private void btn_ClearMonsters_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Clear();
+            dataGridView2.Refresh();
+        }
     }
 }

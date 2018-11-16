@@ -6,38 +6,25 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Buddy
 {
-    public class Campaign
+    class Campaign
     {
-        // Define fields for a Campaign.
-        private int _id;
-        private string _name;
-        private List<string> _description;
+        private string _campaignTitle;
+        private string _description;
+        private string _dungeonMaster;
+        private DateTime _startDate;
+        private List<Monster> _myMonsters;
+        private List<Player> _players;
 
-        // Define properties.
-        public int Id
+        public Campaign()
         {
-            get { return _id;  }
-        }
 
-        public string Name
-        {
-            set { _name = value; }
-            get { return _name; }
-        }
-        public List<string> Description
-        {
-            set { _description = value; }
-            get { return _description; }
         }
 
-        // Constructor to create a new campaign.
-        public Campaign(int id, string name, List<string> desc)
-        {
-            // In future we will create record from values into database
-            // then read from the database to get proper ID value.
-            _id = id;
-            _name = name;
-            _description = desc;
-        }
+        public string CampaignTitle { get => _campaignTitle; set => _campaignTitle = value; }
+        public string Description { get => _description; set => _description = value; }
+        public string DungeonMaster { get => _dungeonMaster; set => _dungeonMaster = value; }
+        public DateTime StartDate { get => _startDate; set => _startDate = value; }
+        public List<Monster> MyMonsters { get => _myMonsters; set => _myMonsters = value; }
+        internal List<Player> Players { get => _players; set => _players = value; }
     }
 }

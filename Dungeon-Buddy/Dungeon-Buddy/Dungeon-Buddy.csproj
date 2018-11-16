@@ -71,6 +71,7 @@
     <Compile Include="FormSplash.Designer.cs">
       <DependentUpon>FormSplash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Encounter.cs" />
     <Compile Include="MonsterIndexForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +79,7 @@
       <DependentUpon>MonsterIndexForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Monster.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormEditCampaign.resx">
@@ -101,6 +103,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Monster.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
