@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_Monsters = new System.Windows.Forms.DataGridView();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.searchTB = new System.Windows.Forms.TextBox();
             this.lbl_challenge = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@
             this.tabControl_Side = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgv_SelectedMonsters = new System.Windows.Forms.DataGridView();
             this.monsterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_AddMonsters = new System.Windows.Forms.Button();
             this.btn_ClearMonsters = new System.Windows.Forms.Button();
@@ -55,13 +55,13 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.clearButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Monsters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MIN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MAX)).BeginInit();
             this.tabControl_Side.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_SelectedMonsters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monsterBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -72,25 +72,24 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgv_Monsters
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 63);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(557, 465);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dgv_Monsters.AllowUserToAddRows = false;
+            this.dgv_Monsters.AllowUserToDeleteRows = false;
+            this.dgv_Monsters.AllowUserToResizeRows = false;
+            this.dgv_Monsters.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgv_Monsters.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_Monsters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Monsters.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Monsters.Location = new System.Drawing.Point(3, 63);
+            this.dgv_Monsters.Name = "dgv_Monsters";
+            this.dgv_Monsters.ReadOnly = true;
+            this.dgv_Monsters.RowHeadersVisible = false;
+            this.dgv_Monsters.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv_Monsters.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Monsters.Size = new System.Drawing.Size(557, 465);
+            this.dgv_Monsters.TabIndex = 3;
+            this.dgv_Monsters.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // richTextBox1
             // 
@@ -194,7 +193,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.dgv_SelectedMonsters);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -203,19 +202,19 @@
             this.tabPage2.Text = "My Monsters";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dgv_SelectedMonsters
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.DataSource = this.monsterBindingSource;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(201, 433);
-            this.dataGridView2.TabIndex = 0;
+            this.dgv_SelectedMonsters.AllowUserToAddRows = false;
+            this.dgv_SelectedMonsters.AllowUserToDeleteRows = false;
+            this.dgv_SelectedMonsters.AutoGenerateColumns = false;
+            this.dgv_SelectedMonsters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_SelectedMonsters.DataSource = this.monsterBindingSource;
+            this.dgv_SelectedMonsters.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_SelectedMonsters.Location = new System.Drawing.Point(3, 3);
+            this.dgv_SelectedMonsters.Name = "dgv_SelectedMonsters";
+            this.dgv_SelectedMonsters.RowHeadersVisible = false;
+            this.dgv_SelectedMonsters.Size = new System.Drawing.Size(201, 433);
+            this.dgv_SelectedMonsters.TabIndex = 0;
             // 
             // btn_AddMonsters
             // 
@@ -245,7 +244,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.93877F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.06123F));
             this.tableLayoutPanel1.Controls.Add(this.tabControl_Side, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dgv_Monsters, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 1, 2);
@@ -439,13 +438,13 @@
             this.Name = "MonsterIndexForm";
             this.Text = "Monster Index";
             this.TopMost = true;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Monsters)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MIN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MAX)).EndInit();
             this.tabControl_Side.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_SelectedMonsters)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monsterBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -461,7 +460,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_Monsters;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox searchTB;
         private CheckComboBoxTest.CheckedComboBox environmentCB;
@@ -474,7 +473,7 @@
         private System.Windows.Forms.TabControl tabControl_Side;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgv_SelectedMonsters;
         private System.Windows.Forms.Button btn_AddMonsters;
         private System.Windows.Forms.Button btn_ClearMonsters;
         private System.Windows.Forms.DataGridViewTextBoxColumn challengeRatingDataGridViewTextBoxColumn;
