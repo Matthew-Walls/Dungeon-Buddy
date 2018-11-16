@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace Dungeon_Buddy
 {
-    class Campaign
+    public class Campaign
     {
+        // Define Campaign fields.
+        private int _id;
         private string _campaignTitle;
-        private string _description;
+        private List<string> _description;
         private string _dungeonMaster;
         private DateTime _startDate;
         private List<Monster> _myMonsters;
         private List<Player> _players;
         private Random rand;
-
-        private string _environment;
+      
         private enum ENVIRONMENTS
         {
             Any,
@@ -35,8 +36,15 @@ namespace Dungeon_Buddy
 
 
 
-        public Campaign()
+        // Constructor to create a new campaign.
+        public Campaign(int id, string title, List<string> desc, string dm, DateTime start)
         {
+            _id = id;
+            _campaignTitle = title;
+            _description = desc;
+            _dungeonMaster = dm;
+            _startDate = start;
+
             _players = new List<Player>();
             rand = new Random();
         }
@@ -106,14 +114,15 @@ namespace Dungeon_Buddy
                     encMonsters.Add(currentMonster);
                 }
             }
+
         }
 
+        public int Id { get => _id; set => _id = value; }
         public string CampaignTitle { get => _campaignTitle; set => _campaignTitle = value; }
-        public string Description { get => _description; set => _description = value; }
+        public List<string> Description { get => _description; set => _description = value; }
         public string DungeonMaster { get => _dungeonMaster; set => _dungeonMaster = value; }
         public DateTime StartDate { get => _startDate; set => _startDate = value; }
         public List<Monster> MyMonsters { get => _myMonsters; set => _myMonsters = value; }
         public List<Player> Players { get => _players; set => _players = value; }
-        public string Environment { get => _environment; set => _environment = value; }
     }
 }
