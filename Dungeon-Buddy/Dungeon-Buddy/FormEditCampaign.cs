@@ -26,6 +26,11 @@ namespace Dungeon_Buddy
         // and FormMain campaign object.
         private void SaveChanges(string name, List<string> desc, string dm, DateTime startDate)
         {
+            // Update databate using campaign from parentForm.
+            campaignTableAdapter.Update(name, string.Join("|", desc), dm, startDate,
+                _parentForm.Campaign.Id, _parentForm.Campaign.CampaignTitle, _parentForm.Campaign.DungeonMaster, _parentForm.Campaign.StartDate);
+
+            // Update Campaign variable to new values.
             _parentForm.Campaign.CampaignTitle = name;
             _parentForm.Campaign.Description = desc;
             _parentForm.Campaign.DungeonMaster = dm;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,6 +41,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateStartDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
+            this.dungeonBuddyDataSet = new Dungeon_Buddy.DungeonBuddyDataSet();
+            this.campaignBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.campaignTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.CampaignTableAdapter();
+            this.tableAdapterManager = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.TableAdapterManager();
+            ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campaignBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -146,6 +153,27 @@
             this.label5.Text = "Start Date";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // dungeonBuddyDataSet
+            // 
+            this.dungeonBuddyDataSet.DataSetName = "DungeonBuddyDataSet";
+            this.dungeonBuddyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // campaignBindingSource
+            // 
+            this.campaignBindingSource.DataMember = "Campaign";
+            // 
+            // campaignTableAdapter
+            // 
+            this.campaignTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CampaignTableAdapter = this.campaignTableAdapter;
+            this.tableAdapterManager.MonsterIndexTableAdapter = null;
+            this.tableAdapterManager.PlayersTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // FormEditCampaign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +198,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Campaign";
             this.Load += new System.EventHandler(this.FormEditCampaign_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campaignBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +219,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateStartDate;
         private System.Windows.Forms.Label label5;
+        private DungeonBuddyDataSet dungeonBuddyDataSet;
+        private System.Windows.Forms.BindingSource campaignBindingSource;
+        private DungeonBuddyDataSetTableAdapters.CampaignTableAdapter campaignTableAdapter;
+        private DungeonBuddyDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

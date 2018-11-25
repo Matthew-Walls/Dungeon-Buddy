@@ -10,8 +10,10 @@ namespace Dungeon_Buddy
     {
         private int _level;
         private DateTime _startDate;
+        private string _race;
+        private string _class;
 
-        private enum playerClasses
+        public enum playerClasses
         {
             Barbarian,
             Bard,
@@ -28,7 +30,7 @@ namespace Dungeon_Buddy
             _FINAL_COUNT
         };
 
-        private enum playerRaces
+        public enum playerRaces
         {
             Dragonborn,
             Dwarf,
@@ -102,7 +104,27 @@ namespace Dungeon_Buddy
                 _playerRace = (playerRaces)playerRace;
         }
 
+        //Method to get defined class list from Player.
+        public Array GetClasses()
+        {
+            Array classes;
+            classes = System.Enum.GetValues(typeof(playerClasses));
+
+            return classes;
+        }
+
+        //Method to get defined class list from Player.
+        public Array GetRaces()
+        {
+            Array races;
+            races = System.Enum.GetValues(typeof(playerRaces));
+
+            return races;
+        }
+
         public int Level { get => _level; set => _level = value; }
         public DateTime StartDate { get => _startDate; set => _startDate = value; }
+        public string Class { get => _class; set => _class = value; }
+        public string Race { get => _race; set => _race = value; }
     }
 }
