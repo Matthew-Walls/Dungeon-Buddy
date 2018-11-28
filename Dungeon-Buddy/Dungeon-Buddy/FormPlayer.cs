@@ -21,7 +21,6 @@ namespace Dungeon_Buddy
             // On default constructor where no player is passed
             // set newPlayer to true.
             _newPlayer = true;
-            _player = new Player();
         }
 
         // Adjusted Constructor that includes argument for parentForm.
@@ -53,18 +52,18 @@ namespace Dungeon_Buddy
                     _currentPlayer.Name, _currentPlayer.Size, _currentPlayer.Allignment, _currentPlayer.Description, _currentPlayer.Tag,
                     _currentPlayer.Level, _currentPlayer.StartDate, _currentPlayer.Race, _currentPlayer.Class);
 
-                MessageBox.Show("Player updated!");
+                MessageBox.Show("Player updated!", "Success!",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (_newPlayer)
             {
                 playersTableAdapter.Insert(_parentForm.Campaign.Id, player.Name, player.Size, player.Allignment,
                     player.Description, player.Tag, player.Level, player.StartDate, player.Race, player.Class);
 
-                MessageBox.Show("Player added to the database!");
+                MessageBox.Show("Player added to the database!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Unexpected error has occured!");
+                MessageBox.Show("Unexpected error has occured!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
             // Refresh player datagrid on parent form and close.
@@ -104,7 +103,7 @@ namespace Dungeon_Buddy
                 txtBoxName.Text = _currentPlayer.Name;
                 lstBoxSize.SelectedIndex = lstBoxSize.FindStringExact(_currentPlayer.Size);
                 lstBoxAlignment.SelectedIndex = lstBoxAlignment.FindStringExact(_currentPlayer.Allignment); ;
-                txtBoxDesc.Text = _currentPlayer.Description;
+                txtBoxDesc.Lines = _currentPlayer.Description.Split('|');
                 txtBoxTags.Text = _currentPlayer.Tag;
                 txtBoxLevel.Text = _currentPlayer.Level.ToString();
                 dateTimeStartDate.Value = _currentPlayer.StartDate;
@@ -121,11 +120,71 @@ namespace Dungeon_Buddy
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Set player properties from form inputs.
+            // Validate proper values have been entered into the form.
+            // Ensure required fields are not null.
+            if(txtBoxName.Text == null || txtBoxName.Text == "")
+            {
+                MessageBox.Show("Player Character Name cannot be blank!","Error!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                txtBoxName.Focus();
+                return;
+            }
+
+            if (lstBoxSize.SelectedIndex == -1)
+            {
+                MessageBox.Show("You must select the Player Character's size!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lstBoxSize.Focus();
+                return;
+            }
+
+            if (lstBoxAlignment.SelectedIndex == -1)
+            {
+                MessageBox.Show("You must select the Player Character's alignment!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lstBoxAlignment.Focus();
+                return;
+            }
+
+            if (dateTimeStartDate.Value == null)
+            {
+                MessageBox.Show("You must select the Player Character's start date!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dateTimeStartDate.Focus();
+                return;
+            }
+
+            if (lstBoxRaces.SelectedIndex == -1)
+            {
+                MessageBox.Show("You must select the Player Character's race!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lstBoxRaces.Focus();
+                return;
+            }
+
+            if (lstBoxClasses.SelectedIndex == -1)
+            {
+                MessageBox.Show("You must select the Player Character's class!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lstBoxClasses.Focus();
+                return;
+            }
+
+            // Ensure int value entered for level.
+            if (!int.TryParse(txtBoxLevel.Text, out int level))
+            {
+                MessageBox.Show("A valid integer must be entered for Player Character level!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBoxLevel.Focus();
+                return;
+            }
+
+            if (level < 1)
+            {
+                MessageBox.Show("Player Character level cannot be less then 1!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBoxLevel.Focus();
+                txtBoxLevel.SelectAll();
+                return;
+            }
+
+            // Set player properties from form inputs if no validation issues.
             _player.Name = txtBoxName.Text;
             _player.Size = lstBoxSize.SelectedItem.ToString();
             _player.Allignment = lstBoxAlignment.SelectedItem.ToString();
-            _player.Description = txtBoxDesc.Text;
+            _player.Description = string.Join("|", txtBoxDesc.Lines);
             _player.Tag = txtBoxTags.Text;
             _player.Level = int.Parse(txtBoxLevel.Text);
             _player.StartDate = dateTimeStartDate.Value;

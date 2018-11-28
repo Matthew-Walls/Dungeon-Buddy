@@ -59,6 +59,12 @@ namespace Dungeon_Buddy
         // view or editing.
         private void GetSelectedPlayer(DataRowView row)
         {
+            // Cancel method if blank space is selected.
+            if(row == null)
+            {
+                return;
+            }
+
             // Create player object from selected row.
             Player player = new Player();
             player.Id = row.Row.Field<int>("Id");
@@ -68,6 +74,7 @@ namespace Dungeon_Buddy
             player.Allignment = row.Row.Field<string>("Alignment");
             player.Description = row.Row.Field<string>("Description");
             player.Tag = row.Row.Field<string>("Tag");
+            player.Level = row.Row.Field<int>("Level");
             player.StartDate = row.Row.Field<DateTime>("StartDate");
             player.Race = row.Row.Field<string>("Race");
             player.Class = row.Row.Field<string>("Class");
@@ -76,7 +83,46 @@ namespace Dungeon_Buddy
             FormPlayer formPlayer = new FormPlayer(this, player);
             formPlayer.Show();
         }
-        
+
+        // Method for deleting an existing player from the database.
+        private void DeleteSelectedPlayer(DataRowView row)
+        {
+            // Cancel method if blank space is selected.
+            if (row == null)
+            {
+                return;
+            }
+
+            // Confirm deletion with the user.
+            if(MessageBox.Show("Are you sure you want to delete this Player? (This is PERMANENT!)", "Warning!",MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                // Create player object from selected row.
+                Player player = new Player();
+                player.Id = row.Row.Field<int>("Id");
+                player.CampaignId = row.Row.Field<int>("CampaignId");
+                player.Name = row.Row.Field<string>("Name");
+                player.Size = row.Row.Field<string>("Size");
+                player.Allignment = row.Row.Field<string>("Alignment");
+                player.Description = row.Row.Field<string>("Description");
+                player.Tag = row.Row.Field<string>("Tag");
+                player.Level = row.Row.Field<int>("Level");
+                player.StartDate = row.Row.Field<DateTime>("StartDate");
+                player.Race = row.Row.Field<string>("Race");
+                player.Class = row.Row.Field<string>("Class");
+
+                playersTableAdapter.Delete(player.Id, Campaign.Id, player.Name, player.Size, player.Allignment, player.Description, player.Tag,
+                    player.Level, player.StartDate, player.Race, player.Class);
+
+                // Refresh player data display.
+                RefreshPlayerData();
+            }
+            else
+            {
+                return;
+            }
+        }
+
         private void FormMain_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dungeonBuddyDataSet.Campaign' table. You can move, or remove it, as needed.
@@ -105,8 +151,7 @@ namespace Dungeon_Buddy
             FormPlayer formPlayer = new FormPlayer(this);
             formPlayer.Show();
         }
-
-        private void playersDataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void toolStripButtonEditPlayer_Click(object sender, EventArgs e)
         {
             // Store selected datarow as a DataRowView for easier access.
             // Found this through debugging that this object can be cast
@@ -114,6 +159,37 @@ namespace Dungeon_Buddy
             DataRowView row = (DataRowView)playersBindingSource.Current;
 
             GetSelectedPlayer(row);
+        }
+
+        private void playersDataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            // Utilize code from toolStripButtonEditPlayer.
+            toolStripButtonEditPlayer.PerformClick();
+        }
+
+        private void toolStripButtonDeletePlayer_Click(object sender, EventArgs e)
+        {
+            // Store selected datarow as a DataRowView for easier access.
+            // Found this through debugging that this object can be cast
+            // as a DataRowView.
+            DataRowView row = (DataRowView)playersBindingSource.Current;
+
+            DeleteSelectedPlayer(row);
+        }
+
+        private void toolStripMenuItemNewPlayer_Click(object sender, EventArgs e)
+        {
+            toolStripButtonNewPlayer.PerformClick();
+        }
+
+        private void toolStripMenuItemEditPlayer_Click(object sender, EventArgs e)
+        {
+            toolStripButtonEditPlayer.PerformClick();
+        }
+
+        private void toolStripMenuItemDeletePlayer_Click(object sender, EventArgs e)
+        {
+            toolStripButtonDeletePlayer.PerformClick();
         }
     }
 }

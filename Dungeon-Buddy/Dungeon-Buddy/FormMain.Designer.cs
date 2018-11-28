@@ -64,6 +64,10 @@
             this.campaignTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.CampaignTableAdapter();
             this.tableAdapterManager = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.TableAdapterManager();
             this.playersTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.PlayersTableAdapter();
+            this.contextMenuStripPlayers = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemNewPlayer = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemEditPlayer = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDeletePlayer = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlData.SuspendLayout();
             this.tabPagePlayers.SuspendLayout();
             this.toolStripPlayers.SuspendLayout();
@@ -71,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSetBindingSource)).BeginInit();
+            this.contextMenuStripPlayers.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNotes
@@ -196,6 +201,7 @@
             this.toolStripButtonEditPlayer.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonEditPlayer.Text = "Edit Player";
             this.toolStripButtonEditPlayer.ToolTipText = "Edit the selected player.";
+            this.toolStripButtonEditPlayer.Click += new System.EventHandler(this.toolStripButtonEditPlayer_Click);
             // 
             // toolStripButtonDeletePlayer
             // 
@@ -206,6 +212,7 @@
             this.toolStripButtonDeletePlayer.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonDeletePlayer.Text = "Delete Player";
             this.toolStripButtonDeletePlayer.ToolTipText = "Delete selected player.";
+            this.toolStripButtonDeletePlayer.Click += new System.EventHandler(this.toolStripButtonDeletePlayer_Click);
             // 
             // toolStripSeparator1
             // 
@@ -240,6 +247,7 @@
             this.dataGridViewTextBoxColumn9,
             this.Race,
             this.Class});
+            this.playersDataGridView.ContextMenuStrip = this.contextMenuStripPlayers;
             this.playersDataGridView.DataSource = this.playersBindingSource;
             this.playersDataGridView.Location = new System.Drawing.Point(6, 31);
             this.playersDataGridView.Name = "playersDataGridView";
@@ -368,6 +376,37 @@
             // 
             this.playersTableAdapter.ClearBeforeFill = true;
             // 
+            // contextMenuStripPlayers
+            // 
+            this.contextMenuStripPlayers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemNewPlayer,
+            this.toolStripMenuItemEditPlayer,
+            this.toolStripMenuItemDeletePlayer});
+            this.contextMenuStripPlayers.Name = "contextMenuStripPlayers";
+            this.contextMenuStripPlayers.ShowImageMargin = false;
+            this.contextMenuStripPlayers.Size = new System.Drawing.Size(118, 70);
+            // 
+            // toolStripMenuItemNewPlayer
+            // 
+            this.toolStripMenuItemNewPlayer.Name = "toolStripMenuItemNewPlayer";
+            this.toolStripMenuItemNewPlayer.Size = new System.Drawing.Size(127, 22);
+            this.toolStripMenuItemNewPlayer.Text = "New Player";
+            this.toolStripMenuItemNewPlayer.Click += new System.EventHandler(this.toolStripMenuItemNewPlayer_Click);
+            // 
+            // toolStripMenuItemEditPlayer
+            // 
+            this.toolStripMenuItemEditPlayer.Name = "toolStripMenuItemEditPlayer";
+            this.toolStripMenuItemEditPlayer.Size = new System.Drawing.Size(127, 22);
+            this.toolStripMenuItemEditPlayer.Text = "Edit Player";
+            this.toolStripMenuItemEditPlayer.Click += new System.EventHandler(this.toolStripMenuItemEditPlayer_Click);
+            // 
+            // toolStripMenuItemDeletePlayer
+            // 
+            this.toolStripMenuItemDeletePlayer.Name = "toolStripMenuItemDeletePlayer";
+            this.toolStripMenuItemDeletePlayer.Size = new System.Drawing.Size(127, 22);
+            this.toolStripMenuItemDeletePlayer.Text = "Delete Player";
+            this.toolStripMenuItemDeletePlayer.Click += new System.EventHandler(this.toolStripMenuItemDeletePlayer_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,6 +435,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSetBindingSource)).EndInit();
+            this.contextMenuStripPlayers.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -439,5 +479,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Race;
         private System.Windows.Forms.DataGridViewTextBoxColumn Class;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripPlayers;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemNewPlayer;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEditPlayer;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDeletePlayer;
     }
 }

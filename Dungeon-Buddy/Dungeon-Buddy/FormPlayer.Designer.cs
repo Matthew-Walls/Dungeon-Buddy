@@ -84,7 +84,7 @@
             // alignmentLabel
             // 
             alignmentLabel.AutoSize = true;
-            alignmentLabel.Location = new System.Drawing.Point(62, 164);
+            alignmentLabel.Location = new System.Drawing.Point(62, 124);
             alignmentLabel.Name = "alignmentLabel";
             alignmentLabel.Size = new System.Drawing.Size(56, 13);
             alignmentLabel.TabIndex = 9;
@@ -93,7 +93,7 @@
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(62, 269);
+            descriptionLabel.Location = new System.Drawing.Point(62, 189);
             descriptionLabel.Name = "descriptionLabel";
             descriptionLabel.Size = new System.Drawing.Size(63, 13);
             descriptionLabel.TabIndex = 11;
@@ -102,7 +102,7 @@
             // tagsLabel
             // 
             tagsLabel.AutoSize = true;
-            tagsLabel.Location = new System.Drawing.Point(62, 295);
+            tagsLabel.Location = new System.Drawing.Point(62, 335);
             tagsLabel.Name = "tagsLabel";
             tagsLabel.Size = new System.Drawing.Size(29, 13);
             tagsLabel.TabIndex = 13;
@@ -111,7 +111,7 @@
             // levelLabel
             // 
             levelLabel.AutoSize = true;
-            levelLabel.Location = new System.Drawing.Point(62, 321);
+            levelLabel.Location = new System.Drawing.Point(62, 361);
             levelLabel.Name = "levelLabel";
             levelLabel.Size = new System.Drawing.Size(36, 13);
             levelLabel.TabIndex = 15;
@@ -120,7 +120,7 @@
             // startDateLabel
             // 
             startDateLabel.AutoSize = true;
-            startDateLabel.Location = new System.Drawing.Point(62, 348);
+            startDateLabel.Location = new System.Drawing.Point(62, 388);
             startDateLabel.Name = "startDateLabel";
             startDateLabel.Size = new System.Drawing.Size(58, 13);
             startDateLabel.TabIndex = 17;
@@ -129,7 +129,7 @@
             // racesLabel
             // 
             racesLabel.AutoSize = true;
-            racesLabel.Location = new System.Drawing.Point(62, 370);
+            racesLabel.Location = new System.Drawing.Point(62, 410);
             racesLabel.Name = "racesLabel";
             racesLabel.Size = new System.Drawing.Size(36, 13);
             racesLabel.TabIndex = 19;
@@ -156,53 +156,59 @@
             // txtBoxName
             // 
             this.txtBoxName.Location = new System.Drawing.Point(137, 36);
+            this.txtBoxName.MaxLength = 50;
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxName.TabIndex = 6;
+            this.txtBoxName.TabIndex = 1;
             // 
             // lstBoxSize
             // 
             this.lstBoxSize.FormattingEnabled = true;
             this.lstBoxSize.Location = new System.Drawing.Point(137, 62);
             this.lstBoxSize.Name = "lstBoxSize";
-            this.lstBoxSize.Size = new System.Drawing.Size(200, 95);
-            this.lstBoxSize.TabIndex = 8;
+            this.lstBoxSize.Size = new System.Drawing.Size(200, 56);
+            this.lstBoxSize.TabIndex = 2;
             // 
             // lstBoxAlignment
             // 
             this.lstBoxAlignment.FormattingEnabled = true;
-            this.lstBoxAlignment.Location = new System.Drawing.Point(137, 164);
+            this.lstBoxAlignment.Location = new System.Drawing.Point(137, 124);
             this.lstBoxAlignment.Name = "lstBoxAlignment";
-            this.lstBoxAlignment.Size = new System.Drawing.Size(200, 95);
-            this.lstBoxAlignment.TabIndex = 10;
+            this.lstBoxAlignment.Size = new System.Drawing.Size(200, 56);
+            this.lstBoxAlignment.TabIndex = 3;
             // 
             // txtBoxDesc
             // 
-            this.txtBoxDesc.Location = new System.Drawing.Point(137, 266);
+            this.txtBoxDesc.Location = new System.Drawing.Point(137, 186);
+            this.txtBoxDesc.MaxLength = 1000;
+            this.txtBoxDesc.Multiline = true;
             this.txtBoxDesc.Name = "txtBoxDesc";
-            this.txtBoxDesc.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxDesc.TabIndex = 12;
+            this.txtBoxDesc.Size = new System.Drawing.Size(200, 140);
+            this.txtBoxDesc.TabIndex = 4;
+            this.txtBoxDesc.Text = "\r\n";
             // 
             // txtBoxTags
             // 
-            this.txtBoxTags.Location = new System.Drawing.Point(137, 292);
+            this.txtBoxTags.Location = new System.Drawing.Point(137, 332);
+            this.txtBoxTags.MaxLength = 255;
             this.txtBoxTags.Name = "txtBoxTags";
             this.txtBoxTags.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxTags.TabIndex = 14;
+            this.txtBoxTags.TabIndex = 5;
             // 
             // txtBoxLevel
             // 
-            this.txtBoxLevel.Location = new System.Drawing.Point(137, 318);
+            this.txtBoxLevel.Location = new System.Drawing.Point(137, 358);
+            this.txtBoxLevel.MaxLength = 2;
             this.txtBoxLevel.Name = "txtBoxLevel";
-            this.txtBoxLevel.Size = new System.Drawing.Size(200, 20);
-            this.txtBoxLevel.TabIndex = 16;
+            this.txtBoxLevel.Size = new System.Drawing.Size(46, 20);
+            this.txtBoxLevel.TabIndex = 6;
             // 
             // dateTimeStartDate
             // 
-            this.dateTimeStartDate.Location = new System.Drawing.Point(137, 344);
+            this.dateTimeStartDate.Location = new System.Drawing.Point(137, 384);
             this.dateTimeStartDate.Name = "dateTimeStartDate";
             this.dateTimeStartDate.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeStartDate.TabIndex = 18;
+            this.dateTimeStartDate.TabIndex = 7;
             // 
             // lblCampaignId
             // 
@@ -218,17 +224,18 @@
             this.btnSave.Location = new System.Drawing.Point(42, 577);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(104, 43);
-            this.btnSave.TabIndex = 24;
+            this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(179, 577);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 43);
-            this.btnCancel.TabIndex = 25;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -240,23 +247,25 @@
             // lstBoxRaces
             // 
             this.lstBoxRaces.FormattingEnabled = true;
-            this.lstBoxRaces.Location = new System.Drawing.Point(137, 370);
+            this.lstBoxRaces.Location = new System.Drawing.Point(137, 410);
             this.lstBoxRaces.Name = "lstBoxRaces";
-            this.lstBoxRaces.Size = new System.Drawing.Size(200, 95);
-            this.lstBoxRaces.TabIndex = 26;
+            this.lstBoxRaces.Size = new System.Drawing.Size(200, 56);
+            this.lstBoxRaces.TabIndex = 8;
             // 
             // lstBoxClasses
             // 
             this.lstBoxClasses.FormattingEnabled = true;
             this.lstBoxClasses.Location = new System.Drawing.Point(137, 472);
             this.lstBoxClasses.Name = "lstBoxClasses";
-            this.lstBoxClasses.Size = new System.Drawing.Size(200, 95);
-            this.lstBoxClasses.TabIndex = 27;
+            this.lstBoxClasses.Size = new System.Drawing.Size(200, 56);
+            this.lstBoxClasses.TabIndex = 9;
             // 
             // FormPlayer
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(411, 632);
             this.Controls.Add(this.lstBoxClasses);
             this.Controls.Add(this.lstBoxRaces);
