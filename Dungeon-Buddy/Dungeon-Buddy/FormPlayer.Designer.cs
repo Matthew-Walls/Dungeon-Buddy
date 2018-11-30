@@ -39,8 +39,6 @@
             System.Windows.Forms.Label classesLabel;
             System.Windows.Forms.Label campaignIdLabel;
             this.txtBoxName = new System.Windows.Forms.TextBox();
-            this.lstBoxSize = new System.Windows.Forms.ListBox();
-            this.lstBoxAlignment = new System.Windows.Forms.ListBox();
             this.txtBoxDesc = new System.Windows.Forms.TextBox();
             this.txtBoxTags = new System.Windows.Forms.TextBox();
             this.txtBoxLevel = new System.Windows.Forms.TextBox();
@@ -49,8 +47,10 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.playersTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.PlayersTableAdapter();
-            this.lstBoxRaces = new System.Windows.Forms.ListBox();
-            this.lstBoxClasses = new System.Windows.Forms.ListBox();
+            this.comboSize = new System.Windows.Forms.ComboBox();
+            this.comboAlignment = new System.Windows.Forms.ComboBox();
+            this.comboRaces = new System.Windows.Forms.ComboBox();
+            this.comboClass = new System.Windows.Forms.ComboBox();
             nameLabel = new System.Windows.Forms.Label();
             sizeLabel = new System.Windows.Forms.Label();
             alignmentLabel = new System.Windows.Forms.Label();
@@ -161,22 +161,6 @@
             this.txtBoxName.Size = new System.Drawing.Size(200, 20);
             this.txtBoxName.TabIndex = 1;
             // 
-            // lstBoxSize
-            // 
-            this.lstBoxSize.FormattingEnabled = true;
-            this.lstBoxSize.Location = new System.Drawing.Point(137, 62);
-            this.lstBoxSize.Name = "lstBoxSize";
-            this.lstBoxSize.Size = new System.Drawing.Size(200, 56);
-            this.lstBoxSize.TabIndex = 2;
-            // 
-            // lstBoxAlignment
-            // 
-            this.lstBoxAlignment.FormattingEnabled = true;
-            this.lstBoxAlignment.Location = new System.Drawing.Point(137, 124);
-            this.lstBoxAlignment.Name = "lstBoxAlignment";
-            this.lstBoxAlignment.Size = new System.Drawing.Size(200, 56);
-            this.lstBoxAlignment.TabIndex = 3;
-            // 
             // txtBoxDesc
             // 
             this.txtBoxDesc.Location = new System.Drawing.Point(137, 186);
@@ -244,21 +228,41 @@
             // 
             this.playersTableAdapter.ClearBeforeFill = true;
             // 
-            // lstBoxRaces
+            // comboSize
             // 
-            this.lstBoxRaces.FormattingEnabled = true;
-            this.lstBoxRaces.Location = new System.Drawing.Point(137, 410);
-            this.lstBoxRaces.Name = "lstBoxRaces";
-            this.lstBoxRaces.Size = new System.Drawing.Size(200, 56);
-            this.lstBoxRaces.TabIndex = 8;
+            this.comboSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboSize.FormattingEnabled = true;
+            this.comboSize.Location = new System.Drawing.Point(137, 62);
+            this.comboSize.Name = "comboSize";
+            this.comboSize.Size = new System.Drawing.Size(121, 21);
+            this.comboSize.TabIndex = 24;
             // 
-            // lstBoxClasses
+            // comboAlignment
             // 
-            this.lstBoxClasses.FormattingEnabled = true;
-            this.lstBoxClasses.Location = new System.Drawing.Point(137, 472);
-            this.lstBoxClasses.Name = "lstBoxClasses";
-            this.lstBoxClasses.Size = new System.Drawing.Size(200, 56);
-            this.lstBoxClasses.TabIndex = 9;
+            this.comboAlignment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboAlignment.FormattingEnabled = true;
+            this.comboAlignment.Location = new System.Drawing.Point(137, 124);
+            this.comboAlignment.Name = "comboAlignment";
+            this.comboAlignment.Size = new System.Drawing.Size(121, 21);
+            this.comboAlignment.TabIndex = 25;
+            // 
+            // comboRaces
+            // 
+            this.comboRaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboRaces.FormattingEnabled = true;
+            this.comboRaces.Location = new System.Drawing.Point(137, 407);
+            this.comboRaces.Name = "comboRaces";
+            this.comboRaces.Size = new System.Drawing.Size(121, 21);
+            this.comboRaces.TabIndex = 26;
+            // 
+            // comboClass
+            // 
+            this.comboClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboClass.FormattingEnabled = true;
+            this.comboClass.Location = new System.Drawing.Point(137, 464);
+            this.comboClass.Name = "comboClass";
+            this.comboClass.Size = new System.Drawing.Size(121, 21);
+            this.comboClass.TabIndex = 27;
             // 
             // FormPlayer
             // 
@@ -267,8 +271,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(411, 632);
-            this.Controls.Add(this.lstBoxClasses);
-            this.Controls.Add(this.lstBoxRaces);
+            this.Controls.Add(this.comboClass);
+            this.Controls.Add(this.comboRaces);
+            this.Controls.Add(this.comboAlignment);
+            this.Controls.Add(this.comboSize);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(campaignIdLabel);
@@ -276,9 +282,7 @@
             this.Controls.Add(nameLabel);
             this.Controls.Add(this.txtBoxName);
             this.Controls.Add(sizeLabel);
-            this.Controls.Add(this.lstBoxSize);
             this.Controls.Add(alignmentLabel);
-            this.Controls.Add(this.lstBoxAlignment);
             this.Controls.Add(descriptionLabel);
             this.Controls.Add(this.txtBoxDesc);
             this.Controls.Add(tagsLabel);
@@ -302,8 +306,6 @@
 
         #endregion
         private System.Windows.Forms.TextBox txtBoxName;
-        private System.Windows.Forms.ListBox lstBoxSize;
-        private System.Windows.Forms.ListBox lstBoxAlignment;
         private System.Windows.Forms.TextBox txtBoxDesc;
         private System.Windows.Forms.TextBox txtBoxTags;
         private System.Windows.Forms.TextBox txtBoxLevel;
@@ -312,7 +314,9 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private DungeonBuddyDataSetTableAdapters.PlayersTableAdapter playersTableAdapter;
-        private System.Windows.Forms.ListBox lstBoxRaces;
-        private System.Windows.Forms.ListBox lstBoxClasses;
+        private System.Windows.Forms.ComboBox comboSize;
+        private System.Windows.Forms.ComboBox comboAlignment;
+        private System.Windows.Forms.ComboBox comboRaces;
+        private System.Windows.Forms.ComboBox comboClass;
     }
 }

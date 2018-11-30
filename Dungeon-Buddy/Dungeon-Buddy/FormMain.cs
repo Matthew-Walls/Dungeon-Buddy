@@ -23,7 +23,7 @@ namespace Dungeon_Buddy
         // Define properties.
         public Campaign Campaign
         { 
-            set { _campaign = value; RefreshPlayerData(); }
+            set { _campaign = value; RefreshPlayerData(); RefreshMonsterData(); }
             get { return _campaign; }
         }
 
@@ -48,6 +48,20 @@ namespace Dungeon_Buddy
             try
             {
                 this.playersTableAdapter.FillByCampaign(this.dungeonBuddyDataSet.Players, Campaign.Id);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        // Method for refreshing the displayed monster data.
+        public void RefreshMonsterData()
+        {
+            // TODO: This line of code loads data into the 'dungeonBuddyDataSet.Players' table. You can move, or remove it, as needed.
+            try
+            {
+                this.monstersTableAdapter.FillByCampaign(this.dungeonBuddyDataSet.Monsters, Campaign.Id);
             }
             catch (System.Exception ex)
             {
@@ -123,6 +137,83 @@ namespace Dungeon_Buddy
             }
         }
 
+        // Method for selecting and loading an existing monster for
+        // view or editing.
+        private void GetSelectedMonster(DataRowView row)
+        {
+            // Cancel method if blank space is selected.
+            if (row == null)
+            {
+                return;
+            }
+
+            // Create monster object from selected row.
+            Monster monster = new Monster();
+            monster.Id = row.Row.Field<int>("Id");
+            monster.CampaignId = row.Row.Field<int>("CampaignId");
+            monster.Name = row.Row.Field<string>("Name");
+            monster.Size = row.Row.Field<string>("Size");
+            monster.Allignment = row.Row.Field<string>("Alignment");
+            monster.Description = row.Row.Field<string>("Description");
+            monster.Tag = row.Row.Field<string>("Tag");
+            monster.ChallengeRating = row.Row.Field<double>("ChallengeRating");
+            monster.Xp = row.Row.Field<double>("Xp");
+            monster.MonsterType = row.Row.Field<string>("Type");
+            monster.Environment = row.Row.Field<string>("Environment");
+            monster.Source = row.Row.Field<string>("Source");
+            monster.Page = row.Row.Field<string>("Page");
+            monster.Reference = row.Row.Field<string>("Reference");
+            monster.Srd  = row.Row.Field<bool>("SRD");
+
+            // Create a monster form with loaded data and display it.
+            FormMonster formMonster = new FormMonster(this, monster);
+            formMonster.Show();
+        }
+
+        // Method for deleting an existing monster from the database.
+        private void DeleteSelectedMonster(DataRowView row)
+        {
+            // Cancel method if blank space is selected.
+            if (row == null)
+            {
+                return;
+            }
+
+            // Confirm deletion with the user.
+            if (MessageBox.Show("Are you sure you want to delete this Monster? (This is PERMANENT!)", "Warning!", MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                // Create monster object from selected row.
+                Monster monster = new Monster();
+                monster.Id = row.Row.Field<int>("Id");
+                monster.CampaignId = row.Row.Field<int>("CampaignId");
+                monster.Name = row.Row.Field<string>("Name");
+                monster.Size = row.Row.Field<string>("Size");
+                monster.Allignment = row.Row.Field<string>("Alignment");
+                monster.Description = row.Row.Field<string>("Description");
+                monster.Tag = row.Row.Field<string>("Tag");
+                monster.ChallengeRating = row.Row.Field<double>("ChallengeRating");
+                monster.Xp = row.Row.Field<double>("Xp");
+                monster.MonsterType = row.Row.Field<string>("Type");
+                monster.Environment = row.Row.Field<string>("Environment");
+                monster.Source = row.Row.Field<string>("Source");
+                monster.Page = row.Row.Field<string>("Page");
+                monster.Reference = row.Row.Field<string>("Reference");
+                monster.Srd = row.Row.Field<bool>("SRD");
+
+                monstersTableAdapter.Delete(monster.Id, Campaign.Id, monster.Name, monster.Size, monster.Allignment, monster.Description, monster.Tag,
+                    monster.ChallengeRating, monster.Xp, monster.MonsterType, monster.Environment, monster.Source, monster.Page, monster.Reference,
+                    monster.Srd);
+
+                // Refresh monster data display.
+                RefreshMonsterData();
+            }
+            else
+            {
+                return;
+            }
+        }
+
         private void FormMain_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dungeonBuddyDataSet.Campaign' table. You can move, or remove it, as needed.
@@ -190,6 +281,54 @@ namespace Dungeon_Buddy
         private void toolStripMenuItemDeletePlayer_Click(object sender, EventArgs e)
         {
             toolStripButtonDeletePlayer.PerformClick();
+        }
+
+        private void toolStripButtonNewMonster_Click(object sender, EventArgs e)
+        {
+            // Create a new, blank monster form and display it.
+            FormMonster formMonster = new FormMonster(this);
+            formMonster.Show();
+        }
+
+        private void toolStripButtonEditMonster_Click(object sender, EventArgs e)
+        {
+            // Store selected datarow as a DataRowView for easier access.
+            // Found this through debugging that this object can be cast
+            // as a DataRowView.
+            DataRowView row = (DataRowView)monstersBindingSource.Current;
+
+            GetSelectedMonster(row);
+        }
+
+        private void monstersDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            // Utilize code from toolStripButtonEditPlayer.
+            toolStripButtonEditMonster.PerformClick();
+        }
+
+        private void toolStripButtonDeleteMonster_Click(object sender, EventArgs e)
+        {
+            // Store selected datarow as a DataRowView for easier access.
+            // Found this through debugging that this object can be cast
+            // as a DataRowView.
+            DataRowView row = (DataRowView)monstersBindingSource.Current;
+
+            DeleteSelectedMonster(row);
+        }
+
+        private void toolStripMenuItemNewMonster_Click(object sender, EventArgs e)
+        {
+            toolStripButtonNewMonster.PerformClick();
+        }
+
+        private void toolStripMenuItemEditMonster_Click(object sender, EventArgs e)
+        {
+            toolStripButtonEditMonster.PerformClick();
+        }
+
+        private void toolStripMenuItemDeleteMonster_Click(object sender, EventArgs e)
+        {
+            toolStripButtonDeleteMonster.PerformClick();
         }
     }
 }

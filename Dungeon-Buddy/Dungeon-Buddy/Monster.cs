@@ -17,8 +17,59 @@ namespace Dungeon_Buddy
         private string _source;
         private string _page;
         private string _reference;
-        private string _srd;
+        private bool _srd;
 
+        public enum Types
+        {
+            Aberrations,
+            Beasts,
+            Celestials,
+            Constructs,
+            Dragons,
+            Elemental,
+            Fey,
+            Fiends,
+            Giants,
+            Humanoids,
+            Monstrosities,
+            Oozes,
+            Plants,
+            Undead
+        };
+
+        public enum Environments
+        {
+            Coastal,
+            Desert,
+            Forest,
+            Grassland,
+            Hills,
+            Mountain,
+            Swamp,
+            Underdark,
+            Underwater,
+            Urban,
+            Any,
+            Arctic,
+            Extraplanar,
+            Extraplanar_Abyss,
+            Extraplanar_Astral,
+            Extraplanar_Baator,
+            Extraplanar_Elemental,
+            Extraplanar_Ethereal,
+            Extraplanar_Limbo,
+            Extraplanar_Lower_Planes,
+            Extraplanar_Mechanus,
+            Extraplanar_Shadowfell,
+            Extraplanar_Upper_Planes,
+            Extraplanar_Yggdrassil,
+            Extraplanar_Ysgard,
+        };
+
+
+        public Monster()
+        {
+        }
 
         public Monster(int index)
         {
@@ -35,7 +86,7 @@ namespace Dungeon_Buddy
         public string Source { get => _source; set => _source = value; }
         public string Page { get => _page; set => _page = value; }
         public string Reference { get => _reference; set => _reference = value; }
-        public string Srd { get => _srd; set => _srd = value; }
+        public bool Srd { get => _srd; set => _srd = value; }
 
         public Object[] GetData()
         {
@@ -77,6 +128,25 @@ namespace Dungeon_Buddy
                 result += (names[index] + ": " + vars[index].ToString() + "\n\n");
             }
             return result;
+        }
+
+
+        //Method to get defined class list from Player.
+        public Array GetTypes()
+        {
+            Array types;
+            types = System.Enum.GetValues(typeof(Types));
+
+            return types;
+        }
+
+        //Method to get defined class list from Player.
+        public Array GetEnvironments()
+        {
+            Array environments;
+            environments = System.Enum.GetValues(typeof(Environments));
+
+            return environments;
         }
     }
 

@@ -57,25 +57,57 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Race = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dungeonBuddyDataSet = new Dungeon_Buddy.DungeonBuddyDataSet();
-            this.tabPageMonsters = new System.Windows.Forms.TabPage();
-            this.dungeonBuddyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.campaignTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.CampaignTableAdapter();
-            this.tableAdapterManager = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.TableAdapterManager();
-            this.playersTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.PlayersTableAdapter();
             this.contextMenuStripPlayers = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemNewPlayer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemEditPlayer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDeletePlayer = new System.Windows.Forms.ToolStripMenuItem();
+            this.playersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dungeonBuddyDataSet = new Dungeon_Buddy.DungeonBuddyDataSet();
+            this.tabPageMonsters = new System.Windows.Forms.TabPage();
+            this.monstersDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.monstersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripMonsters = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonLoadMonster = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonNewMonster = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonEditMonster = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonDeleteMonster = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.dungeonBuddyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableAdapterManager = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.TableAdapterManager();
+            this.playersTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.PlayersTableAdapter();
+            this.campaignTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.CampaignTableAdapter();
+            this.monstersTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.MonstersTableAdapter();
+            this.contextMenuStripMonsters = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemNewMonster = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemEditMonster = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDeleteMonster = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlData.SuspendLayout();
             this.tabPagePlayers.SuspendLayout();
             this.toolStripPlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).BeginInit();
+            this.contextMenuStripPlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSet)).BeginInit();
+            this.tabPageMonsters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.monstersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monstersBindingSource)).BeginInit();
+            this.toolStripMonsters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSetBindingSource)).BeginInit();
-            this.contextMenuStripPlayers.SuspendLayout();
+            this.contextMenuStripMonsters.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNotes
@@ -195,7 +227,7 @@
             // toolStripButtonEditPlayer
             // 
             this.toolStripButtonEditPlayer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonEditPlayer.Image = global::Dungeon_Buddy.Properties.Resources.floppy_512;
+            this.toolStripButtonEditPlayer.Image = global::Dungeon_Buddy.Properties.Resources.edit;
             this.toolStripButtonEditPlayer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonEditPlayer.Name = "toolStripButtonEditPlayer";
             this.toolStripButtonEditPlayer.Size = new System.Drawing.Size(23, 22);
@@ -335,47 +367,6 @@
             this.Class.Name = "Class";
             this.Class.ReadOnly = true;
             // 
-            // playersBindingSource
-            // 
-            this.playersBindingSource.DataMember = "Players";
-            this.playersBindingSource.DataSource = this.dungeonBuddyDataSet;
-            // 
-            // dungeonBuddyDataSet
-            // 
-            this.dungeonBuddyDataSet.DataSetName = "DungeonBuddyDataSet";
-            this.dungeonBuddyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tabPageMonsters
-            // 
-            this.tabPageMonsters.Location = new System.Drawing.Point(4, 22);
-            this.tabPageMonsters.Name = "tabPageMonsters";
-            this.tabPageMonsters.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMonsters.Size = new System.Drawing.Size(518, 304);
-            this.tabPageMonsters.TabIndex = 1;
-            this.tabPageMonsters.Text = "Monsters";
-            this.tabPageMonsters.UseVisualStyleBackColor = true;
-            // 
-            // dungeonBuddyDataSetBindingSource
-            // 
-            this.dungeonBuddyDataSetBindingSource.DataSource = this.dungeonBuddyDataSet;
-            this.dungeonBuddyDataSetBindingSource.Position = 0;
-            // 
-            // campaignTableAdapter
-            // 
-            this.campaignTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CampaignTableAdapter = this.campaignTableAdapter;
-            this.tableAdapterManager.MonsterIndexTableAdapter = null;
-            this.tableAdapterManager.PlayersTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // playersTableAdapter
-            // 
-            this.playersTableAdapter.ClearBeforeFill = true;
-            // 
             // contextMenuStripPlayers
             // 
             this.contextMenuStripPlayers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -389,23 +380,300 @@
             // toolStripMenuItemNewPlayer
             // 
             this.toolStripMenuItemNewPlayer.Name = "toolStripMenuItemNewPlayer";
-            this.toolStripMenuItemNewPlayer.Size = new System.Drawing.Size(127, 22);
+            this.toolStripMenuItemNewPlayer.Size = new System.Drawing.Size(117, 22);
             this.toolStripMenuItemNewPlayer.Text = "New Player";
             this.toolStripMenuItemNewPlayer.Click += new System.EventHandler(this.toolStripMenuItemNewPlayer_Click);
             // 
             // toolStripMenuItemEditPlayer
             // 
             this.toolStripMenuItemEditPlayer.Name = "toolStripMenuItemEditPlayer";
-            this.toolStripMenuItemEditPlayer.Size = new System.Drawing.Size(127, 22);
+            this.toolStripMenuItemEditPlayer.Size = new System.Drawing.Size(117, 22);
             this.toolStripMenuItemEditPlayer.Text = "Edit Player";
             this.toolStripMenuItemEditPlayer.Click += new System.EventHandler(this.toolStripMenuItemEditPlayer_Click);
             // 
             // toolStripMenuItemDeletePlayer
             // 
             this.toolStripMenuItemDeletePlayer.Name = "toolStripMenuItemDeletePlayer";
-            this.toolStripMenuItemDeletePlayer.Size = new System.Drawing.Size(127, 22);
+            this.toolStripMenuItemDeletePlayer.Size = new System.Drawing.Size(117, 22);
             this.toolStripMenuItemDeletePlayer.Text = "Delete Player";
             this.toolStripMenuItemDeletePlayer.Click += new System.EventHandler(this.toolStripMenuItemDeletePlayer_Click);
+            // 
+            // playersBindingSource
+            // 
+            this.playersBindingSource.DataMember = "Players";
+            this.playersBindingSource.DataSource = this.dungeonBuddyDataSet;
+            // 
+            // dungeonBuddyDataSet
+            // 
+            this.dungeonBuddyDataSet.DataSetName = "DungeonBuddyDataSet";
+            this.dungeonBuddyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPageMonsters
+            // 
+            this.tabPageMonsters.Controls.Add(this.monstersDataGridView);
+            this.tabPageMonsters.Controls.Add(this.toolStripMonsters);
+            this.tabPageMonsters.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMonsters.Name = "tabPageMonsters";
+            this.tabPageMonsters.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMonsters.Size = new System.Drawing.Size(518, 304);
+            this.tabPageMonsters.TabIndex = 1;
+            this.tabPageMonsters.Text = "Monsters";
+            this.tabPageMonsters.UseVisualStyleBackColor = true;
+            // 
+            // monstersDataGridView
+            // 
+            this.monstersDataGridView.AllowUserToAddRows = false;
+            this.monstersDataGridView.AllowUserToDeleteRows = false;
+            this.monstersDataGridView.AllowUserToOrderColumns = true;
+            this.monstersDataGridView.AutoGenerateColumns = false;
+            this.monstersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.monstersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewCheckBoxColumn1});
+            this.monstersDataGridView.ContextMenuStrip = this.contextMenuStripMonsters;
+            this.monstersDataGridView.DataSource = this.monstersBindingSource;
+            this.monstersDataGridView.Location = new System.Drawing.Point(6, 31);
+            this.monstersDataGridView.Name = "monstersDataGridView";
+            this.monstersDataGridView.ReadOnly = true;
+            this.monstersDataGridView.Size = new System.Drawing.Size(509, 270);
+            this.monstersDataGridView.TabIndex = 2;
+            this.monstersDataGridView.DoubleClick += new System.EventHandler(this.monstersDataGridView_DoubleClick);
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Size";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Size";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "Alignment";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Alignment";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "Tag";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Tag";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "ChallengeRating";
+            this.dataGridViewTextBoxColumn19.HeaderText = "ChallengeRating";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "XP";
+            this.dataGridViewTextBoxColumn20.HeaderText = "XP";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "Type";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Type";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Environment";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Environment";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "Source";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Source";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "Page";
+            this.dataGridViewTextBoxColumn24.HeaderText = "Page";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "Reference";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Reference";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "SRD";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "SRD";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
+            // monstersBindingSource
+            // 
+            this.monstersBindingSource.DataMember = "Monsters";
+            this.monstersBindingSource.DataSource = this.dungeonBuddyDataSet;
+            // 
+            // toolStripMonsters
+            // 
+            this.toolStripMonsters.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonLoadMonster,
+            this.toolStripButtonNewMonster,
+            this.toolStripButtonEditMonster,
+            this.toolStripButtonDeleteMonster,
+            this.toolStripSeparator2,
+            this.toolStripButton4});
+            this.toolStripMonsters.Location = new System.Drawing.Point(3, 3);
+            this.toolStripMonsters.Name = "toolStripMonsters";
+            this.toolStripMonsters.Size = new System.Drawing.Size(512, 25);
+            this.toolStripMonsters.TabIndex = 2;
+            this.toolStripMonsters.Text = "toolStripMonsters";
+            // 
+            // toolStripButtonLoadMonster
+            // 
+            this.toolStripButtonLoadMonster.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonLoadMonster.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLoadMonster.Image")));
+            this.toolStripButtonLoadMonster.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonLoadMonster.Name = "toolStripButtonLoadMonster";
+            this.toolStripButtonLoadMonster.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonLoadMonster.Text = "&Open";
+            // 
+            // toolStripButtonNewMonster
+            // 
+            this.toolStripButtonNewMonster.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonNewMonster.Image = global::Dungeon_Buddy.Properties.Resources.plus_297823_960_720;
+            this.toolStripButtonNewMonster.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonNewMonster.Name = "toolStripButtonNewMonster";
+            this.toolStripButtonNewMonster.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonNewMonster.Text = "New Player";
+            this.toolStripButtonNewMonster.ToolTipText = "Add a new monster to the campaign.";
+            this.toolStripButtonNewMonster.Click += new System.EventHandler(this.toolStripButtonNewMonster_Click);
+            // 
+            // toolStripButtonEditMonster
+            // 
+            this.toolStripButtonEditMonster.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonEditMonster.Image = global::Dungeon_Buddy.Properties.Resources.edit;
+            this.toolStripButtonEditMonster.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonEditMonster.Name = "toolStripButtonEditMonster";
+            this.toolStripButtonEditMonster.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonEditMonster.Text = "Edit Player";
+            this.toolStripButtonEditMonster.ToolTipText = "Edit the selected player.";
+            this.toolStripButtonEditMonster.Click += new System.EventHandler(this.toolStripButtonEditMonster_Click);
+            // 
+            // toolStripButtonDeleteMonster
+            // 
+            this.toolStripButtonDeleteMonster.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDeleteMonster.Image = global::Dungeon_Buddy.Properties.Resources._256_256_6148db914e2614b0fba3d2bd94211f61;
+            this.toolStripButtonDeleteMonster.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDeleteMonster.Name = "toolStripButtonDeleteMonster";
+            this.toolStripButtonDeleteMonster.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDeleteMonster.Text = "Delete Player";
+            this.toolStripButtonDeleteMonster.ToolTipText = "Delete selected player.";
+            this.toolStripButtonDeleteMonster.Click += new System.EventHandler(this.toolStripButtonDeleteMonster_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "He&lp";
+            // 
+            // dungeonBuddyDataSetBindingSource
+            // 
+            this.dungeonBuddyDataSetBindingSource.DataSource = this.dungeonBuddyDataSet;
+            this.dungeonBuddyDataSetBindingSource.Position = 0;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CampaignTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.MonsterIndexTableAdapter = null;
+            this.tableAdapterManager.MonstersTableAdapter = null;
+            this.tableAdapterManager.PlayersTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // playersTableAdapter
+            // 
+            this.playersTableAdapter.ClearBeforeFill = true;
+            // 
+            // campaignTableAdapter
+            // 
+            this.campaignTableAdapter.ClearBeforeFill = true;
+            // 
+            // monstersTableAdapter
+            // 
+            this.monstersTableAdapter.ClearBeforeFill = true;
+            // 
+            // contextMenuStripMonsters
+            // 
+            this.contextMenuStripMonsters.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemNewMonster,
+            this.toolStripMenuItemEditMonster,
+            this.toolStripMenuItemDeleteMonster});
+            this.contextMenuStripMonsters.Name = "contextMenuStripPlayers";
+            this.contextMenuStripMonsters.ShowImageMargin = false;
+            this.contextMenuStripMonsters.Size = new System.Drawing.Size(130, 70);
+            // 
+            // toolStripMenuItemNewMonster
+            // 
+            this.toolStripMenuItemNewMonster.Name = "toolStripMenuItemNewMonster";
+            this.toolStripMenuItemNewMonster.Size = new System.Drawing.Size(129, 22);
+            this.toolStripMenuItemNewMonster.Text = "New Monster";
+            this.toolStripMenuItemNewMonster.Click += new System.EventHandler(this.toolStripMenuItemNewMonster_Click);
+            // 
+            // toolStripMenuItemEditMonster
+            // 
+            this.toolStripMenuItemEditMonster.Name = "toolStripMenuItemEditMonster";
+            this.toolStripMenuItemEditMonster.Size = new System.Drawing.Size(129, 22);
+            this.toolStripMenuItemEditMonster.Text = "Edit Monster";
+            this.toolStripMenuItemEditMonster.Click += new System.EventHandler(this.toolStripMenuItemEditMonster_Click);
+            // 
+            // toolStripMenuItemDeleteMonster
+            // 
+            this.toolStripMenuItemDeleteMonster.Name = "toolStripMenuItemDeleteMonster";
+            this.toolStripMenuItemDeleteMonster.Size = new System.Drawing.Size(129, 22);
+            this.toolStripMenuItemDeleteMonster.Text = "Delete Monster";
+            this.toolStripMenuItemDeleteMonster.Click += new System.EventHandler(this.toolStripMenuItemDeleteMonster_Click);
             // 
             // FormMain
             // 
@@ -432,10 +700,17 @@
             this.toolStripPlayers.ResumeLayout(false);
             this.toolStripPlayers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).EndInit();
+            this.contextMenuStripPlayers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSet)).EndInit();
+            this.tabPageMonsters.ResumeLayout(false);
+            this.tabPageMonsters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.monstersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monstersBindingSource)).EndInit();
+            this.toolStripMonsters.ResumeLayout(false);
+            this.toolStripMonsters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSetBindingSource)).EndInit();
-            this.contextMenuStripPlayers.ResumeLayout(false);
+            this.contextMenuStripMonsters.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -454,7 +729,6 @@
         private System.Windows.Forms.TabControl tabControlData;
         private System.Windows.Forms.TabPage tabPagePlayers;
         private System.Windows.Forms.TabPage tabPageMonsters;
-        private DungeonBuddyDataSetTableAdapters.CampaignTableAdapter campaignTableAdapter;
         private DungeonBuddyDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingSource playersBindingSource;
         private DungeonBuddyDataSetTableAdapters.PlayersTableAdapter playersTableAdapter;
@@ -483,5 +757,33 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemNewPlayer;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEditPlayer;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDeletePlayer;
+        private System.Windows.Forms.ToolStrip toolStripMonsters;
+        private System.Windows.Forms.ToolStripButton toolStripButtonLoadMonster;
+        private System.Windows.Forms.ToolStripButton toolStripButtonNewMonster;
+        private System.Windows.Forms.ToolStripButton toolStripButtonEditMonster;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDeleteMonster;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private DungeonBuddyDataSetTableAdapters.CampaignTableAdapter campaignTableAdapter;
+        private DungeonBuddyDataSetTableAdapters.MonstersTableAdapter monstersTableAdapter;
+        private System.Windows.Forms.DataGridView monstersDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.BindingSource monstersBindingSource;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripMonsters;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemNewMonster;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEditMonster;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDeleteMonster;
     }
 }

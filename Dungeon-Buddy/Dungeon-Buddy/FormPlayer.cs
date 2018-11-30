@@ -36,9 +36,9 @@ namespace Dungeon_Buddy
         // Initalize variable to hold parent form and
         // a selected player if editing.
         private FormMain _parentForm;
-        Player _currentPlayer;
-        Player _player = new Player();
-        bool _newPlayer = false;
+        private Player _currentPlayer;
+        private Player _player = new Player();
+        private bool _newPlayer = false;
 
         // Method to save/add new players to the database.
         private void SavePlayer(Player player)
@@ -79,36 +79,36 @@ namespace Dungeon_Buddy
             // Set list boxes from Player.Enums.
             foreach (var value in _player.GetRaces())
             {
-                lstBoxRaces.Items.Add(value);
+                comboRaces.Items.Add(value);
             }
 
             foreach (var value in _player.GetClasses())
             {
-                lstBoxClasses.Items.Add(value);
+                comboClass.Items.Add(value);
             }
 
             foreach (var value in _player.GetSizes())
             {
-                lstBoxSize.Items.Add(value);
+                comboSize.Items.Add(value);
             }
 
             foreach (var value in _player.GetAlignments())
             {
-                lstBoxAlignment.Items.Add(value);
+                comboAlignment.Items.Add(value);
             }
 
             // Set form fields from selected existing player if applicable.
             if (!_newPlayer)
             {
                 txtBoxName.Text = _currentPlayer.Name;
-                lstBoxSize.SelectedIndex = lstBoxSize.FindStringExact(_currentPlayer.Size);
-                lstBoxAlignment.SelectedIndex = lstBoxAlignment.FindStringExact(_currentPlayer.Allignment); ;
+                comboSize.SelectedIndex = comboSize.FindStringExact(_currentPlayer.Size);
+                comboAlignment.SelectedIndex = comboAlignment.FindStringExact(_currentPlayer.Allignment); ;
                 txtBoxDesc.Lines = _currentPlayer.Description.Split('|');
                 txtBoxTags.Text = _currentPlayer.Tag;
                 txtBoxLevel.Text = _currentPlayer.Level.ToString();
                 dateTimeStartDate.Value = _currentPlayer.StartDate;
-                lstBoxRaces.SelectedIndex = lstBoxRaces.FindStringExact(_currentPlayer.Race);
-                lstBoxClasses.SelectedIndex = lstBoxClasses.FindStringExact(_currentPlayer.Class);
+                comboRaces.SelectedIndex = comboRaces.FindStringExact(_currentPlayer.Race);
+                comboClass.SelectedIndex = comboClass.FindStringExact(_currentPlayer.Class);
             }
         }
 
@@ -129,17 +129,17 @@ namespace Dungeon_Buddy
                 return;
             }
 
-            if (lstBoxSize.SelectedIndex == -1)
+            if (comboSize.SelectedIndex == -1)
             {
                 MessageBox.Show("You must select the Player Character's size!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lstBoxSize.Focus();
+                comboSize.Focus();
                 return;
             }
 
-            if (lstBoxAlignment.SelectedIndex == -1)
+            if (comboAlignment.SelectedIndex == -1)
             {
                 MessageBox.Show("You must select the Player Character's alignment!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lstBoxAlignment.Focus();
+                comboAlignment.Focus();
                 return;
             }
 
@@ -150,17 +150,17 @@ namespace Dungeon_Buddy
                 return;
             }
 
-            if (lstBoxRaces.SelectedIndex == -1)
+            if (comboRaces.SelectedIndex == -1)
             {
                 MessageBox.Show("You must select the Player Character's race!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lstBoxRaces.Focus();
+                comboRaces.Focus();
                 return;
             }
 
-            if (lstBoxClasses.SelectedIndex == -1)
+            if (comboClass.SelectedIndex == -1)
             {
                 MessageBox.Show("You must select the Player Character's class!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lstBoxClasses.Focus();
+                comboClass.Focus();
                 return;
             }
 
@@ -182,14 +182,14 @@ namespace Dungeon_Buddy
 
             // Set player properties from form inputs if no validation issues.
             _player.Name = txtBoxName.Text;
-            _player.Size = lstBoxSize.SelectedItem.ToString();
-            _player.Allignment = lstBoxAlignment.SelectedItem.ToString();
+            _player.Size = comboSize.SelectedItem.ToString();
+            _player.Allignment = comboAlignment.SelectedItem.ToString();
             _player.Description = string.Join("|", txtBoxDesc.Lines);
             _player.Tag = txtBoxTags.Text;
             _player.Level = int.Parse(txtBoxLevel.Text);
             _player.StartDate = dateTimeStartDate.Value;
-            _player.Race = lstBoxRaces.SelectedItem.ToString();
-            _player.Class = lstBoxClasses.SelectedItem.ToString();
+            _player.Race = comboRaces.SelectedItem.ToString();
+            _player.Class = comboClass.SelectedItem.ToString();
 
 
             // Call SavePlayer method using local variable after validation.

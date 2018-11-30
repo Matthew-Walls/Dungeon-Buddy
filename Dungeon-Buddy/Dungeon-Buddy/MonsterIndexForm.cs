@@ -322,7 +322,7 @@ namespace Dungeon_Buddy
                 monster.Source = temp[9];
                 monster.Page = temp[10];
                 monster.Reference = temp[11];
-                monster.Srd = temp[12];
+                monster.Srd = bool.Parse(temp[12]);
                 monster.Description = temp[13];
 
                 //Add the monster to the list of monsters
