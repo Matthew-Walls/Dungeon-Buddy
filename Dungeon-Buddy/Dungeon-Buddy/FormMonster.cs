@@ -130,6 +130,12 @@ namespace Dungeon_Buddy
                 txtboxRef.Text = _currentMonster.Reference;
                 checkboxSRD.Checked = _currentMonster.Srd;
             }
+            else
+            {
+                // Remove carriage return when creating new monster.
+                // Couldn't figure out cause so bandaid for now.
+                txtBoxDesc.Clear();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

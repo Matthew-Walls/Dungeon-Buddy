@@ -23,7 +23,7 @@ namespace Dungeon_Buddy
         // Define properties.
         public Campaign Campaign
         { 
-            set { _campaign = value; RefreshPlayerData(); RefreshMonsterData(); }
+            set { _campaign = value; RefreshPlayerData(); RefreshMonsterData(); RefreshNoteData(); }
             get { return _campaign; }
         }
 
@@ -62,6 +62,20 @@ namespace Dungeon_Buddy
             try
             {
                 this.monstersTableAdapter.FillByCampaign(this.dungeonBuddyDataSet.Monsters, Campaign.Id);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        // Method for refreshing the displayed note data.
+        public void RefreshNoteData()
+        {
+            // TODO: This line of code loads data into the 'dungeonBuddyDataSet.Players' table. You can move, or remove it, as needed.
+            try
+            {
+                this.notesTableAdapter.FillByCampaign(this.dungeonBuddyDataSet.Notes, Campaign.Id);
             }
             catch (System.Exception ex)
             {
@@ -214,8 +228,67 @@ namespace Dungeon_Buddy
             }
         }
 
+        // Method for selecting and loading an existing note for
+        // view or editing.
+        private void GetSelectedNote(DataRowView row)
+        {
+            // Cancel method if blank space is selected.
+            if (row == null)
+            {
+                return;
+            }
+
+            // Create note object from selected row.
+            CampaignNote note = new CampaignNote();
+            note.Id = row.Row.Field<int>("Id");
+            note.CampaignId = row.Row.Field<int>("CampaignId");
+            note.Title = row.Row.Field<string>("Title");
+            note.Type = row.Row.Field<string>("Type");
+            note.DateAdded = row.Row.Field<DateTime>("DateAdded").ToString();
+            note.Note = row.Row.Field<string>("Note");
+
+            // Create a monster form with loaded data and display it.
+            FormNote formNote = new FormNote(this, note);
+            formNote.Show();
+        }
+
+        // Method for deleting an existing monster from the database.
+        private void DeleteSelectedNote(DataRowView row)
+        {
+            // Cancel method if blank space is selected.
+            if (row == null)
+            {
+                return;
+            }
+
+            // Confirm deletion with the user.
+            if (MessageBox.Show("Are you sure you want to delete this Note? (This is PERMANENT!)", "Warning!", MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                // Create note object from selected row.
+                CampaignNote note = new CampaignNote();
+                note.Id = row.Row.Field<int>("Id");
+                note.CampaignId = row.Row.Field<int>("CampaignId");
+                note.Title = row.Row.Field<string>("Title");
+                note.Type = row.Row.Field<string>("Type");
+                note.DateAdded = row.Row.Field<DateTime>("DateAdded").ToString();
+                note.Note = row.Row.Field<string>("Note");
+
+                notesTableAdapter.Delete(note.Id, Campaign.Id, note.Title,note.Type,DateTime.Parse(note.DateAdded),note.Note);
+
+                // Refresh monster data display.
+                RefreshNoteData();
+            }
+            else
+            {
+                return;
+            }
+        }
+
         private void FormMain_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dungeonBuddyDataSet.Notes' table. You can move, or remove it, as needed.
+            this.notesTableAdapter.Fill(this.dungeonBuddyDataSet.Notes);
             // TODO: This line of code loads data into the 'dungeonBuddyDataSet.Campaign' table. You can move, or remove it, as needed.
             this.campaignTableAdapter.Fill(this.dungeonBuddyDataSet.Campaign);
             DisplayFormSplash();
@@ -336,6 +409,49 @@ namespace Dungeon_Buddy
             // Open monster catalog form.
             MonsterIndexForm1 formIndex = new MonsterIndexForm1(this);
             formIndex.Show();
+        }
+
+        private void FormMain_Activated(object sender, EventArgs e)
+        {
+            // Check if campaign is loaded.
+            if(Campaign == null)
+            {
+                MessageBox.Show("You must create or load a campaign first!");
+                FormSplash formSplash = new FormSplash(this);
+                formSplash.ShowDialog();
+            }
+        }
+
+        private void toolStripButtonNewNote_Click(object sender, EventArgs e)
+        {
+            // Create a new, blank note form and display it.
+            FormNote formNote = new FormNote(this);
+            formNote.Show();
+        }
+
+        private void toolStripButtonEditNote_Click(object sender, EventArgs e)
+        {
+            // Store selected datarow as a DataRowView for easier access.
+            // Found this through debugging that this object can be cast
+            // as a DataRowView.
+            DataRowView row = (DataRowView)notesBindingSource.Current;
+
+            GetSelectedNote(row);
+        }
+
+        private void notesDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            toolStripButtonEditNote.PerformClick();
+        }
+
+        private void toolStripButtonDeleteNote_Click(object sender, EventArgs e)
+        {
+            // Store selected datarow as a DataRowView for easier access.
+            // Found this through debugging that this object can be cast
+            // as a DataRowView.
+            DataRowView row = (DataRowView)notesBindingSource.Current;
+
+            DeleteSelectedNote(row);
         }
     }
 }

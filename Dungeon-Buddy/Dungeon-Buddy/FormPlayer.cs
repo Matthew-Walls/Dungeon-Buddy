@@ -110,6 +110,12 @@ namespace Dungeon_Buddy
                 comboRaces.SelectedIndex = comboRaces.FindStringExact(_currentPlayer.Race);
                 comboClass.SelectedIndex = comboClass.FindStringExact(_currentPlayer.Class);
             }
+            else
+            {
+                // Remove carriage return when creating new player.
+                // Couldn't figure out cause so bandaid for now.
+                txtBoxDesc.Clear();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

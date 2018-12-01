@@ -167,6 +167,7 @@
             this.txtBoxDesc.MaxLength = 1000;
             this.txtBoxDesc.Multiline = true;
             this.txtBoxDesc.Name = "txtBoxDesc";
+            this.txtBoxDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtBoxDesc.Size = new System.Drawing.Size(200, 140);
             this.txtBoxDesc.TabIndex = 4;
             this.txtBoxDesc.Text = "\r\n";
