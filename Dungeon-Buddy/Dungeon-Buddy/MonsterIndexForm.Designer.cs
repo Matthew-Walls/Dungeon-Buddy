@@ -1,6 +1,6 @@
 ﻿namespace Dungeon_Buddy
 {
-    partial class MonsterIndexForm
+    partial class MonsterIndexForm1
     {
         /// <summary>
         /// Required designer variable.
@@ -40,9 +40,10 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgv_SelectedMonsters = new System.Windows.Forms.DataGridView();
+            this.monstersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dungeonBuddyDataSet = new Dungeon_Buddy.DungeonBuddyDataSet();
             this.monsterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_AddMonsters = new System.Windows.Forms.Button();
-            this.btn_ClearMonsters = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -52,9 +53,12 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_Count = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.clearButton2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.clearButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.monsterIndexTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.MonsterIndexTableAdapter();
+            this.monstersTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.MonstersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Monsters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MIN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MAX)).BeginInit();
@@ -62,6 +66,8 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SelectedMonsters)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monstersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monsterBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -208,13 +214,24 @@
             this.dgv_SelectedMonsters.AllowUserToDeleteRows = false;
             this.dgv_SelectedMonsters.AutoGenerateColumns = false;
             this.dgv_SelectedMonsters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_SelectedMonsters.DataSource = this.monsterBindingSource;
+            this.dgv_SelectedMonsters.DataSource = this.monstersBindingSource;
             this.dgv_SelectedMonsters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_SelectedMonsters.Location = new System.Drawing.Point(3, 3);
             this.dgv_SelectedMonsters.Name = "dgv_SelectedMonsters";
+            this.dgv_SelectedMonsters.ReadOnly = true;
             this.dgv_SelectedMonsters.RowHeadersVisible = false;
             this.dgv_SelectedMonsters.Size = new System.Drawing.Size(201, 433);
             this.dgv_SelectedMonsters.TabIndex = 0;
+            // 
+            // monstersBindingSource
+            // 
+            this.monstersBindingSource.DataMember = "Monsters";
+            this.monstersBindingSource.DataSource = this.dungeonBuddyDataSet;
+            // 
+            // dungeonBuddyDataSet
+            // 
+            this.dungeonBuddyDataSet.DataSetName = "DungeonBuddyDataSet";
+            this.dungeonBuddyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_AddMonsters
             // 
@@ -226,17 +243,6 @@
             this.btn_AddMonsters.Text = "Add Selected";
             this.btn_AddMonsters.UseVisualStyleBackColor = true;
             this.btn_AddMonsters.Click += new System.EventHandler(this.btn_AddMonsters_Click);
-            // 
-            // btn_ClearMonsters
-            // 
-            this.btn_ClearMonsters.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_ClearMonsters.Location = new System.Drawing.Point(110, 30);
-            this.btn_ClearMonsters.Name = "btn_ClearMonsters";
-            this.btn_ClearMonsters.Size = new System.Drawing.Size(102, 21);
-            this.btn_ClearMonsters.TabIndex = 22;
-            this.btn_ClearMonsters.Text = "Clear List";
-            this.btn_ClearMonsters.UseVisualStyleBackColor = true;
-            this.btn_ClearMonsters.Click += new System.EventHandler(this.btn_ClearMonsters_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -378,7 +384,7 @@
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.btn_ClearMonsters, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.clearButton2, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.btn_AddMonsters, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(566, 3);
@@ -389,6 +395,16 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(215, 54);
             this.tableLayoutPanel5.TabIndex = 22;
+            // 
+            // clearButton2
+            // 
+            this.clearButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clearButton2.Location = new System.Drawing.Point(110, 30);
+            this.clearButton2.Name = "clearButton2";
+            this.clearButton2.Size = new System.Drawing.Size(102, 21);
+            this.clearButton2.TabIndex = 25;
+            this.clearButton2.Text = "Clear Filters";
+            this.clearButton2.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel6
             // 
@@ -428,16 +444,26 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(557, 24);
             this.tableLayoutPanel7.TabIndex = 24;
             // 
-            // MonsterIndexForm
+            // monsterIndexTableAdapter
+            // 
+            this.monsterIndexTableAdapter.ClearBeforeFill = true;
+            // 
+            // monstersTableAdapter
+            // 
+            this.monstersTableAdapter.ClearBeforeFill = true;
+            // 
+            // MonsterIndexForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "MonsterIndexForm";
-            this.Text = "Monster Index";
+            this.Name = "MonsterIndexForm1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Monster Catalog";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.MonsterIndexForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Monsters)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MIN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MAX)).EndInit();
@@ -445,6 +471,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SelectedMonsters)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monstersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monsterBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -473,24 +501,12 @@
         private System.Windows.Forms.TabControl tabControl_Side;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dgv_SelectedMonsters;
         private System.Windows.Forms.Button btn_AddMonsters;
-        private System.Windows.Forms.Button btn_ClearMonsters;
-        private System.Windows.Forms.DataGridViewTextBoxColumn challengeRatingDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn xPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn environmentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn npcNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sourceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pageDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn referenceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn srdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn monsterTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn monsterIndexDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sizeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn allignmentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tagDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource monsterBindingSource;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -501,6 +517,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label lbl_Count;
         private System.Windows.Forms.Button clearButton;
+        private DungeonBuddyDataSetTableAdapters.MonsterIndexTableAdapter monsterIndexTableAdapter;
+        private DungeonBuddyDataSet dungeonBuddyDataSet;
+        private System.Windows.Forms.BindingSource monstersBindingSource;
+        private DungeonBuddyDataSetTableAdapters.MonstersTableAdapter monstersTableAdapter;
+        private System.Windows.Forms.Button clearButton2;
+        private System.Windows.Forms.DataGridView dgv_SelectedMonsters;
     }
 }
 

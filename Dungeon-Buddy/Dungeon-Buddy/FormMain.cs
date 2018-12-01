@@ -330,5 +330,12 @@ namespace Dungeon_Buddy
         {
             toolStripButtonDeleteMonster.PerformClick();
         }
+
+        private void toolStripButtonLoadMonster_Click(object sender, EventArgs e)
+        {
+            // Open monster catalog form.
+            MonsterIndexForm1 formIndex = new MonsterIndexForm1(this);
+            formIndex.Show();
+        }
     }
 }

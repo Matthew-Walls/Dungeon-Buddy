@@ -11,13 +11,13 @@ using System.IO;
 
 namespace Dungeon_Buddy
 {
-    public partial class MonsterIndexForm : Form
+    public partial class MonsterIndexForm1 : Form
     {
-        private const String FILE_PATH = "Data\\5E Monster Spreadsheet.txt";
+        //private const String FILE_PATH = "Data\\5E Monster Spreadsheet.txt";
 
         //This refers to the number of columns of text in the text file
         //Could be replaced with a normal int and set via a count colum method during construction 
-        private const int NUMBER_OF_COLUMNS = 14;
+        private const int NUMBER_OF_COLUMNS = 13;
 
         private String[] ENVIRONMENTS = { "Arctic", "Coastal", "Desert", "Forest", "Grassland", "Hills", "Mountain", "Swamp", "Underdark", "Underwater", "Urban" };
         private String[] SIZES = { "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan" };
@@ -26,11 +26,13 @@ namespace Dungeon_Buddy
         private List<Monster> monsters = new List<Monster>();
         private DataTable monsterTable = new DataTable();
 
+        private FormMain _parentForm;
 
-        public MonsterIndexForm()
+
+        public MonsterIndexForm1(FormMain parentForm)
         {
             InitializeComponent();
-            
+            _parentForm = parentForm;
 
             foreach (String env in ENVIRONMENTS)
                 environmentCB.Items.Add(env);
@@ -41,7 +43,7 @@ namespace Dungeon_Buddy
             foreach (String type in TYPES)
                 typeCB.Items.Add(type);
 
-            PopulateMonsterList(ImportTextFile(FILE_PATH));     //Populate List<Monster> from text file
+            PopulateMonsterList();     //Populate List<Monster> from text file
             GenerateDataTable();                                //Create and configure Monster Data Table
             ConfigureDataGrids();                               //Configure data grid views
 
@@ -66,14 +68,13 @@ namespace Dungeon_Buddy
 
             dgv_Monsters.DataSource = monsterTable;
             dgv_Monsters.Columns[0].Visible = false;
-            dgv_Monsters.Columns[2].Visible = false;
+            dgv_Monsters.Columns[4].Visible = false;
             dgv_Monsters.Columns[5].Visible = false;
-            dgv_Monsters.Columns[6].Visible = false;
+            dgv_Monsters.Columns[9].Visible = false;
             dgv_Monsters.Columns[10].Visible = false;
             dgv_Monsters.Columns[11].Visible = false;
             dgv_Monsters.Columns[12].Visible = false;
             dgv_Monsters.Columns[13].Visible = false;
-            dgv_Monsters.Columns[14].Visible = false;
 
             foreach (DataGridViewColumn col in dgv_Monsters.Columns)
             {
@@ -93,14 +94,13 @@ namespace Dungeon_Buddy
             }
 
             dgv_SelectedMonsters.Columns[0].Visible = false;
-            dgv_SelectedMonsters.Columns[2].Visible = false;
+            dgv_SelectedMonsters.Columns[4].Visible = false;
             dgv_SelectedMonsters.Columns[5].Visible = false;
-            dgv_SelectedMonsters.Columns[6].Visible = false;
+            dgv_SelectedMonsters.Columns[9].Visible = false;
             dgv_SelectedMonsters.Columns[10].Visible = false;
             dgv_SelectedMonsters.Columns[11].Visible = false;
             dgv_SelectedMonsters.Columns[12].Visible = false;
             dgv_SelectedMonsters.Columns[13].Visible = false;
-            dgv_SelectedMonsters.Columns[14].Visible = false;
         }
 
         private void FilterData()
@@ -250,7 +250,7 @@ namespace Dungeon_Buddy
                 return count;
             }
         }
-
+        /*
         //Takes a text file, reads it line by line and returns a String Array of all lines in the text file
         private String[] ImportTextFile(String filePath)
         {
@@ -266,14 +266,14 @@ namespace Dungeon_Buddy
                 }
             }
             return textData;
-        }
+        }*/
 
         //Takes an individual line of text, Splits it by TAB and returns a String Array with Size NUMBER OF COLUMNS
         //When reading a Tab delimited text file, there ends up being extra tab characters per line, which is why this method takes a sub array from String.Split
         private String[] ParseRow(String row)
         {
             String[] subArray = new String[NUMBER_OF_COLUMNS];
-            String[] tempArray = row.Split('\t');
+            String[] tempArray = row.Split(',');
 
             for (int index = 0; index < subArray.Length; index++)
             {
@@ -284,9 +284,19 @@ namespace Dungeon_Buddy
 
         /*      <END OF METHODS RELATED TO TEXT FILES>        */
 
-        //Takes a String Array and populates a list of Monsters from the data
-        private void PopulateMonsterList(String[] data)
+       // Connect to DB and populates a list of Monsters from the data
+        private void PopulateMonsterList()
         {
+            // Variable for data array.
+            List<string> dataList = new List<string>();
+
+            foreach (DataRow d in monsterIndexTableAdapter.GetData().Select())
+            {
+                dataList.Add(string.Join(", ", d.ItemArray));
+            }
+
+            string[] data = dataList.ToArray();
+
             //Loop through each row of the String Array, parse each individual row, and create a monster from the values
             for (int index = 0; index < data.Length; index++)
             {
@@ -294,14 +304,13 @@ namespace Dungeon_Buddy
 
                 Monster monster = new Monster(index);
                 monster.Name = temp[0];
-                monster.NpcName = temp[1];
-                monster.Size = temp[2];
-                monster.MonsterType = temp[3];
-                monster.Tag = temp[4];
-                monster.Allignment = temp[5];
-                monster.Environment = temp[6];
+                monster.Size = temp[1];
+                monster.MonsterType = temp[2];
+                monster.Tag = temp[3];
+                monster.Allignment = temp[4];
+                monster.Environment = temp[5];
 
-                if (double.TryParse(temp[7], out double cr))
+                if (double.TryParse(temp[6], out double cr))
                 {
                     monster.ChallengeRating = cr;
                 }
@@ -310,7 +319,7 @@ namespace Dungeon_Buddy
                     Console.WriteLine("CR could not be parsed");
                 }
 
-                if (double.TryParse(temp[8], out double xp))
+                if (double.TryParse(temp[7], out double xp))
                 {
                     monster.Xp = xp;
                 }
@@ -319,11 +328,11 @@ namespace Dungeon_Buddy
                     Console.WriteLine("xp could not be parsed");
                 }
 
-                monster.Source = temp[9];
-                monster.Page = temp[10];
-                monster.Reference = temp[11];
-                monster.Srd = bool.Parse(temp[12]);
-                monster.Description = temp[13];
+                monster.Source = temp[8];
+                monster.Page = temp[9];
+                monster.Reference = temp[10];
+                monster.Srd = bool.TryParse(temp[11], out bool result);
+                monster.Description = temp[12];
 
                 //Add the monster to the list of monsters
                 monsters.Add(monster);
@@ -463,16 +472,74 @@ namespace Dungeon_Buddy
         }
 
         //Method to add monsters to the My MNonsters list
-        private void btn_AddMonsters_Click(object sender, EventArgs e)
+
+        private void AddMonster(Monster monster)
         {
-            
+            monstersTableAdapter.Insert(_parentForm.Campaign.Id, monster.Name, monster.Size, monster.Allignment, monster.Description, monster.Tag,
+                monster.ChallengeRating, monster.Xp, monster.MonsterType, monster.Environment, monster.Source, monster.Page, monster.Reference,
+                monster.Srd);
+
+            _parentForm.RefreshMonsterData();
         }
 
+        private void AddSelectedMonster(DataGridViewSelectedRowCollection rows)
+        {
+            // Cancel method if blank space is selected.
+            if (rows == null)
+            {
+                return;
+            }
+
+            foreach(DataGridViewRow row in rows)
+            {
+                DataRowView data = (DataRowView)row.DataBoundItem;
+
+                // Create monster object from selected row.
+                Monster monster = new Monster();
+                monster.Name = data.Row.Field<string>("Name").Trim();
+                monster.Size = data.Row.Field<string>("Size").Trim();
+                monster.Allignment = data.Row.Field<string>("Allignment").Trim();
+                monster.Description = data.Row.Field<string>("Description").Trim();
+                monster.Tag = data.Row.Field<string>("Tags\\Lair").Trim();
+                monster.ChallengeRating = data.Row.Field<double>("Challenge");
+                monster.Xp = data.Row.Field<double>("XP");
+                monster.MonsterType = data.Row.Field<string>("Type").Trim();
+                monster.Environment = data.Row.Field<string>("Environment").Trim();
+                monster.Source = data.Row.Field<string>("Source").Trim();
+                monster.Page = data.Row.Field<string>("Page").Trim();
+                monster.Reference = data.Row.Field<string>("Reference").Trim();
+                monster.Srd = data.Row.Field<bool>("SRD");
+
+                AddMonster(monster);
+            }
+
+            monstersTableAdapter.FillByCampaign(this.dungeonBuddyDataSet.Monsters, _parentForm.Campaign.Id);
+        }
+
+        private void btn_AddMonsters_Click(object sender, EventArgs e)
+        {
+            // Store selected datarow as a DataRowView for easier access.
+            // Found this through debugging that this object can be cast
+            // as a DataRowView.
+            DataGridViewSelectedRowCollection rows = dgv_Monsters.SelectedRows;
+
+            AddSelectedMonster(rows);
+        }
+
+        /* METHOD DEPRICATED WITH NEW MONSTERS FORM - CODE KEPT FOR REFERENCE!
         //Method to clear monsters from the My Monsters list
         private void btn_ClearMonsters_Click(object sender, EventArgs e)
         {
             dgv_SelectedMonsters.Rows.Clear();
             dgv_SelectedMonsters.Refresh();
+        }
+        */
+
+        private void MonsterIndexForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dungeonBuddyDataSet.Monsters' table. You can move, or remove it, as needed.
+            this.monstersTableAdapter.FillByCampaign(this.dungeonBuddyDataSet.Monsters, _parentForm.Campaign.Id);
+
         }
     }
 }

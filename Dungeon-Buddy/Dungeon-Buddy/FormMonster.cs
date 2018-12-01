@@ -96,7 +96,7 @@ namespace Dungeon_Buddy
 
             foreach (var value in _monster.GetAlignments())
             {
-                comboAlignment.Items.Add(value);
+                checkedListBoxAlignment.Items.Add(value);
             }
 
             // Set form fields from selected existing monster if applicable.
@@ -104,7 +104,14 @@ namespace Dungeon_Buddy
             {
                 txtBoxName.Text = _currentMonster.Name;
                 comboSize.SelectedIndex = comboSize.FindStringExact(_currentMonster.Size);
-                comboAlignment.SelectedIndex = comboAlignment.FindStringExact(_currentMonster.Allignment); ;
+
+                // Loop through tokenized alignment and check each one.
+                foreach (string env in _currentMonster.Allignment.Split('|'))
+                {
+                    int selectedIndex = checkedListBoxAlignment.FindStringExact(env);
+                    checkedListBoxAlignment.SetItemChecked(selectedIndex, true);
+                }
+
                 txtBoxDesc.Lines = _currentMonster.Description.Split('|');
                 txtBoxTags.Text = _currentMonster.Tag;
                 txtboxChallenge.Text = _currentMonster.ChallengeRating.ToString();
@@ -132,10 +139,69 @@ namespace Dungeon_Buddy
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // Validate form entries.
+            if (txtBoxName.Text == null || txtBoxName.Text == "")
+            {
+                MessageBox.Show("Monster Name cannot be blank!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBoxName.Focus();
+                return;
+            }
+
+            if (comboSize.SelectedIndex == -1)
+            {
+                MessageBox.Show("You must select the Monster's size!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboSize.Focus();
+                return;
+            }
+
+            if (checkedListBoxAlignment.CheckedIndices.Count == 0)
+            {
+                MessageBox.Show("You must set the Monster's alignment!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                checkedListBoxAlignment.Focus();
+                return;
+            }
+
+            // Ensure double value entered to ChallengeRating and XP.
+            if (!double.TryParse(txtboxChallenge.Text, out double challenge))
+            {
+                MessageBox.Show("A valid number must be entered for the Monster's Challenge Rating!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtboxChallenge.Focus();
+                return;
+            }
+
+            if (!double.TryParse(txtboxXP.Text, out double xp))
+            {
+                MessageBox.Show("A valid number must be entered for the Monster's XP!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtboxXP.Focus();
+                return;
+            }
+
+            if (comboType.SelectedIndex == -1)
+            {
+                MessageBox.Show("You must select the Monster's type!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                comboType.Focus();
+                return;
+            }
+
+            if (checkedListBoxEnvironment.CheckedIndices.Count == 0)
+            {
+                MessageBox.Show("You must set the Monster's environment!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                checkedListBoxEnvironment.Focus();
+                return;
+            }
+
             // Set monster properties from form inputs if no validation issues.
             _monster.Name = txtBoxName.Text;
             _monster.Size = comboSize.SelectedItem.ToString();
-            _monster.Allignment = comboAlignment.SelectedItem.ToString();
+
+            // Loop through checked alignments and pass to Monster using a string list.
+            List<string> alignments = new List<string>();
+            for (int i = 0; i < checkedListBoxAlignment.CheckedItems.Count; i++)
+            {
+                alignments.Add(checkedListBoxAlignment.CheckedItems[i].ToString());
+            }
+            _monster.Allignment = string.Join("|", alignments);
+            
             _monster.Description = string.Join("|", txtBoxDesc.Lines);
             _monster.Tag = txtBoxTags.Text;
             _monster.ChallengeRating = int.Parse(txtboxChallenge.Text);

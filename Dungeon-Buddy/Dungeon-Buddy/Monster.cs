@@ -13,27 +13,45 @@ namespace Dungeon_Buddy
         private double _xp;
         private string _monsterType;
         private string _environment;
-        private string _npcName;
+        //private string _npcName;
         private string _source;
         private string _page;
         private string _reference;
         private bool _srd;
 
+        public new enum alignments
+        {
+            Chaotic_Good,
+            Lawful_Good,
+            Neutral_Evil,
+            Varies,
+            Unaligned,
+            Chaotic_Evil,
+            Neutral_Good,
+            Any,
+            Neutral,
+            Lawful_Evil,
+            Any_evil,
+            Any_good,
+            Chaotic_Neutral,
+            Lawful_Neutral
+        }
+
         public enum Types
         {
-            Aberrations,
-            Beasts,
-            Celestials,
-            Constructs,
-            Dragons,
+            Aberration,
+            Beast,
+            Celestial,
+            Construct,
+            Dragon,
             Elemental,
             Fey,
-            Fiends,
-            Giants,
-            Humanoids,
-            Monstrosities,
-            Oozes,
-            Plants,
+            Fiend,
+            Giant,
+            Humanoid,
+            Monstrosity,
+            Ooze,
+            Plant,
             Undead
         };
 
@@ -82,22 +100,31 @@ namespace Dungeon_Buddy
         public double Xp { get => _xp; set => _xp = value; }
         public string MonsterType { get => _monsterType; set => _monsterType = value; }
         public string Environment { get => _environment; set => _environment = value; }
-        public string NpcName { get => _npcName; set => _npcName = value; }
+        //public string NpcName { get => _npcName; set => _npcName = value; }
         public string Source { get => _source; set => _source = value; }
         public string Page { get => _page; set => _page = value; }
         public string Reference { get => _reference; set => _reference = value; }
         public bool Srd { get => _srd; set => _srd = value; }
 
+        //Method to get defined alignment list from Monster.
+        public override Array GetAlignments()
+        {
+            Array alignments;
+            alignments = System.Enum.GetValues(typeof(alignments));
+
+            return alignments;
+        }
+
         public Object[] GetData()
         {
-            return new object[] { MonsterIndex, Name, NpcName, Size, MonsterType, Tag, Allignment, Environment, ChallengeRating, Xp, Source, Page, Reference, Srd, Description };
+            return new object[] { MonsterIndex, Name, /*NpcName,*/ Size, MonsterType, Tag, Allignment, Environment, ChallengeRating, Xp, Source, Page, Reference, Srd, Description };
         }
         public string[] GetFields()
         {
             return new string[]
             {   "index",
                 "Name",
-                "NPC Name",
+                //"NPC Name",
                 "Size",
                 "Type",
                 "Tags\\Lair",

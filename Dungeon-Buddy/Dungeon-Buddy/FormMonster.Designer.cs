@@ -56,8 +56,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.checkedListBoxEnvironment = new System.Windows.Forms.CheckedListBox();
             this.comboSize = new System.Windows.Forms.ComboBox();
-            this.comboAlignment = new System.Windows.Forms.ComboBox();
             this.monstersTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.MonstersTableAdapter();
+            this.checkedListBoxAlignment = new System.Windows.Forms.CheckedListBox();
             campaignIdLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             sizeLabel = new System.Windows.Forms.Label();
@@ -105,7 +105,7 @@
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(67, 188);
+            descriptionLabel.Location = new System.Drawing.Point(67, 215);
             descriptionLabel.Name = "descriptionLabel";
             descriptionLabel.Size = new System.Drawing.Size(63, 13);
             descriptionLabel.TabIndex = 32;
@@ -114,7 +114,7 @@
             // tagsLabel
             // 
             tagsLabel.AutoSize = true;
-            tagsLabel.Location = new System.Drawing.Point(67, 334);
+            tagsLabel.Location = new System.Drawing.Point(67, 361);
             tagsLabel.Name = "tagsLabel";
             tagsLabel.Size = new System.Drawing.Size(29, 13);
             tagsLabel.TabIndex = 33;
@@ -139,7 +139,7 @@
             // 
             // txtBoxDesc
             // 
-            this.txtBoxDesc.Location = new System.Drawing.Point(142, 185);
+            this.txtBoxDesc.Location = new System.Drawing.Point(142, 212);
             this.txtBoxDesc.MaxLength = 1000;
             this.txtBoxDesc.Multiline = true;
             this.txtBoxDesc.Name = "txtBoxDesc";
@@ -149,7 +149,7 @@
             // 
             // txtBoxTags
             // 
-            this.txtBoxTags.Location = new System.Drawing.Point(142, 331);
+            this.txtBoxTags.Location = new System.Drawing.Point(142, 358);
             this.txtBoxTags.MaxLength = 255;
             this.txtBoxTags.Name = "txtBoxTags";
             this.txtBoxTags.Size = new System.Drawing.Size(200, 20);
@@ -304,31 +304,29 @@
             // comboSize
             // 
             this.comboSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboSize.FormattingEnabled = true;
             this.comboSize.Location = new System.Drawing.Point(142, 61);
             this.comboSize.Name = "comboSize";
             this.comboSize.Size = new System.Drawing.Size(121, 21);
             this.comboSize.TabIndex = 54;
             // 
-            // comboAlignment
-            // 
-            this.comboAlignment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboAlignment.FormattingEnabled = true;
-            this.comboAlignment.Location = new System.Drawing.Point(142, 123);
-            this.comboAlignment.Name = "comboAlignment";
-            this.comboAlignment.Size = new System.Drawing.Size(121, 21);
-            this.comboAlignment.TabIndex = 55;
-            // 
             // monstersTableAdapter
             // 
             this.monstersTableAdapter.ClearBeforeFill = true;
+            // 
+            // checkedListBoxAlignment
+            // 
+            this.checkedListBoxAlignment.FormattingEnabled = true;
+            this.checkedListBoxAlignment.Location = new System.Drawing.Point(142, 112);
+            this.checkedListBoxAlignment.Name = "checkedListBoxAlignment";
+            this.checkedListBoxAlignment.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBoxAlignment.TabIndex = 56;
             // 
             // FormMonster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 629);
-            this.Controls.Add(this.comboAlignment);
+            this.Controls.Add(this.checkedListBoxAlignment);
             this.Controls.Add(this.comboSize);
             this.Controls.Add(this.checkedListBoxEnvironment);
             this.Controls.Add(this.label7);
@@ -358,6 +356,7 @@
             this.Controls.Add(tagsLabel);
             this.Controls.Add(this.txtBoxTags);
             this.Name = "FormMonster";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMonster";
             this.Load += new System.EventHandler(this.FormMonster_Load);
             this.ResumeLayout(false);
@@ -389,7 +388,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckedListBox checkedListBoxEnvironment;
         private System.Windows.Forms.ComboBox comboSize;
-        private System.Windows.Forms.ComboBox comboAlignment;
         private DungeonBuddyDataSetTableAdapters.MonstersTableAdapter monstersTableAdapter;
+        private System.Windows.Forms.CheckedListBox checkedListBoxAlignment;
     }
 }

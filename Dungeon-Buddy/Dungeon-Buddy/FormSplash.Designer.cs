@@ -119,6 +119,7 @@
             this.radioLoad.Name = "radioLoad";
             this.radioLoad.Size = new System.Drawing.Size(364, 34);
             this.radioLoad.TabIndex = 1;
+            this.radioLoad.TabStop = true;
             this.radioLoad.Text = "Load a previously created campaign...";
             this.radioLoad.UseVisualStyleBackColor = true;
             this.radioLoad.CheckedChanged += new System.EventHandler(this.radioLoad_CheckedChanged);
@@ -237,6 +238,8 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CampaignTableAdapter = this.campaignTableAdapter;
             this.tableAdapterManager.MonsterIndexTableAdapter = null;
+            this.tableAdapterManager.MonstersTableAdapter = null;
+            this.tableAdapterManager.PlayersTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // FormSplash
@@ -244,6 +247,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 500);
+            this.ControlBox = false;
             this.Controls.Add(this.panelLoad);
             this.Controls.Add(this.panelNew);
             this.Controls.Add(this.radioNew);

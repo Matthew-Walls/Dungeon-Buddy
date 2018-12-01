@@ -64,8 +64,8 @@ namespace Dungeon_Buddy
             return sizes;
         }
 
-        //Method to get defined class list from Player.
-        public Array GetAlignments()
+        //Method to get defined alignment list from Character.
+        public virtual Array GetAlignments()
         {
             Array alignments;
             alignments = System.Enum.GetValues(typeof(alignments));

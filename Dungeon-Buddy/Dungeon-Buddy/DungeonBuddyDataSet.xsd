@@ -278,7 +278,16 @@ SELECT Name, Size, Type, Tags, Alignment, Environment, Challenge, XP, Source, Pa
               <Mapping SourceColumn="SRD" DataSetColumn="SRD" />
               <Mapping SourceColumn="Description" DataSetColumn="Description" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="DungeonBuddyConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetCountOfMonsters" Modifier="Public" Name="GetCountOfMonsters" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetCountOfMonsters">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT COUNT(*) FROM MonsterIndex</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PlayersTableAdapter" GeneratorDataComponentClassName="PlayersTableAdapter" Name="Players" UserDataComponentName="PlayersTableAdapter">
             <MainSource>
@@ -529,7 +538,7 @@ WHERE (CampaignId = @Id)</CommandText>
   <xs:element name="DungeonBuddyDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DungeonBuddyDataSet" msprop:Generator_UserDSName="DungeonBuddyDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="MonsterIndex" msprop:Generator_TableClassName="MonsterIndexDataTable" msprop:Generator_TableVarName="tableMonsterIndex" msprop:Generator_TablePropName="MonsterIndex" msprop:Generator_RowDeletingName="MonsterIndexRowDeleting" msprop:Generator_RowChangingName="MonsterIndexRowChanging" msprop:Generator_RowEvHandlerName="MonsterIndexRowChangeEventHandler" msprop:Generator_RowDeletedName="MonsterIndexRowDeleted" msprop:Generator_UserTableName="MonsterIndex" msprop:Generator_RowChangedName="MonsterIndexRowChanged" msprop:Generator_RowEvArgName="MonsterIndexRowChangeEvent" msprop:Generator_RowClassName="MonsterIndexRow">
+        <xs:element name="MonsterIndex" msprop:Generator_TableClassName="MonsterIndexDataTable" msprop:Generator_TableVarName="tableMonsterIndex" msprop:Generator_RowChangedName="MonsterIndexRowChanged" msprop:Generator_TablePropName="MonsterIndex" msprop:Generator_RowDeletingName="MonsterIndexRowDeleting" msprop:Generator_RowChangingName="MonsterIndexRowChanging" msprop:Generator_RowEvHandlerName="MonsterIndexRowChangeEventHandler" msprop:Generator_RowDeletedName="MonsterIndexRowDeleted" msprop:Generator_RowClassName="MonsterIndexRow" msprop:Generator_UserTableName="MonsterIndex" msprop:Generator_RowEvArgName="MonsterIndexRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -614,7 +623,7 @@ WHERE (CampaignId = @Id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Campaign" msprop:Generator_TableClassName="CampaignDataTable" msprop:Generator_TableVarName="tableCampaign" msprop:Generator_TablePropName="Campaign" msprop:Generator_RowDeletingName="CampaignRowDeleting" msprop:Generator_RowChangingName="CampaignRowChanging" msprop:Generator_RowEvHandlerName="CampaignRowChangeEventHandler" msprop:Generator_RowDeletedName="CampaignRowDeleted" msprop:Generator_UserTableName="Campaign" msprop:Generator_RowChangedName="CampaignRowChanged" msprop:Generator_RowEvArgName="CampaignRowChangeEvent" msprop:Generator_RowClassName="CampaignRow">
+        <xs:element name="Campaign" msprop:Generator_TableClassName="CampaignDataTable" msprop:Generator_TableVarName="tableCampaign" msprop:Generator_RowChangedName="CampaignRowChanged" msprop:Generator_TablePropName="Campaign" msprop:Generator_RowDeletingName="CampaignRowDeleting" msprop:Generator_RowChangingName="CampaignRowChanging" msprop:Generator_RowEvHandlerName="CampaignRowChangeEventHandler" msprop:Generator_RowDeletedName="CampaignRowDeleted" msprop:Generator_RowClassName="CampaignRow" msprop:Generator_UserTableName="Campaign" msprop:Generator_RowEvArgName="CampaignRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -637,7 +646,7 @@ WHERE (CampaignId = @Id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Players" msprop:Generator_TableClassName="PlayersDataTable" msprop:Generator_TableVarName="tablePlayers" msprop:Generator_RowChangedName="PlayersRowChanged" msprop:Generator_TablePropName="Players" msprop:Generator_RowDeletingName="PlayersRowDeleting" msprop:Generator_RowChangingName="PlayersRowChanging" msprop:Generator_RowEvHandlerName="PlayersRowChangeEventHandler" msprop:Generator_RowDeletedName="PlayersRowDeleted" msprop:Generator_RowClassName="PlayersRow" msprop:Generator_UserTableName="Players" msprop:Generator_RowEvArgName="PlayersRowChangeEvent">
+        <xs:element name="Players" msprop:Generator_TableClassName="PlayersDataTable" msprop:Generator_TableVarName="tablePlayers" msprop:Generator_TablePropName="Players" msprop:Generator_RowDeletingName="PlayersRowDeleting" msprop:Generator_RowChangingName="PlayersRowChanging" msprop:Generator_RowEvHandlerName="PlayersRowChangeEventHandler" msprop:Generator_RowDeletedName="PlayersRowDeleted" msprop:Generator_UserTableName="Players" msprop:Generator_RowChangedName="PlayersRowChanged" msprop:Generator_RowEvArgName="PlayersRowChangeEvent" msprop:Generator_RowClassName="PlayersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -696,7 +705,7 @@ WHERE (CampaignId = @Id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Monsters" msprop:Generator_TableClassName="MonstersDataTable" msprop:Generator_TableVarName="tableMonsters" msprop:Generator_TablePropName="Monsters" msprop:Generator_RowDeletingName="MonstersRowDeleting" msprop:Generator_RowChangingName="MonstersRowChanging" msprop:Generator_RowEvHandlerName="MonstersRowChangeEventHandler" msprop:Generator_RowDeletedName="MonstersRowDeleted" msprop:Generator_UserTableName="Monsters" msprop:Generator_RowChangedName="MonstersRowChanged" msprop:Generator_RowEvArgName="MonstersRowChangeEvent" msprop:Generator_RowClassName="MonstersRow">
+        <xs:element name="Monsters" msprop:Generator_TableClassName="MonstersDataTable" msprop:Generator_TableVarName="tableMonsters" msprop:Generator_RowChangedName="MonstersRowChanged" msprop:Generator_TablePropName="Monsters" msprop:Generator_RowDeletingName="MonstersRowDeleting" msprop:Generator_RowChangingName="MonstersRowChanging" msprop:Generator_RowEvHandlerName="MonstersRowChangeEventHandler" msprop:Generator_RowDeletedName="MonstersRowDeleted" msprop:Generator_RowClassName="MonstersRow" msprop:Generator_UserTableName="Monsters" msprop:Generator_RowEvArgName="MonstersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -798,8 +807,8 @@ WHERE (CampaignId = @Id)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Players__Campaig__49C3F6B71" msdata:parent="Campaign" msdata:child="Players" msdata:parentkey="Id" msdata:childkey="CampaignId" msprop:Generator_UserChildTable="Players" msprop:Generator_ChildPropName="GetPlayersRows" msprop:Generator_UserRelationName="FK__Players__Campaig__49C3F6B71" msprop:Generator_RelationVarName="relationFK__Players__Campaig__49C3F6B71" msprop:Generator_UserParentTable="Campaign" msprop:Generator_ParentPropName="CampaignRow" />
-      <msdata:Relationship name="FK__Monsters__Campai__5CD6CB2B" msdata:parent="Campaign" msdata:child="Monsters" msdata:parentkey="Id" msdata:childkey="CampaignId" msprop:Generator_UserChildTable="Monsters" msprop:Generator_ChildPropName="GetMonstersRows" msprop:Generator_UserRelationName="FK__Monsters__Campai__5CD6CB2B" msprop:Generator_ParentPropName="CampaignRow" msprop:Generator_RelationVarName="relationFK__Monsters__Campai__5CD6CB2B" msprop:Generator_UserParentTable="Campaign" />
+      <msdata:Relationship name="FK__Players__Campaig__49C3F6B71" msdata:parent="Campaign" msdata:child="Players" msdata:parentkey="Id" msdata:childkey="CampaignId" msprop:Generator_UserChildTable="Players" msprop:Generator_ChildPropName="GetPlayersRows" msprop:Generator_UserRelationName="FK__Players__Campaig__49C3F6B71" msprop:Generator_ParentPropName="CampaignRow" msprop:Generator_RelationVarName="relationFK__Players__Campaig__49C3F6B71" msprop:Generator_UserParentTable="Campaign" />
+      <msdata:Relationship name="FK__Monsters__Campai__5CD6CB2B" msdata:parent="Campaign" msdata:child="Monsters" msdata:parentkey="Id" msdata:childkey="CampaignId" msprop:Generator_UserChildTable="Monsters" msprop:Generator_ChildPropName="GetMonstersRows" msprop:Generator_UserRelationName="FK__Monsters__Campai__5CD6CB2B" msprop:Generator_RelationVarName="relationFK__Monsters__Campai__5CD6CB2B" msprop:Generator_UserParentTable="Campaign" msprop:Generator_ParentPropName="CampaignRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
