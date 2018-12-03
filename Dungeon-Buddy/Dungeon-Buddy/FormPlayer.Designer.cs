@@ -51,6 +51,7 @@
             this.comboAlignment = new System.Windows.Forms.ComboBox();
             this.comboRaces = new System.Windows.Forms.ComboBox();
             this.comboClass = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             nameLabel = new System.Windows.Forms.Label();
             sizeLabel = new System.Windows.Forms.Label();
             alignmentLabel = new System.Windows.Forms.Label();
@@ -61,101 +62,132 @@
             racesLabel = new System.Windows.Forms.Label();
             classesLabel = new System.Windows.Forms.Label();
             campaignIdLabel = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(62, 39);
+            nameLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nameLabel.ForeColor = System.Drawing.SystemColors.Info;
+            nameLabel.Location = new System.Drawing.Point(83, 53);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(38, 13);
+            nameLabel.Size = new System.Drawing.Size(54, 22);
             nameLabel.TabIndex = 5;
-            nameLabel.Text = "Name:";
+            nameLabel.Text = "Name";
+            nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // sizeLabel
             // 
             sizeLabel.AutoSize = true;
-            sizeLabel.Location = new System.Drawing.Point(62, 62);
+            sizeLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            sizeLabel.ForeColor = System.Drawing.SystemColors.Info;
+            sizeLabel.Location = new System.Drawing.Point(96, 79);
             sizeLabel.Name = "sizeLabel";
-            sizeLabel.Size = new System.Drawing.Size(30, 13);
+            sizeLabel.Size = new System.Drawing.Size(41, 22);
             sizeLabel.TabIndex = 7;
-            sizeLabel.Text = "Size:";
+            sizeLabel.Text = "Size";
+            sizeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // alignmentLabel
             // 
             alignmentLabel.AutoSize = true;
-            alignmentLabel.Location = new System.Drawing.Point(62, 124);
+            alignmentLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            alignmentLabel.ForeColor = System.Drawing.SystemColors.Info;
+            alignmentLabel.Location = new System.Drawing.Point(47, 106);
             alignmentLabel.Name = "alignmentLabel";
-            alignmentLabel.Size = new System.Drawing.Size(56, 13);
+            alignmentLabel.Size = new System.Drawing.Size(90, 22);
             alignmentLabel.TabIndex = 9;
-            alignmentLabel.Text = "Alignment:";
+            alignmentLabel.Text = "Alignment";
+            alignmentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(62, 189);
+            descriptionLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descriptionLabel.ForeColor = System.Drawing.SystemColors.Info;
+            descriptionLabel.Location = new System.Drawing.Point(40, 136);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(63, 13);
+            descriptionLabel.Size = new System.Drawing.Size(97, 22);
             descriptionLabel.TabIndex = 11;
-            descriptionLabel.Text = "Description:";
+            descriptionLabel.Text = "Description";
+            descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tagsLabel
             // 
             tagsLabel.AutoSize = true;
-            tagsLabel.Location = new System.Drawing.Point(62, 335);
+            tagsLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tagsLabel.ForeColor = System.Drawing.SystemColors.Info;
+            tagsLabel.Location = new System.Drawing.Point(100, 279);
             tagsLabel.Name = "tagsLabel";
-            tagsLabel.Size = new System.Drawing.Size(29, 13);
+            tagsLabel.Size = new System.Drawing.Size(37, 22);
             tagsLabel.TabIndex = 13;
-            tagsLabel.Text = "Tag:";
+            tagsLabel.Text = "Tag";
+            tagsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // levelLabel
             // 
             levelLabel.AutoSize = true;
-            levelLabel.Location = new System.Drawing.Point(62, 361);
+            levelLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            levelLabel.ForeColor = System.Drawing.SystemColors.Info;
+            levelLabel.Location = new System.Drawing.Point(87, 308);
             levelLabel.Name = "levelLabel";
-            levelLabel.Size = new System.Drawing.Size(36, 13);
+            levelLabel.Size = new System.Drawing.Size(50, 22);
             levelLabel.TabIndex = 15;
-            levelLabel.Text = "Level:";
+            levelLabel.Text = "Level";
+            levelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // startDateLabel
             // 
             startDateLabel.AutoSize = true;
-            startDateLabel.Location = new System.Drawing.Point(62, 388);
+            startDateLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            startDateLabel.ForeColor = System.Drawing.SystemColors.Info;
+            startDateLabel.Location = new System.Drawing.Point(51, 334);
             startDateLabel.Name = "startDateLabel";
-            startDateLabel.Size = new System.Drawing.Size(58, 13);
+            startDateLabel.Size = new System.Drawing.Size(86, 22);
             startDateLabel.TabIndex = 17;
-            startDateLabel.Text = "Start Date:";
+            startDateLabel.Text = "Start Date";
+            startDateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // racesLabel
             // 
             racesLabel.AutoSize = true;
-            racesLabel.Location = new System.Drawing.Point(62, 410);
+            racesLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            racesLabel.ForeColor = System.Drawing.SystemColors.Info;
+            racesLabel.Location = new System.Drawing.Point(93, 360);
             racesLabel.Name = "racesLabel";
-            racesLabel.Size = new System.Drawing.Size(36, 13);
+            racesLabel.Size = new System.Drawing.Size(44, 22);
             racesLabel.TabIndex = 19;
-            racesLabel.Text = "Race:";
+            racesLabel.Text = "Race";
+            racesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // classesLabel
             // 
             classesLabel.AutoSize = true;
-            classesLabel.Location = new System.Drawing.Point(62, 472);
+            classesLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            classesLabel.ForeColor = System.Drawing.SystemColors.Info;
+            classesLabel.Location = new System.Drawing.Point(88, 387);
             classesLabel.Name = "classesLabel";
-            classesLabel.Size = new System.Drawing.Size(35, 13);
+            classesLabel.Size = new System.Drawing.Size(49, 22);
             classesLabel.TabIndex = 21;
-            classesLabel.Text = "Class:";
+            classesLabel.Text = "Class";
+            classesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // campaignIdLabel
             // 
             campaignIdLabel.AutoSize = true;
-            campaignIdLabel.Location = new System.Drawing.Point(49, 9);
+            campaignIdLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            campaignIdLabel.ForeColor = System.Drawing.SystemColors.Info;
+            campaignIdLabel.Location = new System.Drawing.Point(2, 7);
             campaignIdLabel.Name = "campaignIdLabel";
-            campaignIdLabel.Size = new System.Drawing.Size(69, 13);
+            campaignIdLabel.Size = new System.Drawing.Size(107, 22);
             campaignIdLabel.TabIndex = 22;
-            campaignIdLabel.Text = "Campaign Id:";
+            campaignIdLabel.Text = "Campaign Id";
+            campaignIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtBoxName
             // 
-            this.txtBoxName.Location = new System.Drawing.Point(137, 36);
+            this.txtBoxName.Location = new System.Drawing.Point(143, 56);
             this.txtBoxName.MaxLength = 50;
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(200, 20);
@@ -163,7 +195,7 @@
             // 
             // txtBoxDesc
             // 
-            this.txtBoxDesc.Location = new System.Drawing.Point(137, 186);
+            this.txtBoxDesc.Location = new System.Drawing.Point(143, 136);
             this.txtBoxDesc.MaxLength = 1000;
             this.txtBoxDesc.Multiline = true;
             this.txtBoxDesc.Name = "txtBoxDesc";
@@ -174,7 +206,7 @@
             // 
             // txtBoxTags
             // 
-            this.txtBoxTags.Location = new System.Drawing.Point(137, 332);
+            this.txtBoxTags.Location = new System.Drawing.Point(143, 282);
             this.txtBoxTags.MaxLength = 255;
             this.txtBoxTags.Name = "txtBoxTags";
             this.txtBoxTags.Size = new System.Drawing.Size(200, 20);
@@ -182,7 +214,7 @@
             // 
             // txtBoxLevel
             // 
-            this.txtBoxLevel.Location = new System.Drawing.Point(137, 358);
+            this.txtBoxLevel.Location = new System.Drawing.Point(143, 308);
             this.txtBoxLevel.MaxLength = 2;
             this.txtBoxLevel.Name = "txtBoxLevel";
             this.txtBoxLevel.Size = new System.Drawing.Size(46, 20);
@@ -190,15 +222,16 @@
             // 
             // dateTimeStartDate
             // 
-            this.dateTimeStartDate.Location = new System.Drawing.Point(137, 384);
+            this.dateTimeStartDate.Location = new System.Drawing.Point(143, 334);
             this.dateTimeStartDate.Name = "dateTimeStartDate";
             this.dateTimeStartDate.Size = new System.Drawing.Size(200, 20);
             this.dateTimeStartDate.TabIndex = 7;
             // 
             // lblCampaignId
             // 
+            this.lblCampaignId.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCampaignId.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCampaignId.Location = new System.Drawing.Point(137, 10);
+            this.lblCampaignId.Location = new System.Drawing.Point(105, 5);
             this.lblCampaignId.Name = "lblCampaignId";
             this.lblCampaignId.Size = new System.Drawing.Size(100, 23);
             this.lblCampaignId.TabIndex = 23;
@@ -206,7 +239,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(42, 577);
+            this.btnSave.Location = new System.Drawing.Point(85, 463);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(104, 43);
             this.btnSave.TabIndex = 10;
@@ -217,7 +250,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(179, 577);
+            this.btnCancel.Location = new System.Drawing.Point(222, 463);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 43);
             this.btnCancel.TabIndex = 11;
@@ -233,7 +266,7 @@
             // 
             this.comboSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboSize.FormattingEnabled = true;
-            this.comboSize.Location = new System.Drawing.Point(137, 62);
+            this.comboSize.Location = new System.Drawing.Point(143, 82);
             this.comboSize.Name = "comboSize";
             this.comboSize.Size = new System.Drawing.Size(121, 21);
             this.comboSize.TabIndex = 24;
@@ -242,7 +275,7 @@
             // 
             this.comboAlignment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboAlignment.FormattingEnabled = true;
-            this.comboAlignment.Location = new System.Drawing.Point(137, 124);
+            this.comboAlignment.Location = new System.Drawing.Point(143, 109);
             this.comboAlignment.Name = "comboAlignment";
             this.comboAlignment.Size = new System.Drawing.Size(121, 21);
             this.comboAlignment.TabIndex = 25;
@@ -251,7 +284,7 @@
             // 
             this.comboRaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboRaces.FormattingEnabled = true;
-            this.comboRaces.Location = new System.Drawing.Point(137, 407);
+            this.comboRaces.Location = new System.Drawing.Point(143, 360);
             this.comboRaces.Name = "comboRaces";
             this.comboRaces.Size = new System.Drawing.Size(121, 21);
             this.comboRaces.TabIndex = 26;
@@ -260,10 +293,39 @@
             // 
             this.comboClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboClass.FormattingEnabled = true;
-            this.comboClass.Location = new System.Drawing.Point(137, 464);
+            this.comboClass.Location = new System.Drawing.Point(143, 387);
             this.comboClass.Name = "comboClass";
             this.comboClass.Size = new System.Drawing.Size(121, 21);
             this.comboClass.TabIndex = 27;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblCampaignId);
+            this.panel1.Controls.Add(this.comboClass);
+            this.panel1.Controls.Add(classesLabel);
+            this.panel1.Controls.Add(this.comboRaces);
+            this.panel1.Controls.Add(racesLabel);
+            this.panel1.Controls.Add(this.comboAlignment);
+            this.panel1.Controls.Add(this.dateTimeStartDate);
+            this.panel1.Controls.Add(this.comboSize);
+            this.panel1.Controls.Add(startDateLabel);
+            this.panel1.Controls.Add(this.txtBoxLevel);
+            this.panel1.Controls.Add(levelLabel);
+            this.panel1.Controls.Add(campaignIdLabel);
+            this.panel1.Controls.Add(this.txtBoxTags);
+            this.panel1.Controls.Add(tagsLabel);
+            this.panel1.Controls.Add(nameLabel);
+            this.panel1.Controls.Add(this.txtBoxDesc);
+            this.panel1.Controls.Add(this.txtBoxName);
+            this.panel1.Controls.Add(descriptionLabel);
+            this.panel1.Controls.Add(sizeLabel);
+            this.panel1.Controls.Add(alignmentLabel);
+            this.panel1.Location = new System.Drawing.Point(13, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(386, 434);
+            this.panel1.TabIndex = 28;
             // 
             // FormPlayer
             // 
@@ -271,37 +333,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(411, 632);
-            this.Controls.Add(this.comboClass);
-            this.Controls.Add(this.comboRaces);
-            this.Controls.Add(this.comboAlignment);
-            this.Controls.Add(this.comboSize);
+            this.ClientSize = new System.Drawing.Size(411, 518);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(campaignIdLabel);
-            this.Controls.Add(this.lblCampaignId);
-            this.Controls.Add(nameLabel);
-            this.Controls.Add(this.txtBoxName);
-            this.Controls.Add(sizeLabel);
-            this.Controls.Add(alignmentLabel);
-            this.Controls.Add(descriptionLabel);
-            this.Controls.Add(this.txtBoxDesc);
-            this.Controls.Add(tagsLabel);
-            this.Controls.Add(this.txtBoxTags);
-            this.Controls.Add(levelLabel);
-            this.Controls.Add(this.txtBoxLevel);
-            this.Controls.Add(startDateLabel);
-            this.Controls.Add(this.dateTimeStartDate);
-            this.Controls.Add(racesLabel);
-            this.Controls.Add(classesLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormPlayer";
+            this.Text = "Player Entry";
             this.Load += new System.EventHandler(this.FormPlayer_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -319,5 +363,6 @@
         private System.Windows.Forms.ComboBox comboAlignment;
         private System.Windows.Forms.ComboBox comboRaces;
         private System.Windows.Forms.ComboBox comboClass;
+        private System.Windows.Forms.Panel panel1;
     }
 }

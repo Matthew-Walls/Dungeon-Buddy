@@ -12,6 +12,9 @@ namespace Dungeon_Buddy
         // Set static array of valid die types for use in validation.
         private static readonly int[] VALIDDICE = new int[6] { 4, 6, 8, 10, 12, 20 };
 
+        // Define property.
+        public int[] ValidDice { get { return VALIDDICE; } }
+
         // This method can be used to get the results of a dice roll.
         public int Roll(int die, int count)
         {

@@ -76,6 +76,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DungeonBuddyDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormDice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDice.Designer.cs">
+      <DependentUpon>FormDice.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditCampaign.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormDice.resx">
+      <DependentUpon>FormDice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditCampaign.resx">
       <DependentUpon>FormEditCampaign.cs</DependentUpon>
     </EmbeddedResource>

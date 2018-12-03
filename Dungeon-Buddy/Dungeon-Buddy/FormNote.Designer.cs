@@ -41,17 +41,79 @@
             this.comboType = new System.Windows.Forms.ComboBox();
             this.labelCreateDate = new System.Windows.Forms.Label();
             this.notesTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.NotesTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
             campaignIdLabel = new System.Windows.Forms.Label();
             titleLabel = new System.Windows.Forms.Label();
             noteLabel = new System.Windows.Forms.Label();
             typeLabel = new System.Windows.Forms.Label();
             dateLabel = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // campaignIdLabel
+            // 
+            campaignIdLabel.AutoSize = true;
+            campaignIdLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            campaignIdLabel.ForeColor = System.Drawing.SystemColors.Info;
+            campaignIdLabel.Location = new System.Drawing.Point(6, 5);
+            campaignIdLabel.Name = "campaignIdLabel";
+            campaignIdLabel.Size = new System.Drawing.Size(107, 22);
+            campaignIdLabel.TabIndex = 26;
+            campaignIdLabel.Text = "Campaign Id";
+            campaignIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // titleLabel
+            // 
+            titleLabel.AutoSize = true;
+            titleLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            titleLabel.ForeColor = System.Drawing.SystemColors.Info;
+            titleLabel.Location = new System.Drawing.Point(76, 50);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new System.Drawing.Size(45, 22);
+            titleLabel.TabIndex = 25;
+            titleLabel.Text = "Title";
+            titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // noteLabel
+            // 
+            noteLabel.AutoSize = true;
+            noteLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            noteLabel.ForeColor = System.Drawing.SystemColors.Info;
+            noteLabel.Location = new System.Drawing.Point(75, 130);
+            noteLabel.Name = "noteLabel";
+            noteLabel.Size = new System.Drawing.Size(46, 22);
+            noteLabel.TabIndex = 29;
+            noteLabel.Text = "Note";
+            noteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // typeLabel
+            // 
+            typeLabel.AutoSize = true;
+            typeLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            typeLabel.ForeColor = System.Drawing.SystemColors.Info;
+            typeLabel.Location = new System.Drawing.Point(73, 75);
+            typeLabel.Name = "typeLabel";
+            typeLabel.Size = new System.Drawing.Size(48, 22);
+            typeLabel.TabIndex = 30;
+            typeLabel.Text = "Type";
+            typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dateLabel
+            // 
+            dateLabel.AutoSize = true;
+            dateLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dateLabel.ForeColor = System.Drawing.SystemColors.Info;
+            dateLabel.Location = new System.Drawing.Point(23, 103);
+            dateLabel.Name = "dateLabel";
+            dateLabel.Size = new System.Drawing.Size(98, 22);
+            dateLabel.TabIndex = 32;
+            dateLabel.Text = "Create Date";
+            dateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(282, 434);
+            this.btnCancel.Location = new System.Drawing.Point(286, 392);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 43);
             this.btnCancel.TabIndex = 13;
@@ -61,7 +123,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(145, 434);
+            this.btnSave.Location = new System.Drawing.Point(149, 392);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(104, 43);
             this.btnSave.TabIndex = 12;
@@ -69,91 +131,48 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // campaignIdLabel
-            // 
-            campaignIdLabel.AutoSize = true;
-            campaignIdLabel.Location = new System.Drawing.Point(120, 58);
-            campaignIdLabel.Name = "campaignIdLabel";
-            campaignIdLabel.Size = new System.Drawing.Size(69, 13);
-            campaignIdLabel.TabIndex = 26;
-            campaignIdLabel.Text = "Campaign Id:";
-            // 
             // lblCampaignId
             // 
+            this.lblCampaignId.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCampaignId.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblCampaignId.Location = new System.Drawing.Point(208, 53);
+            this.lblCampaignId.Location = new System.Drawing.Point(112, 6);
             this.lblCampaignId.Name = "lblCampaignId";
             this.lblCampaignId.Size = new System.Drawing.Size(100, 23);
             this.lblCampaignId.TabIndex = 27;
             this.lblCampaignId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // titleLabel
-            // 
-            titleLabel.AutoSize = true;
-            titleLabel.Location = new System.Drawing.Point(133, 88);
-            titleLabel.Name = "titleLabel";
-            titleLabel.Size = new System.Drawing.Size(30, 13);
-            titleLabel.TabIndex = 25;
-            titleLabel.Text = "Title:";
-            // 
             // txtBoxTitle
             // 
-            this.txtBoxTitle.Location = new System.Drawing.Point(208, 85);
+            this.txtBoxTitle.Location = new System.Drawing.Point(127, 52);
             this.txtBoxTitle.MaxLength = 255;
             this.txtBoxTitle.Name = "txtBoxTitle";
-            this.txtBoxTitle.Size = new System.Drawing.Size(200, 20);
+            this.txtBoxTitle.Size = new System.Drawing.Size(345, 20);
             this.txtBoxTitle.TabIndex = 24;
-            // 
-            // noteLabel
-            // 
-            noteLabel.AutoSize = true;
-            noteLabel.Location = new System.Drawing.Point(111, 219);
-            noteLabel.Name = "noteLabel";
-            noteLabel.Size = new System.Drawing.Size(33, 13);
-            noteLabel.TabIndex = 29;
-            noteLabel.Text = "Note:";
             // 
             // txtBoxNote
             // 
-            this.txtBoxNote.Location = new System.Drawing.Point(186, 216);
+            this.txtBoxNote.Location = new System.Drawing.Point(127, 130);
             this.txtBoxNote.MaxLength = 5000;
             this.txtBoxNote.Multiline = true;
             this.txtBoxNote.Name = "txtBoxNote";
-            this.txtBoxNote.Size = new System.Drawing.Size(200, 140);
+            this.txtBoxNote.Size = new System.Drawing.Size(345, 191);
             this.txtBoxNote.TabIndex = 28;
             this.txtBoxNote.Text = "\r\n";
             // 
             // comboType
             // 
             this.comboType.FormattingEnabled = true;
-            this.comboType.Location = new System.Drawing.Point(208, 122);
+            this.comboType.Location = new System.Drawing.Point(127, 78);
             this.comboType.MaxLength = 50;
             this.comboType.Name = "comboType";
-            this.comboType.Size = new System.Drawing.Size(121, 21);
+            this.comboType.Size = new System.Drawing.Size(179, 21);
             this.comboType.TabIndex = 31;
-            // 
-            // typeLabel
-            // 
-            typeLabel.AutoSize = true;
-            typeLabel.Location = new System.Drawing.Point(142, 125);
-            typeLabel.Name = "typeLabel";
-            typeLabel.Size = new System.Drawing.Size(34, 13);
-            typeLabel.TabIndex = 30;
-            typeLabel.Text = "Type:";
-            // 
-            // dateLabel
-            // 
-            dateLabel.AutoSize = true;
-            dateLabel.Location = new System.Drawing.Point(129, 167);
-            dateLabel.Name = "dateLabel";
-            dateLabel.Size = new System.Drawing.Size(67, 13);
-            dateLabel.TabIndex = 32;
-            dateLabel.Text = "Create Date:";
             // 
             // labelCreateDate
             // 
+            this.labelCreateDate.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.labelCreateDate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelCreateDate.Location = new System.Drawing.Point(208, 162);
+            this.labelCreateDate.Location = new System.Drawing.Point(127, 102);
             this.labelCreateDate.Name = "labelCreateDate";
             this.labelCreateDate.Size = new System.Drawing.Size(100, 23);
             this.labelCreateDate.TabIndex = 33;
@@ -163,29 +182,42 @@
             // 
             this.notesTableAdapter.ClearBeforeFill = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtBoxTitle);
+            this.panel1.Controls.Add(campaignIdLabel);
+            this.panel1.Controls.Add(typeLabel);
+            this.panel1.Controls.Add(dateLabel);
+            this.panel1.Controls.Add(this.txtBoxNote);
+            this.panel1.Controls.Add(this.comboType);
+            this.panel1.Controls.Add(titleLabel);
+            this.panel1.Controls.Add(noteLabel);
+            this.panel1.Controls.Add(this.lblCampaignId);
+            this.panel1.Controls.Add(this.labelCreateDate);
+            this.panel1.Location = new System.Drawing.Point(13, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(514, 362);
+            this.panel1.TabIndex = 34;
+            // 
             // FormNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 519);
-            this.Controls.Add(dateLabel);
-            this.Controls.Add(this.labelCreateDate);
-            this.Controls.Add(this.comboType);
-            this.Controls.Add(typeLabel);
-            this.Controls.Add(noteLabel);
-            this.Controls.Add(this.txtBoxNote);
-            this.Controls.Add(campaignIdLabel);
-            this.Controls.Add(this.lblCampaignId);
-            this.Controls.Add(titleLabel);
-            this.Controls.Add(this.txtBoxTitle);
+            this.ClientSize = new System.Drawing.Size(539, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "FormNote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormNote";
+            this.Text = "Campaign Note Entry";
             this.Load += new System.EventHandler(this.FormNote_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -199,5 +231,6 @@
         private System.Windows.Forms.ComboBox comboType;
         private System.Windows.Forms.Label labelCreateDate;
         private DungeonBuddyDataSetTableAdapters.NotesTableAdapter notesTableAdapter;
+        private System.Windows.Forms.Panel panel1;
     }
 }

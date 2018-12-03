@@ -453,5 +453,35 @@ namespace Dungeon_Buddy
 
             DeleteSelectedNote(row);
         }
+
+        private void helpToolStripButton_Click(object sender, EventArgs e)
+        {
+            // Show help message box when clicked.
+            MessageBox.Show("Top menu options left to right"+System.Environment.NewLine+System.Environment.NewLine+ "Create a new Player"+System.Environment.NewLine+
+                "View/Edit the currently selected Player"+System.Environment.NewLine+"Delete the currently selected Player", "Player Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            // Show help message box when clicked.
+            MessageBox.Show("Top menu options left to right" + System.Environment.NewLine + System.Environment.NewLine+
+                "Open the Monster Catalog" + System.Environment.NewLine +"Create a new Monster"+System.Environment.NewLine+
+                "View/Edit the currently selected Monster" + System.Environment.NewLine+"Delete the currently selected Monster",
+                "Monster Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            // Show help message box when clicked.
+            MessageBox.Show("Top menu options left to right" + System.Environment.NewLine + System.Environment.NewLine + "Record a new note"+
+                System.Environment.NewLine + "View/Edit the currently selected note" + System.Environment.NewLine + 
+                "Delete the currently selected note", "Campaign Note Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnDiceRoller_Click(object sender, EventArgs e)
+        {
+            FormDice formDice = new FormDice();
+            formDice.Show();
+        }
     }
 }

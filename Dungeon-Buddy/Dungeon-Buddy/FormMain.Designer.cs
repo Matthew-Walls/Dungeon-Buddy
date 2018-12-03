@@ -30,46 +30,34 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.btnNotes = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
             this.btnDiceRoller = new System.Windows.Forms.Button();
-            this.btnPlayers = new System.Windows.Forms.Button();
-            this.btnMonsters = new System.Windows.Forms.Button();
             this.tabControlData = new System.Windows.Forms.TabControl();
             this.tabPagePlayers = new System.Windows.Forms.TabPage();
             this.toolStripPlayers = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.playersDataGridView = new System.Windows.Forms.DataGridView();
-            this.Tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Race = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStripPlayers = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItemNewPlayer = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemEditPlayer = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemDeletePlayer = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPageMonsters = new System.Windows.Forms.TabPage();
-            this.monstersDataGridView = new System.Windows.Forms.DataGridView();
-            this.contextMenuStripMonsters = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItemNewMonster = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemEditMonster = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemDeleteMonster = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMonsters = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tabPageNotes = new System.Windows.Forms.TabPage();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Race = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStripPlayers = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemNewPlayer = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemEditPlayer = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDeletePlayer = new System.Windows.Forms.ToolStripMenuItem();
             this.playersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dungeonBuddyDataSet = new Dungeon_Buddy.DungeonBuddyDataSet();
+            this.tabPageMonsters = new System.Windows.Forms.TabPage();
+            this.monstersDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,12 +71,28 @@
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.contextMenuStripMonsters = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemNewMonster = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemEditMonster = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemDeleteMonster = new System.Windows.Forms.ToolStripMenuItem();
             this.monstersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripMonsters = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tabPageNotes = new System.Windows.Forms.TabPage();
+            this.notesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.dungeonBuddyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.TableAdapterManager();
             this.playersTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.PlayersTableAdapter();
             this.campaignTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.CampaignTableAdapter();
             this.monstersTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.MonstersTableAdapter();
+            this.notesTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.NotesTableAdapter();
             this.toolStripButtonNewPlayer = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEditPlayer = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDeletePlayer = new System.Windows.Forms.ToolStripButton();
@@ -102,44 +106,28 @@
             this.toolStripButtonEditNote = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDeleteNote = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.notesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.notesTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.NotesTableAdapter();
-            this.notesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlData.SuspendLayout();
             this.tabPagePlayers.SuspendLayout();
             this.toolStripPlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).BeginInit();
             this.contextMenuStripPlayers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSet)).BeginInit();
             this.tabPageMonsters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monstersDataGridView)).BeginInit();
             this.contextMenuStripMonsters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.monstersBindingSource)).BeginInit();
             this.toolStripMonsters.SuspendLayout();
             this.tabPageNotes.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monstersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notesBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnNotes
-            // 
-            this.btnNotes.Location = new System.Drawing.Point(111, 95);
-            this.btnNotes.Name = "btnNotes";
-            this.btnNotes.Size = new System.Drawing.Size(90, 38);
-            this.btnNotes.TabIndex = 0;
-            this.btnNotes.Text = "Campaign Notes";
-            this.btnNotes.UseVisualStyleBackColor = true;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(223, 544);
+            this.btnExit.Location = new System.Drawing.Point(339, 569);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(90, 38);
             this.btnExit.TabIndex = 1;
@@ -149,7 +137,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(262, 24);
+            this.btnEdit.Location = new System.Drawing.Point(171, 497);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(90, 38);
             this.btnEdit.TabIndex = 2;
@@ -159,7 +147,7 @@
             // 
             // btnChange
             // 
-            this.btnChange.Location = new System.Drawing.Point(111, 24);
+            this.btnChange.Location = new System.Drawing.Point(339, 497);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(90, 38);
             this.btnChange.TabIndex = 3;
@@ -169,40 +157,23 @@
             // 
             // btnDiceRoller
             // 
-            this.btnDiceRoller.Location = new System.Drawing.Point(262, 164);
+            this.btnDiceRoller.Location = new System.Drawing.Point(507, 497);
             this.btnDiceRoller.Name = "btnDiceRoller";
             this.btnDiceRoller.Size = new System.Drawing.Size(90, 38);
             this.btnDiceRoller.TabIndex = 4;
             this.btnDiceRoller.Text = "Dice Roller";
             this.btnDiceRoller.UseVisualStyleBackColor = true;
-            // 
-            // btnPlayers
-            // 
-            this.btnPlayers.Location = new System.Drawing.Point(262, 95);
-            this.btnPlayers.Name = "btnPlayers";
-            this.btnPlayers.Size = new System.Drawing.Size(90, 38);
-            this.btnPlayers.TabIndex = 5;
-            this.btnPlayers.Text = "Players";
-            this.btnPlayers.UseVisualStyleBackColor = true;
-            // 
-            // btnMonsters
-            // 
-            this.btnMonsters.Location = new System.Drawing.Point(111, 164);
-            this.btnMonsters.Name = "btnMonsters";
-            this.btnMonsters.Size = new System.Drawing.Size(90, 38);
-            this.btnMonsters.TabIndex = 6;
-            this.btnMonsters.Text = "Monsters";
-            this.btnMonsters.UseVisualStyleBackColor = true;
+            this.btnDiceRoller.Click += new System.EventHandler(this.btnDiceRoller_Click);
             // 
             // tabControlData
             // 
             this.tabControlData.Controls.Add(this.tabPagePlayers);
             this.tabControlData.Controls.Add(this.tabPageMonsters);
             this.tabControlData.Controls.Add(this.tabPageNotes);
-            this.tabControlData.Location = new System.Drawing.Point(12, 208);
+            this.tabControlData.Location = new System.Drawing.Point(12, 12);
             this.tabControlData.Name = "tabControlData";
             this.tabControlData.SelectedIndex = 0;
-            this.tabControlData.Size = new System.Drawing.Size(526, 330);
+            this.tabControlData.Size = new System.Drawing.Size(745, 459);
             this.tabControlData.TabIndex = 7;
             // 
             // tabPagePlayers
@@ -213,7 +184,7 @@
             this.tabPagePlayers.Location = new System.Drawing.Point(4, 22);
             this.tabPagePlayers.Name = "tabPagePlayers";
             this.tabPagePlayers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePlayers.Size = new System.Drawing.Size(518, 304);
+            this.tabPagePlayers.Size = new System.Drawing.Size(737, 433);
             this.tabPagePlayers.TabIndex = 0;
             this.tabPagePlayers.Text = "Players";
             this.tabPagePlayers.UseVisualStyleBackColor = true;
@@ -228,7 +199,7 @@
             this.helpToolStripButton});
             this.toolStripPlayers.Location = new System.Drawing.Point(3, 3);
             this.toolStripPlayers.Name = "toolStripPlayers";
-            this.toolStripPlayers.Size = new System.Drawing.Size(512, 25);
+            this.toolStripPlayers.Size = new System.Drawing.Size(731, 25);
             this.toolStripPlayers.TabIndex = 1;
             this.toolStripPlayers.Text = "toolStrip1";
             // 
@@ -261,9 +232,54 @@
             this.playersDataGridView.Location = new System.Drawing.Point(6, 31);
             this.playersDataGridView.Name = "playersDataGridView";
             this.playersDataGridView.ReadOnly = true;
-            this.playersDataGridView.Size = new System.Drawing.Size(509, 267);
+            this.playersDataGridView.Size = new System.Drawing.Size(725, 396);
             this.playersDataGridView.TabIndex = 0;
             this.playersDataGridView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.playersDataGridView_MouseDoubleClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CampaignId";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CampaignId";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Size";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Size";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Alignment";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Alignment";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 300;
             // 
             // Tag
             // 
@@ -271,6 +287,20 @@
             this.Tag.HeaderText = "Tag";
             this.Tag.Name = "Tag";
             this.Tag.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Level";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Level";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "StartDate";
+            this.dataGridViewTextBoxColumn9.HeaderText = "StartDate";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // Race
             // 
@@ -317,6 +347,16 @@
             this.toolStripMenuItemDeletePlayer.Text = "Delete Player";
             this.toolStripMenuItemDeletePlayer.Click += new System.EventHandler(this.toolStripMenuItemDeletePlayer_Click);
             // 
+            // playersBindingSource
+            // 
+            this.playersBindingSource.DataMember = "Players";
+            this.playersBindingSource.DataSource = this.dungeonBuddyDataSet;
+            // 
+            // dungeonBuddyDataSet
+            // 
+            this.dungeonBuddyDataSet.DataSetName = "DungeonBuddyDataSet";
+            this.dungeonBuddyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tabPageMonsters
             // 
             this.tabPageMonsters.Controls.Add(this.monstersDataGridView);
@@ -324,7 +364,7 @@
             this.tabPageMonsters.Location = new System.Drawing.Point(4, 22);
             this.tabPageMonsters.Name = "tabPageMonsters";
             this.tabPageMonsters.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMonsters.Size = new System.Drawing.Size(518, 304);
+            this.tabPageMonsters.Size = new System.Drawing.Size(737, 433);
             this.tabPageMonsters.TabIndex = 1;
             this.tabPageMonsters.Text = "Monsters";
             this.tabPageMonsters.UseVisualStyleBackColor = true;
@@ -355,160 +395,9 @@
             this.monstersDataGridView.Location = new System.Drawing.Point(6, 31);
             this.monstersDataGridView.Name = "monstersDataGridView";
             this.monstersDataGridView.ReadOnly = true;
-            this.monstersDataGridView.Size = new System.Drawing.Size(509, 270);
+            this.monstersDataGridView.Size = new System.Drawing.Size(725, 396);
             this.monstersDataGridView.TabIndex = 2;
             this.monstersDataGridView.DoubleClick += new System.EventHandler(this.monstersDataGridView_DoubleClick);
-            // 
-            // contextMenuStripMonsters
-            // 
-            this.contextMenuStripMonsters.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemNewMonster,
-            this.toolStripMenuItemEditMonster,
-            this.toolStripMenuItemDeleteMonster});
-            this.contextMenuStripMonsters.Name = "contextMenuStripPlayers";
-            this.contextMenuStripMonsters.ShowImageMargin = false;
-            this.contextMenuStripMonsters.Size = new System.Drawing.Size(130, 70);
-            // 
-            // toolStripMenuItemNewMonster
-            // 
-            this.toolStripMenuItemNewMonster.Name = "toolStripMenuItemNewMonster";
-            this.toolStripMenuItemNewMonster.Size = new System.Drawing.Size(129, 22);
-            this.toolStripMenuItemNewMonster.Text = "New Monster";
-            this.toolStripMenuItemNewMonster.Click += new System.EventHandler(this.toolStripMenuItemNewMonster_Click);
-            // 
-            // toolStripMenuItemEditMonster
-            // 
-            this.toolStripMenuItemEditMonster.Name = "toolStripMenuItemEditMonster";
-            this.toolStripMenuItemEditMonster.Size = new System.Drawing.Size(129, 22);
-            this.toolStripMenuItemEditMonster.Text = "Edit Monster";
-            this.toolStripMenuItemEditMonster.Click += new System.EventHandler(this.toolStripMenuItemEditMonster_Click);
-            // 
-            // toolStripMenuItemDeleteMonster
-            // 
-            this.toolStripMenuItemDeleteMonster.Name = "toolStripMenuItemDeleteMonster";
-            this.toolStripMenuItemDeleteMonster.Size = new System.Drawing.Size(129, 22);
-            this.toolStripMenuItemDeleteMonster.Text = "Delete Monster";
-            this.toolStripMenuItemDeleteMonster.Click += new System.EventHandler(this.toolStripMenuItemDeleteMonster_Click);
-            // 
-            // toolStripMonsters
-            // 
-            this.toolStripMonsters.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonLoadMonster,
-            this.toolStripButtonNewMonster,
-            this.toolStripButtonEditMonster,
-            this.toolStripButtonDeleteMonster,
-            this.toolStripSeparator2,
-            this.toolStripButton4});
-            this.toolStripMonsters.Location = new System.Drawing.Point(3, 3);
-            this.toolStripMonsters.Name = "toolStripMonsters";
-            this.toolStripMonsters.Size = new System.Drawing.Size(512, 25);
-            this.toolStripMonsters.TabIndex = 2;
-            this.toolStripMonsters.Text = "toolStripMonsters";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tabPageNotes
-            // 
-            this.tabPageNotes.AutoScroll = true;
-            this.tabPageNotes.Controls.Add(this.notesDataGridView);
-            this.tabPageNotes.Controls.Add(this.toolStrip1);
-            this.tabPageNotes.Location = new System.Drawing.Point(4, 22);
-            this.tabPageNotes.Name = "tabPageNotes";
-            this.tabPageNotes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageNotes.Size = new System.Drawing.Size(518, 304);
-            this.tabPageNotes.TabIndex = 2;
-            this.tabPageNotes.Text = "Campaign Notes";
-            this.tabPageNotes.UseVisualStyleBackColor = true;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonNewNote,
-            this.toolStripButtonEditNote,
-            this.toolStripButtonDeleteNote,
-            this.toolStripSeparator3,
-            this.toolStripButton5});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(512, 25);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CampaignId";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CampaignId";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Size";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Size";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Alignment";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Alignment";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Level";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Level";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "StartDate";
-            this.dataGridViewTextBoxColumn9.HeaderText = "StartDate";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // playersBindingSource
-            // 
-            this.playersBindingSource.DataMember = "Players";
-            this.playersBindingSource.DataSource = this.dungeonBuddyDataSet;
-            // 
-            // dungeonBuddyDataSet
-            // 
-            this.dungeonBuddyDataSet.DataSetName = "DungeonBuddyDataSet";
-            this.dungeonBuddyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -537,6 +426,7 @@
             this.dataGridViewTextBoxColumn17.HeaderText = "Description";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Width = 300;
             // 
             // dataGridViewTextBoxColumn18
             // 
@@ -601,10 +491,148 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
+            // contextMenuStripMonsters
+            // 
+            this.contextMenuStripMonsters.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemNewMonster,
+            this.toolStripMenuItemEditMonster,
+            this.toolStripMenuItemDeleteMonster});
+            this.contextMenuStripMonsters.Name = "contextMenuStripPlayers";
+            this.contextMenuStripMonsters.ShowImageMargin = false;
+            this.contextMenuStripMonsters.Size = new System.Drawing.Size(130, 70);
+            // 
+            // toolStripMenuItemNewMonster
+            // 
+            this.toolStripMenuItemNewMonster.Name = "toolStripMenuItemNewMonster";
+            this.toolStripMenuItemNewMonster.Size = new System.Drawing.Size(129, 22);
+            this.toolStripMenuItemNewMonster.Text = "New Monster";
+            this.toolStripMenuItemNewMonster.Click += new System.EventHandler(this.toolStripMenuItemNewMonster_Click);
+            // 
+            // toolStripMenuItemEditMonster
+            // 
+            this.toolStripMenuItemEditMonster.Name = "toolStripMenuItemEditMonster";
+            this.toolStripMenuItemEditMonster.Size = new System.Drawing.Size(129, 22);
+            this.toolStripMenuItemEditMonster.Text = "Edit Monster";
+            this.toolStripMenuItemEditMonster.Click += new System.EventHandler(this.toolStripMenuItemEditMonster_Click);
+            // 
+            // toolStripMenuItemDeleteMonster
+            // 
+            this.toolStripMenuItemDeleteMonster.Name = "toolStripMenuItemDeleteMonster";
+            this.toolStripMenuItemDeleteMonster.Size = new System.Drawing.Size(129, 22);
+            this.toolStripMenuItemDeleteMonster.Text = "Delete Monster";
+            this.toolStripMenuItemDeleteMonster.Click += new System.EventHandler(this.toolStripMenuItemDeleteMonster_Click);
+            // 
             // monstersBindingSource
             // 
             this.monstersBindingSource.DataMember = "Monsters";
             this.monstersBindingSource.DataSource = this.dungeonBuddyDataSet;
+            // 
+            // toolStripMonsters
+            // 
+            this.toolStripMonsters.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonLoadMonster,
+            this.toolStripButtonNewMonster,
+            this.toolStripButtonEditMonster,
+            this.toolStripButtonDeleteMonster,
+            this.toolStripSeparator2,
+            this.toolStripButton4});
+            this.toolStripMonsters.Location = new System.Drawing.Point(3, 3);
+            this.toolStripMonsters.Name = "toolStripMonsters";
+            this.toolStripMonsters.Size = new System.Drawing.Size(731, 25);
+            this.toolStripMonsters.TabIndex = 2;
+            this.toolStripMonsters.Text = "toolStripMonsters";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tabPageNotes
+            // 
+            this.tabPageNotes.AutoScroll = true;
+            this.tabPageNotes.Controls.Add(this.notesDataGridView);
+            this.tabPageNotes.Controls.Add(this.toolStrip1);
+            this.tabPageNotes.Location = new System.Drawing.Point(4, 22);
+            this.tabPageNotes.Name = "tabPageNotes";
+            this.tabPageNotes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageNotes.Size = new System.Drawing.Size(737, 433);
+            this.tabPageNotes.TabIndex = 2;
+            this.tabPageNotes.Text = "Campaign Notes";
+            this.tabPageNotes.UseVisualStyleBackColor = true;
+            // 
+            // notesDataGridView
+            // 
+            this.notesDataGridView.AllowUserToAddRows = false;
+            this.notesDataGridView.AllowUserToDeleteRows = false;
+            this.notesDataGridView.AllowUserToOrderColumns = true;
+            this.notesDataGridView.AutoGenerateColumns = false;
+            this.notesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.notesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29});
+            this.notesDataGridView.DataSource = this.notesBindingSource;
+            this.notesDataGridView.Location = new System.Drawing.Point(6, 31);
+            this.notesDataGridView.Name = "notesDataGridView";
+            this.notesDataGridView.ReadOnly = true;
+            this.notesDataGridView.Size = new System.Drawing.Size(725, 396);
+            this.notesDataGridView.TabIndex = 2;
+            this.notesDataGridView.DoubleClick += new System.EventHandler(this.notesDataGridView_DoubleClick);
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "Title";
+            this.dataGridViewTextBoxColumn26.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
+            this.dataGridViewTextBoxColumn26.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "Type";
+            this.dataGridViewTextBoxColumn27.HeaderText = "Type";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "DateAdded";
+            this.dataGridViewTextBoxColumn28.HeaderText = "DateAdded";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "Note";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Note";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.ReadOnly = true;
+            this.dataGridViewTextBoxColumn29.Width = 300;
+            // 
+            // notesBindingSource
+            // 
+            this.notesBindingSource.DataMember = "Notes";
+            this.notesBindingSource.DataSource = this.dungeonBuddyDataSet;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonNewNote,
+            this.toolStripButtonEditNote,
+            this.toolStripButtonDeleteNote,
+            this.toolStripSeparator3,
+            this.toolStripButton5});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(731, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // dungeonBuddyDataSetBindingSource
             // 
@@ -633,6 +661,10 @@
             // monstersTableAdapter
             // 
             this.monstersTableAdapter.ClearBeforeFill = true;
+            // 
+            // notesTableAdapter
+            // 
+            this.notesTableAdapter.ClearBeforeFill = true;
             // 
             // toolStripButtonNewPlayer
             // 
@@ -675,6 +707,7 @@
             this.helpToolStripButton.Name = "helpToolStripButton";
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
+            this.helpToolStripButton.Click += new System.EventHandler(this.helpToolStripButton_Click);
             // 
             // toolStripButtonLoadMonster
             // 
@@ -727,6 +760,7 @@
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton4.Text = "He&lp";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // toolStripButtonNewNote
             // 
@@ -769,77 +803,18 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton5.Text = "He&lp";
-            // 
-            // notesBindingSource
-            // 
-            this.notesBindingSource.DataMember = "Notes";
-            this.notesBindingSource.DataSource = this.dungeonBuddyDataSet;
-            // 
-            // notesTableAdapter
-            // 
-            this.notesTableAdapter.ClearBeforeFill = true;
-            // 
-            // notesDataGridView
-            // 
-            this.notesDataGridView.AllowUserToAddRows = false;
-            this.notesDataGridView.AllowUserToDeleteRows = false;
-            this.notesDataGridView.AllowUserToOrderColumns = true;
-            this.notesDataGridView.AutoGenerateColumns = false;
-            this.notesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.notesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29});
-            this.notesDataGridView.DataSource = this.notesBindingSource;
-            this.notesDataGridView.Location = new System.Drawing.Point(6, 31);
-            this.notesDataGridView.Name = "notesDataGridView";
-            this.notesDataGridView.ReadOnly = true;
-            this.notesDataGridView.Size = new System.Drawing.Size(509, 270);
-            this.notesDataGridView.TabIndex = 2;
-            this.notesDataGridView.DoubleClick += new System.EventHandler(this.notesDataGridView_DoubleClick);
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "Title";
-            this.dataGridViewTextBoxColumn26.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "Type";
-            this.dataGridViewTextBoxColumn27.HeaderText = "Type";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "DateAdded";
-            this.dataGridViewTextBoxColumn28.HeaderText = "DateAdded";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "Note";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Note";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.ReadOnly = true;
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 619);
+            this.ClientSize = new System.Drawing.Size(769, 619);
             this.Controls.Add(this.tabControlData);
-            this.Controls.Add(this.btnMonsters);
-            this.Controls.Add(this.btnPlayers);
             this.Controls.Add(this.btnDiceRoller);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnNotes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "FormMain";
@@ -854,35 +829,31 @@
             this.toolStripPlayers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).EndInit();
             this.contextMenuStripPlayers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSet)).EndInit();
             this.tabPageMonsters.ResumeLayout(false);
             this.tabPageMonsters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.monstersDataGridView)).EndInit();
             this.contextMenuStripMonsters.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.monstersBindingSource)).EndInit();
             this.toolStripMonsters.ResumeLayout(false);
             this.toolStripMonsters.PerformLayout();
             this.tabPageNotes.ResumeLayout(false);
             this.tabPageNotes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notesBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.playersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monstersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dungeonBuddyDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notesDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnNotes;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnDiceRoller;
-        private System.Windows.Forms.Button btnPlayers;
-        private System.Windows.Forms.Button btnMonsters;
         private System.Windows.Forms.BindingSource dungeonBuddyDataSetBindingSource;
         private DungeonBuddyDataSet dungeonBuddyDataSet;
         private System.Windows.Forms.TabControl tabControlData;
@@ -901,17 +872,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonDeletePlayer;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Race;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Class;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripPlayers;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemNewPlayer;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEditPlayer;
@@ -926,19 +886,6 @@
         private DungeonBuddyDataSetTableAdapters.CampaignTableAdapter campaignTableAdapter;
         private DungeonBuddyDataSetTableAdapters.MonstersTableAdapter monstersTableAdapter;
         private System.Windows.Forms.DataGridView monstersDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.BindingSource monstersBindingSource;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripMonsters;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemNewMonster;
@@ -954,6 +901,30 @@
         private System.Windows.Forms.BindingSource notesBindingSource;
         private DungeonBuddyDataSetTableAdapters.NotesTableAdapter notesTableAdapter;
         private System.Windows.Forms.DataGridView notesDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Race;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Class;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
