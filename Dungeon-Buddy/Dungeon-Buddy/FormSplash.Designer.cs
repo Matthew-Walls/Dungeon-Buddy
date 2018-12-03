@@ -70,22 +70,23 @@
             this.txtBoxName.Location = new System.Drawing.Point(63, 34);
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(336, 20);
-            this.txtBoxName.TabIndex = 2;
+            this.txtBoxName.TabIndex = 1;
             // 
             // txtBoxDesc
             // 
             this.txtBoxDesc.Location = new System.Drawing.Point(63, 83);
             this.txtBoxDesc.Multiline = true;
             this.txtBoxDesc.Name = "txtBoxDesc";
+            this.txtBoxDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtBoxDesc.Size = new System.Drawing.Size(336, 91);
-            this.txtBoxDesc.TabIndex = 3;
+            this.txtBoxDesc.TabIndex = 2;
             // 
             // btnNew
             // 
             this.btnNew.Location = new System.Drawing.Point(177, 339);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(108, 46);
-            this.btnNew.TabIndex = 4;
+            this.btnNew.TabIndex = 5;
             this.btnNew.Text = "New Campaign";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -158,7 +159,7 @@
             this.dateStartDate.Location = new System.Drawing.Point(131, 298);
             this.dateStartDate.Name = "dateStartDate";
             this.dateStartDate.Size = new System.Drawing.Size(200, 20);
-            this.dateStartDate.TabIndex = 12;
+            this.dateStartDate.TabIndex = 4;
             // 
             // label5
             // 
@@ -175,7 +176,7 @@
             this.txtBoxDM.Location = new System.Drawing.Point(63, 224);
             this.txtBoxDM.Name = "txtBoxDM";
             this.txtBoxDM.Size = new System.Drawing.Size(336, 20);
-            this.txtBoxDM.TabIndex = 10;
+            this.txtBoxDM.TabIndex = 3;
             // 
             // label2
             // 
@@ -239,6 +240,7 @@
             this.tableAdapterManager.CampaignTableAdapter = this.campaignTableAdapter;
             this.tableAdapterManager.MonsterIndexTableAdapter = null;
             this.tableAdapterManager.MonstersTableAdapter = null;
+            this.tableAdapterManager.NotesTableAdapter = null;
             this.tableAdapterManager.PlayersTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 

@@ -183,7 +183,7 @@
             this.btnCancel.Location = new System.Drawing.Point(396, 475);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 43);
-            this.btnCancel.TabIndex = 37;
+            this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -193,7 +193,7 @@
             this.btnSave.Location = new System.Drawing.Point(211, 475);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(104, 43);
-            this.btnSave.TabIndex = 36;
+            this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -353,7 +353,7 @@
             this.comboSize.Location = new System.Drawing.Point(117, 91);
             this.comboSize.Name = "comboSize";
             this.comboSize.Size = new System.Drawing.Size(164, 21);
-            this.comboSize.TabIndex = 54;
+            this.comboSize.TabIndex = 2;
             // 
             // monstersTableAdapter
             // 
@@ -406,7 +406,6 @@
             // 
             // FormMonster
             // 
-            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;

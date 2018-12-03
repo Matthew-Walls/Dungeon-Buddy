@@ -80,7 +80,20 @@ namespace Dungeon_Buddy
 
             foreach(DataRow d in types)
             {
-                comboType.Items.Add(d.Field<String>("Type"));
+                bool found = false;
+
+                foreach(string s in comboType.Items)
+                {
+                    if(s == d.Field<String>("Type"))
+                    {
+                        found = true;
+                    }
+                }
+
+                if (!found)
+                {
+                    comboType.Items.Add(d.Field<String>("Type"));
+                }
             }
 
             // Set form fields from selected existing player if applicable.

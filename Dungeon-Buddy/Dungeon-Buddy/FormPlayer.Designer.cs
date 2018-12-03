@@ -269,7 +269,7 @@
             this.comboSize.Location = new System.Drawing.Point(143, 82);
             this.comboSize.Name = "comboSize";
             this.comboSize.Size = new System.Drawing.Size(121, 21);
-            this.comboSize.TabIndex = 24;
+            this.comboSize.TabIndex = 2;
             // 
             // comboAlignment
             // 
@@ -278,7 +278,7 @@
             this.comboAlignment.Location = new System.Drawing.Point(143, 109);
             this.comboAlignment.Name = "comboAlignment";
             this.comboAlignment.Size = new System.Drawing.Size(121, 21);
-            this.comboAlignment.TabIndex = 25;
+            this.comboAlignment.TabIndex = 3;
             // 
             // comboRaces
             // 
@@ -287,7 +287,7 @@
             this.comboRaces.Location = new System.Drawing.Point(143, 360);
             this.comboRaces.Name = "comboRaces";
             this.comboRaces.Size = new System.Drawing.Size(121, 21);
-            this.comboRaces.TabIndex = 26;
+            this.comboRaces.TabIndex = 8;
             // 
             // comboClass
             // 
@@ -296,7 +296,7 @@
             this.comboClass.Location = new System.Drawing.Point(143, 387);
             this.comboClass.Name = "comboClass";
             this.comboClass.Size = new System.Drawing.Size(121, 21);
-            this.comboClass.TabIndex = 27;
+            this.comboClass.TabIndex = 9;
             // 
             // panel1
             // 
@@ -329,7 +329,6 @@
             // 
             // FormPlayer
             // 
-            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;

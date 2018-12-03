@@ -116,7 +116,7 @@
             this.btnCancel.Location = new System.Drawing.Point(286, 392);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 43);
-            this.btnCancel.TabIndex = 13;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -126,7 +126,7 @@
             this.btnSave.Location = new System.Drawing.Point(149, 392);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(104, 43);
-            this.btnSave.TabIndex = 12;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -147,7 +147,7 @@
             this.txtBoxTitle.MaxLength = 255;
             this.txtBoxTitle.Name = "txtBoxTitle";
             this.txtBoxTitle.Size = new System.Drawing.Size(345, 20);
-            this.txtBoxTitle.TabIndex = 24;
+            this.txtBoxTitle.TabIndex = 1;
             // 
             // txtBoxNote
             // 
@@ -155,8 +155,9 @@
             this.txtBoxNote.MaxLength = 5000;
             this.txtBoxNote.Multiline = true;
             this.txtBoxNote.Name = "txtBoxNote";
+            this.txtBoxNote.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtBoxNote.Size = new System.Drawing.Size(345, 191);
-            this.txtBoxNote.TabIndex = 28;
+            this.txtBoxNote.TabIndex = 3;
             this.txtBoxNote.Text = "\r\n";
             // 
             // comboType
@@ -166,7 +167,7 @@
             this.comboType.MaxLength = 50;
             this.comboType.Name = "comboType";
             this.comboType.Size = new System.Drawing.Size(179, 21);
-            this.comboType.TabIndex = 31;
+            this.comboType.TabIndex = 2;
             // 
             // labelCreateDate
             // 
@@ -205,6 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(539, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancel);

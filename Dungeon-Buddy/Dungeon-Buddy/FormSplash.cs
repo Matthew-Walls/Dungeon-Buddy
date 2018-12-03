@@ -106,7 +106,7 @@ namespace Dungeon_Buddy
             }
 
             // Call PassCampaign.
-            PassCampaign((int)campaignTableAdapter.GetNextId(), name, desc, dm, startDate,newCampaign);
+            PassCampaign(int.Parse(campaignTableAdapter.GetNextId().ToString()), name, desc, dm, startDate,newCampaign);
         }
 
         private void FormSplash_Load(object sender, EventArgs e)

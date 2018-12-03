@@ -40,6 +40,21 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgv_SelectedMonsters = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.campaignIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alignmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.challengeRatingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.environmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sourceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sRDDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.monstersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dungeonBuddyDataSet = new Dungeon_Buddy.DungeonBuddyDataSet();
             this.monsterBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -59,21 +74,6 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.monsterIndexTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.MonsterIndexTableAdapter();
             this.monstersTableAdapter = new Dungeon_Buddy.DungeonBuddyDataSetTableAdapters.MonstersTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.campaignIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alignmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.challengeRatingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.environmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sourceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.referenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sRDDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Monsters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MIN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDown_CR_MAX)).BeginInit();
@@ -253,6 +253,111 @@
             this.dgv_SelectedMonsters.RowHeadersVisible = false;
             this.dgv_SelectedMonsters.Size = new System.Drawing.Size(201, 433);
             this.dgv_SelectedMonsters.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // campaignIdDataGridViewTextBoxColumn
+            // 
+            this.campaignIdDataGridViewTextBoxColumn.DataPropertyName = "CampaignId";
+            this.campaignIdDataGridViewTextBoxColumn.HeaderText = "CampaignId";
+            this.campaignIdDataGridViewTextBoxColumn.Name = "campaignIdDataGridViewTextBoxColumn";
+            this.campaignIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sizeDataGridViewTextBoxColumn
+            // 
+            this.sizeDataGridViewTextBoxColumn.DataPropertyName = "Size";
+            this.sizeDataGridViewTextBoxColumn.HeaderText = "Size";
+            this.sizeDataGridViewTextBoxColumn.Name = "sizeDataGridViewTextBoxColumn";
+            this.sizeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // alignmentDataGridViewTextBoxColumn
+            // 
+            this.alignmentDataGridViewTextBoxColumn.DataPropertyName = "Alignment";
+            this.alignmentDataGridViewTextBoxColumn.HeaderText = "Alignment";
+            this.alignmentDataGridViewTextBoxColumn.Name = "alignmentDataGridViewTextBoxColumn";
+            this.alignmentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tagDataGridViewTextBoxColumn
+            // 
+            this.tagDataGridViewTextBoxColumn.DataPropertyName = "Tag";
+            this.tagDataGridViewTextBoxColumn.HeaderText = "Tag";
+            this.tagDataGridViewTextBoxColumn.Name = "tagDataGridViewTextBoxColumn";
+            this.tagDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // challengeRatingDataGridViewTextBoxColumn
+            // 
+            this.challengeRatingDataGridViewTextBoxColumn.DataPropertyName = "ChallengeRating";
+            this.challengeRatingDataGridViewTextBoxColumn.HeaderText = "ChallengeRating";
+            this.challengeRatingDataGridViewTextBoxColumn.Name = "challengeRatingDataGridViewTextBoxColumn";
+            this.challengeRatingDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // xPDataGridViewTextBoxColumn
+            // 
+            this.xPDataGridViewTextBoxColumn.DataPropertyName = "XP";
+            this.xPDataGridViewTextBoxColumn.HeaderText = "XP";
+            this.xPDataGridViewTextBoxColumn.Name = "xPDataGridViewTextBoxColumn";
+            this.xPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // environmentDataGridViewTextBoxColumn
+            // 
+            this.environmentDataGridViewTextBoxColumn.DataPropertyName = "Environment";
+            this.environmentDataGridViewTextBoxColumn.HeaderText = "Environment";
+            this.environmentDataGridViewTextBoxColumn.Name = "environmentDataGridViewTextBoxColumn";
+            this.environmentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sourceDataGridViewTextBoxColumn
+            // 
+            this.sourceDataGridViewTextBoxColumn.DataPropertyName = "Source";
+            this.sourceDataGridViewTextBoxColumn.HeaderText = "Source";
+            this.sourceDataGridViewTextBoxColumn.Name = "sourceDataGridViewTextBoxColumn";
+            this.sourceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pageDataGridViewTextBoxColumn
+            // 
+            this.pageDataGridViewTextBoxColumn.DataPropertyName = "Page";
+            this.pageDataGridViewTextBoxColumn.HeaderText = "Page";
+            this.pageDataGridViewTextBoxColumn.Name = "pageDataGridViewTextBoxColumn";
+            this.pageDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // referenceDataGridViewTextBoxColumn
+            // 
+            this.referenceDataGridViewTextBoxColumn.DataPropertyName = "Reference";
+            this.referenceDataGridViewTextBoxColumn.HeaderText = "Reference";
+            this.referenceDataGridViewTextBoxColumn.Name = "referenceDataGridViewTextBoxColumn";
+            this.referenceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sRDDataGridViewCheckBoxColumn
+            // 
+            this.sRDDataGridViewCheckBoxColumn.DataPropertyName = "SRD";
+            this.sRDDataGridViewCheckBoxColumn.HeaderText = "SRD";
+            this.sRDDataGridViewCheckBoxColumn.Name = "sRDDataGridViewCheckBoxColumn";
+            this.sRDDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // monstersBindingSource
             // 
@@ -482,111 +587,6 @@
             // monstersTableAdapter
             // 
             this.monstersTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // campaignIdDataGridViewTextBoxColumn
-            // 
-            this.campaignIdDataGridViewTextBoxColumn.DataPropertyName = "CampaignId";
-            this.campaignIdDataGridViewTextBoxColumn.HeaderText = "CampaignId";
-            this.campaignIdDataGridViewTextBoxColumn.Name = "campaignIdDataGridViewTextBoxColumn";
-            this.campaignIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sizeDataGridViewTextBoxColumn
-            // 
-            this.sizeDataGridViewTextBoxColumn.DataPropertyName = "Size";
-            this.sizeDataGridViewTextBoxColumn.HeaderText = "Size";
-            this.sizeDataGridViewTextBoxColumn.Name = "sizeDataGridViewTextBoxColumn";
-            this.sizeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // alignmentDataGridViewTextBoxColumn
-            // 
-            this.alignmentDataGridViewTextBoxColumn.DataPropertyName = "Alignment";
-            this.alignmentDataGridViewTextBoxColumn.HeaderText = "Alignment";
-            this.alignmentDataGridViewTextBoxColumn.Name = "alignmentDataGridViewTextBoxColumn";
-            this.alignmentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tagDataGridViewTextBoxColumn
-            // 
-            this.tagDataGridViewTextBoxColumn.DataPropertyName = "Tag";
-            this.tagDataGridViewTextBoxColumn.HeaderText = "Tag";
-            this.tagDataGridViewTextBoxColumn.Name = "tagDataGridViewTextBoxColumn";
-            this.tagDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // challengeRatingDataGridViewTextBoxColumn
-            // 
-            this.challengeRatingDataGridViewTextBoxColumn.DataPropertyName = "ChallengeRating";
-            this.challengeRatingDataGridViewTextBoxColumn.HeaderText = "ChallengeRating";
-            this.challengeRatingDataGridViewTextBoxColumn.Name = "challengeRatingDataGridViewTextBoxColumn";
-            this.challengeRatingDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // xPDataGridViewTextBoxColumn
-            // 
-            this.xPDataGridViewTextBoxColumn.DataPropertyName = "XP";
-            this.xPDataGridViewTextBoxColumn.HeaderText = "XP";
-            this.xPDataGridViewTextBoxColumn.Name = "xPDataGridViewTextBoxColumn";
-            this.xPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // environmentDataGridViewTextBoxColumn
-            // 
-            this.environmentDataGridViewTextBoxColumn.DataPropertyName = "Environment";
-            this.environmentDataGridViewTextBoxColumn.HeaderText = "Environment";
-            this.environmentDataGridViewTextBoxColumn.Name = "environmentDataGridViewTextBoxColumn";
-            this.environmentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sourceDataGridViewTextBoxColumn
-            // 
-            this.sourceDataGridViewTextBoxColumn.DataPropertyName = "Source";
-            this.sourceDataGridViewTextBoxColumn.HeaderText = "Source";
-            this.sourceDataGridViewTextBoxColumn.Name = "sourceDataGridViewTextBoxColumn";
-            this.sourceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pageDataGridViewTextBoxColumn
-            // 
-            this.pageDataGridViewTextBoxColumn.DataPropertyName = "Page";
-            this.pageDataGridViewTextBoxColumn.HeaderText = "Page";
-            this.pageDataGridViewTextBoxColumn.Name = "pageDataGridViewTextBoxColumn";
-            this.pageDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // referenceDataGridViewTextBoxColumn
-            // 
-            this.referenceDataGridViewTextBoxColumn.DataPropertyName = "Reference";
-            this.referenceDataGridViewTextBoxColumn.HeaderText = "Reference";
-            this.referenceDataGridViewTextBoxColumn.Name = "referenceDataGridViewTextBoxColumn";
-            this.referenceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sRDDataGridViewCheckBoxColumn
-            // 
-            this.sRDDataGridViewCheckBoxColumn.DataPropertyName = "SRD";
-            this.sRDDataGridViewCheckBoxColumn.HeaderText = "SRD";
-            this.sRDDataGridViewCheckBoxColumn.Name = "sRDDataGridViewCheckBoxColumn";
-            this.sRDDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // MonsterIndexForm1
             // 
